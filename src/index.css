@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Existing float animation (unchanged) */
+@keyframes float {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-6px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* NEW: Visible but professional image drift (About section image) */
+@keyframes imageDrift {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-12px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* Utility class for image motion */
+.animate-imageDrift {
+  animation: imageDrift 18s ease-in-out infinite;
+}
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Internet Explorer / Edge */
+body {
+  -ms-overflow-style: none;
+}
