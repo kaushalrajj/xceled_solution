@@ -56,13 +56,22 @@ const Hero = () => {
   return (
     <section className="w-full mt-32">
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="relative min-h-[70vh] rounded-2xl overflow-hidden shadow-sm">
+
+        {/* HERO CONTAINER – FIXED ASPECT RATIO */}
+        <div className="
+          relative
+          aspect-[16/9] md:aspect-[21/9]
+          min-h-[420px] sm:min-h-[480px]
+          w-full
+          rounded-2xl overflow-hidden shadow-sm
+        ">
 
           {/* Background Image */}
           <div
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-[2600ms] ease-out ${
-              visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.03]"
-            }`}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat
+              transition-all duration-[2600ms] ease-out
+              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.03]"}
+            `}
             style={{ backgroundImage: `url(${slides[current].image})` }}
           />
 
@@ -81,10 +90,10 @@ const Hero = () => {
               {/* Heading */}
               <h1
                 className={`text-[38px] md:text-[48px] lg:text-[56px]
-                font-semibold leading-[1.15] tracking-tight
-                text-white transition-opacity duration-700 ${
-                  visible ? "opacity-100" : "opacity-0"
-                }`}
+                  font-semibold leading-[1.15] tracking-tight
+                  text-white transition-opacity duration-700
+                  ${visible ? "opacity-100" : "opacity-0"}
+                `}
               >
                 {slides[current].heading}
               </h1>
@@ -92,10 +101,10 @@ const Hero = () => {
               {/* Main Description */}
               <p
                 className={`text-[17px] md:text-[18px]
-                leading-[1.7] max-w-xl
-                text-sky-50 transition-opacity duration-700 ${
-                  visible ? "opacity-90" : "opacity-0"
-                }`}
+                  leading-[1.7] max-w-xl
+                  text-sky-50 transition-opacity duration-700
+                  ${visible ? "opacity-90" : "opacity-0"}
+                `}
               >
                 {slides[current].text}
               </p>
@@ -103,10 +112,10 @@ const Hero = () => {
               {/* Supporting Description */}
               <p
                 className={`text-[15px] md:text-[16px]
-                leading-[1.75] max-w-xl
-                text-sky-100 transition-opacity duration-700 ${
-                  visible ? "opacity-85" : "opacity-0"
-                }`}
+                  leading-[1.75] max-w-xl
+                  text-sky-100 transition-opacity duration-700
+                  ${visible ? "opacity-85" : "opacity-0"}
+                `}
               >
                 {slides[current].subtext}
               </p>
