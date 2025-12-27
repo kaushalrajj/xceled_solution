@@ -2,6 +2,9 @@ import Navbar from "./components/layout/Navbar";
 import Hero from "./components/layout/Hero";
 import AboutSection from "./components/layout/AboutSection";
 import ServicesSection from "./components/layout/ServicesSection";
+import TrustSection from "./components/layout/TrustSection";
+import ImpactSection from "./components/layout/ImpactSection";
+import CTASection from "./components/layout/CTASection";
 
 const App = () => {
   return (
@@ -17,11 +20,13 @@ const App = () => {
       <main className="relative z-10">
         <Hero />
         <AboutSection />
-        <ServicesSection/>
-        {/* Services */}
-        {/* Products */}
-        {/* Career */}
-        {/* Gallery */}
+        <ServicesSection />
+        <ImpactSection />
+
+        <TrustSection />
+        <CTASection />
+
+     
         {/* Footer */}
       </main>
     </div>

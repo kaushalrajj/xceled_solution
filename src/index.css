@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-/* Existing float animation (unchanged) */
+/* =========================================================
+   Existing float animation (UNCHANGED – do not touch)
+   ========================================================= */
 @keyframes float {
   0% {
     transform: translateX(0px);
@@ -13,7 +15,9 @@
   }
 }
 
-/* NEW: Visible but professional image drift (About section image) */
+/* =========================================================
+   About section image drift (SUBTLE & PROFESSIONAL)
+   ========================================================= */
 @keyframes imageDrift {
   0% {
     transform: translateX(0px);
@@ -26,12 +30,31 @@
   }
 }
 
-/* Utility class for image motion */
 .animate-imageDrift {
   animation: imageDrift 18s ease-in-out infinite;
 }
 
-/* Hide scrollbar but allow scrolling */
+/* =========================================================
+   Trust section logo horizontal scroll (NEW)
+   ========================================================= */
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logoScroll {
+  animation: logoScroll 35s linear infinite;
+}
+
+/* =========================================================
+   Hide scrollbar (KEEP SCROLL FUNCTIONAL)
+   ========================================================= */
+
+/* Chrome / Safari / Edge */
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
@@ -50,7 +73,7 @@ html {
   scrollbar-width: none;
 }
 
-/* Internet Explorer / Edge */
+/* IE / Legacy Edge */
 body {
   -ms-overflow-style: none;
 }
