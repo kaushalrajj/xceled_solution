@@ -21,7 +21,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="w-full mt-40 pb-36">
+    <section className="w-full mt-36 pb-32">
       <div
         ref={sectionRef}
         className="
@@ -33,38 +33,50 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
           {/* TEXT CONTENT */}
-          <div className="space-y-7 flex flex-col justify-center">
-            <p className="uppercase tracking-widest text-sm text-sky-500 font-medium">
-              About Us
+          <div className="space-y-5 flex flex-col justify-center">
+
+            {/* Label */}
+            <p className="uppercase tracking-[0.3em] text-xs text-sky-500 font-medium">
+              Who We Are
             </p>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold
-              text-slate-800 leading-tight">
-              Building Skills, Confidence, and Opportunity
+            {/* Heading */}
+            <h2 className="
+              text-[30px] md:text-[36px] lg:text-[42px]
+              font-semibold text-slate-800
+              leading-tight
+            ">
+              Building Skills That Lead to Real Opportunity
             </h2>
 
-            <p className="text-slate-600 text-lg leading-relaxed">
-              Ekwik Solution is a PMEGP-supported, women-led enterprise dedicated
-              to education, skill development, and innovation. We work closely
-              with learners and institutions to deliver practical training,
-              career-oriented programs, and structured guidance that build
-              real-world capabilities.
+            {/* Core Description */}
+            <p className="text-slate-600 text-[16px] leading-[1.7] max-w-xl">
+              Xceled Solutions is a PMEGP-supported, women-led initiative focused on
+              practical skill development and career-oriented education. We work with
+              learners and institutions to deliver structured programs that build
+              confidence, employability, and real-world capability.
             </p>
 
-            <p className="text-slate-600 leading-relaxed">
-              As an MSME-registered and ISO-certified organization, our focus
-              remains on empowering individuals with confidence, self-reliance,
-              and skills that contribute to long-term personal and national
-              growth.
+            {/* Added Differentiation Line (NEW, subtle but powerful) */}
+            <p className="text-slate-600 text-[15px] leading-[1.7] max-w-xl">
+              Our approach emphasizes hands-on learning, clear outcomes, and alignment
+              with real industry and institutional needs.
             </p>
+
+            {/* Trust Strip */}
+            <div className="text-slate-700 text-sm flex flex-wrap gap-x-6 gap-y-2 pt-1">
+              <span>• PMEGP Supported</span>
+              <span>• MSME Registered</span>
+              <span>• Outcome-Driven Training</span>
+            </div>
 
             {/* CTA */}
             <a
               href="/about"
               className="
                 inline-flex items-center gap-2
-                mt-8 w-fit
-                px-8 py-3.5
+                mt-4 w-fit
+                px-6 py-2.5
                 rounded-full
                 border border-sky-400/60
                 text-sky-600
@@ -77,9 +89,10 @@ const AboutSection = () => {
                 transition-all duration-300 ease-out
               "
             >
-              Know More
+              Learn More About Xceled
               <span className="text-lg">→</span>
             </a>
+
           </div>
 
           {/* IMAGE */}
@@ -87,7 +100,7 @@ const AboutSection = () => {
             <div className="relative max-h-[420px] overflow-hidden rounded-3xl shadow-sm">
               <img
                 src={aboutImg}
-                alt="About Ekwik Solution"
+                alt="Xceled Solutions training session"
                 className="
                   w-full h-full object-cover
                   animate-imageDrift
@@ -97,7 +110,7 @@ const AboutSection = () => {
               />
             </div>
 
-            {/* Soft decorative accent */}
+            {/* Decorative Accent */}
             <div
               className="
                 absolute -bottom-12 -left-12

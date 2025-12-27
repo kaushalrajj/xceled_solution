@@ -21,11 +21,11 @@ const CTASection = () => {
 
           {/* Content */}
           <div className="relative z-10 max-w-3xl">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 leading-tight">
-              Ready to Begin Your Learning Journey?
+            <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 leading-tight">
+              Let’s Take the Next Step Together
             </h2>
 
-            <p className="text-slate-600 mt-5 text-lg leading-relaxed">
+            <p className="text-slate-600 mt-5 text-[16.5px] leading-relaxed">
               Whether you’re a student, institution, or learner seeking guidance,
               we’re here to support skill development with clarity and purpose.
             </p>

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import {
   AcademicCapIcon,
-  LightBulbIcon,
   UserGroupIcon,
   BriefcaseIcon,
+  LightBulbIcon,
 } from "@heroicons/react/24/outline";
 
 const services = [
@@ -19,12 +19,12 @@ const services = [
   },
   {
     title: "Career Clarity & Guidance",
-    desc: "Aptitude assessment, mentorship, and direction to help learners make informed choices.",
+    desc: "Aptitude assessment, mentorship, and guidance to help learners make informed academic and career choices.",
     icon: BriefcaseIcon,
   },
   {
-    title: "Innovation & Outreach",
-    desc: "Workshops and initiatives that encourage creativity, experimentation, and self-reliance.",
+    title: "Innovation & Community Programs",
+    desc: "Workshops and outreach initiatives that encourage innovation, creativity, and learning beyond classrooms.",
     icon: LightBulbIcon,
   },
 ];
@@ -44,19 +44,18 @@ const ServicesSection = () => {
           "
         >
           {/* Heading */}
-          <div className="max-w-2xl mb-18">
-            <p className="uppercase tracking-widest text-sm text-sky-500 font-medium">
+          <div className="max-w-2xl mb-16">
+            <p className="uppercase tracking-[0.3em] text-xs text-sky-500 font-medium">
               What We Enable
             </p>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-slate-800 mt-3">
+            <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 mt-3 leading-tight">
               Focus Areas That Create Impact
             </h2>
 
-            <p className="text-slate-600 mt-5 leading-relaxed">
-              Our initiatives are designed to empower learners, institutions,
-              and communities through skill-focused education, guidance, and
-              meaningful engagement.
+            <p className="text-slate-600 mt-4 leading-relaxed text-[15.5px]">
+              Our work spans a few focused areas where structured learning, guidance,
+              and innovation create long-term value for learners and institutions.
             </p>
           </div>
 
@@ -98,7 +97,7 @@ const ServicesSection = () => {
                     "
                   />
 
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2 relative z-10">
+                  <h3 className="text-[17px] font-semibold text-slate-800 mb-2 relative z-10">
                     {service.title}
                   </h3>
 
@@ -111,12 +110,12 @@ const ServicesSection = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 text-center">
+          <div className="mt-16 text-center">
             <Link
               to="/services"
               className="
                 inline-flex items-center gap-3
-                px-9 py-3.5 rounded-full
+                px-8 py-3 rounded-full
                 border border-sky-400/60
                 text-sky-600 font-medium
                 bg-sky-50/60

@@ -8,31 +8,31 @@ import slide4 from "../../assets/images/hero/slider4.webp";
 const slides = [
   {
     image: slide1,
-    heading: "Learning Today, Leading Tomorrow",
-    text: "A PMEGP-backed, women-led initiative empowering learners through skills and confidence.",
+    heading: "Industry-Focused Skill Training for Tomorrow’s Leaders",
+    text: "A PMEGP-backed, women-led initiative delivering practical skill development and career-ready education.",
     subtext:
-      "Focused on skill development, vocational training, and career-oriented education.",
+      "We work with students, institutions, and communities to build confidence, capability, and employability.",
   },
   {
     image: slide2,
-    heading: "Education With Purpose",
-    text: "We believe education is a service to the nation — not a business.",
+    heading: "Education With Purpose, Not Just Promises",
+    text: "We believe education should create real outcomes — skills, clarity, and self-reliance.",
     subtext:
-      "Delivering value-driven learning programs that build self-reliance and clarity.",
+      "Our programs focus on vocational training, hands-on learning, and meaningful career pathways.",
   },
   {
     image: slide3,
-    heading: "Skills That Build Futures",
-    text: "Practical training, mentorship, and innovation designed for real-world impact.",
+    heading: "Skills That Translate Into Real-World Impact",
+    text: "Practical training, mentorship, and guided learning designed to meet today’s industry needs.",
     subtext:
-      "Programs aligned with schools, institutions, and emerging industry needs.",
+      "From schools to institutions, we align education with emerging technologies and opportunities.",
   },
   {
     image: slide4,
-    heading: "Shaping a Self-Reliant India",
-    text: "Creating confident individuals ready to contribute, lead, and grow.",
+    heading: "Building Confident Individuals for a Self-Reliant India",
+    text: "We empower learners to contribute, lead, and grow through structured skill-based programs.",
     subtext:
-      "Supporting national skill missions through education, innovation, and guidance.",
+      "Supporting national skill missions with responsible education and focused mentorship.",
   },
 ];
 
@@ -47,7 +47,7 @@ const Hero = () => {
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
         setVisible(true);
-      }, 900); // smoother fade duration
+      }, 900);
     }, 6500);
 
     return () => clearInterval(interval);
@@ -57,6 +57,7 @@ const Hero = () => {
     <section className="w-full mt-32">
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="relative min-h-[70vh] rounded-2xl overflow-hidden shadow-sm">
+
           {/* Background Image */}
           <div
             className={`absolute inset-0 bg-cover bg-center transition-all duration-[2600ms] ease-out ${
@@ -65,18 +66,22 @@ const Hero = () => {
             style={{ backgroundImage: `url(${slides[current].image})` }}
           />
 
-          {/* Overlay – slightly stronger for readability */}
+          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/55 to-transparent" />
 
           {/* Content */}
           <div className="relative z-10 h-full flex items-center">
-            <div className="max-w-2xl px-8 space-y-6">
-              <p className="text-sm tracking-widest text-sky-100 opacity-90">
+            <div className="max-w-2xl px-8 space-y-6 md:space-y-7">
+
+              {/* Brand */}
+              <p className="text-[11px] tracking-[0.32em] text-sky-100/70 uppercase">
                 XCELED SOLUTIONS
               </p>
 
+              {/* Heading */}
               <h1
-                className={`text-4xl md:text-5xl lg:text-6xl font-bold leading-tight
+                className={`text-[38px] md:text-[48px] lg:text-[56px]
+                font-semibold leading-[1.15] tracking-tight
                 text-white transition-opacity duration-700 ${
                   visible ? "opacity-100" : "opacity-0"
                 }`}
@@ -84,29 +89,41 @@ const Hero = () => {
                 {slides[current].heading}
               </h1>
 
+              {/* Main Description */}
               <p
-                className={`text-lg md:text-xl leading-relaxed
+                className={`text-[17px] md:text-[18px]
+                leading-[1.7] max-w-xl
                 text-sky-50 transition-opacity duration-700 ${
-                  visible ? "opacity-95" : "opacity-0"
+                  visible ? "opacity-90" : "opacity-0"
                 }`}
               >
                 {slides[current].text}
               </p>
 
+              {/* Supporting Description */}
               <p
-                className={`text-base md:text-lg leading-relaxed
+                className={`text-[15px] md:text-[16px]
+                leading-[1.75] max-w-xl
                 text-sky-100 transition-opacity duration-700 ${
-                  visible ? "opacity-90" : "opacity-0"
+                  visible ? "opacity-85" : "opacity-0"
                 }`}
               >
                 {slides[current].subtext}
               </p>
 
-              <p className="text-sm text-sky-200 tracking-wide opacity-80">
+              {/* Trust */}
+              <p className="text-[12.5px] tracking-wide text-sky-200/80">
                 PMEGP Supported • MSME Registered • Women-Led Initiative
               </p>
+
+              {/* Soft CTA */}
+              <p className="text-[13.5px] text-sky-100/85 pt-1">
+                Explore our training programs for students, institutions, and emerging professionals.
+              </p>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
