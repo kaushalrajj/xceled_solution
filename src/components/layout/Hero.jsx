@@ -43,7 +43,6 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(false);
-
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
         setVisible(true);
@@ -57,15 +56,15 @@ const Hero = () => {
     <section className="w-full mt-32">
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* HERO CONTAINER – FIXED ASPECT RATIO */}
-        <div className="
-          relative
-          aspect-[16/9] md:aspect-[21/9]
-          min-h-[420px] sm:min-h-[480px]
-          w-full
-          rounded-2xl overflow-hidden shadow-sm
-        ">
-
+        {/* HERO CONTAINER */}
+        <div
+          className="
+            relative w-full
+            md:aspect-[21/9]
+            min-h-[420px] md:min-h-[480px]
+            rounded-2xl overflow-hidden shadow-sm
+          "
+        >
           {/* Background Image */}
           <div
             className={`absolute inset-0 bg-cover bg-center bg-no-repeat
@@ -79,54 +78,54 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/55 to-transparent" />
 
           {/* Content */}
-          <div className="relative z-10 h-full flex items-center">
-            <div className="max-w-2xl px-8 space-y-6 md:space-y-7">
+          <div className="relative z-10 h-full flex items-start md:items-center py-10 md:py-0">
+            <div className="max-w-2xl px-6 md:px-8 space-y-[clamp(12px,3vw,24px)]">
 
               {/* Brand */}
-              <p className="text-[11px] tracking-[0.32em] text-sky-100/70 uppercase">
+              <p className="uppercase tracking-[0.32em] text-sky-100/70 text-[clamp(10px,2.5vw,11px)]">
                 XCELED SOLUTIONS
               </p>
 
-              {/* Heading */}
+              {/* Heading – auto scales */}
               <h1
-                className={`text-[38px] md:text-[48px] lg:text-[56px]
-                  font-semibold leading-[1.15] tracking-tight
+                className={`font-semibold tracking-tight leading-[1.15]
                   text-white transition-opacity duration-700
+                  text-[clamp(26px,6vw,56px)]
                   ${visible ? "opacity-100" : "opacity-0"}
                 `}
               >
                 {slides[current].heading}
               </h1>
 
-              {/* Main Description */}
+              {/* Main text – auto scales */}
               <p
-                className={`text-[17px] md:text-[18px]
-                  leading-[1.7] max-w-xl
+                className={`leading-[1.6] max-w-xl
                   text-sky-50 transition-opacity duration-700
+                  text-[clamp(14px,3.8vw,18px)]
                   ${visible ? "opacity-90" : "opacity-0"}
                 `}
               >
                 {slides[current].text}
               </p>
 
-              {/* Supporting Description */}
+              {/* Subtext – auto scales */}
               <p
-                className={`text-[15px] md:text-[16px]
-                  leading-[1.75] max-w-xl
+                className={`leading-[1.65] max-w-xl
                   text-sky-100 transition-opacity duration-700
+                  text-[clamp(13px,3.4vw,16px)]
                   ${visible ? "opacity-85" : "opacity-0"}
                 `}
               >
                 {slides[current].subtext}
               </p>
 
-              {/* Trust */}
-              <p className="text-[12.5px] tracking-wide text-sky-200/80">
+              {/* Trust line */}
+              <p className="tracking-wide text-sky-200/80 text-[clamp(11px,3vw,12px)]">
                 PMEGP Supported • MSME Registered • Women-Led Initiative
               </p>
 
               {/* Soft CTA */}
-              <p className="text-[13.5px] text-sky-100/85 pt-1">
+              <p className="text-sky-100/85 text-[clamp(12px,3.2vw,13px)]">
                 Explore our training programs for students, institutions, and emerging professionals.
               </p>
 
