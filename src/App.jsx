@@ -5,6 +5,7 @@ import ServicesSection from "./components/layout/ServicesSection";
 import TrustSection from "./components/layout/TrustSection";
 import ImpactSection from "./components/layout/ImpactSection";
 import CTASection from "./components/layout/CTASection";
+import Footer from "./components/layout/Footer";
 
 const App = () => {
   return (
@@ -22,12 +23,9 @@ const App = () => {
         <AboutSection />
         <ServicesSection />
         <ImpactSection />
-
         <TrustSection />
         <CTASection />
-
-     
-        {/* Footer */}
+        <Footer />
       </main>
     </div>
   );
