@@ -9,30 +9,34 @@ const slides = [
   {
     image: slide1,
     heading: "Industry-Focused Skill Training for Tomorrow’s Leaders",
-    text: "A PMEGP-backed, women-led initiative delivering practical skill development and career-ready education.",
+    text:
+      "A PMEGP-backed, women-led initiative delivering practical skill development through structured, career-ready learning programs.",
     subtext:
-      "We work with students, institutions, and communities to build confidence, capability, and employability.",
+      "We work with students, institutions, and communities to build confidence, capability, and long-term employability.",
   },
   {
     image: slide2,
-    heading: "Education With Purpose, Not Just Promises",
-    text: "We believe education should create real outcomes — skills, clarity, and self-reliance.",
+    heading: "Education With Purpose That Creates Real Outcomes",
+    text:
+      "We believe education should go beyond theory and focus on hands-on learning that builds clarity, skills, and self-reliance.",
     subtext:
-      "Our programs focus on vocational training, hands-on learning, and meaningful career pathways.",
+      "Our programs are designed to support vocational training, real-world exposure, and meaningful career pathways.",
   },
   {
     image: slide3,
     heading: "Skills That Translate Into Real-World Impact",
-    text: "Practical training, mentorship, and guided learning designed to meet today’s industry needs.",
+    text:
+      "Practical training, guided mentorship, and structured learning designed to meet today’s evolving industry needs.",
     subtext:
-      "From schools to institutions, we align education with emerging technologies and opportunities.",
+      "From schools to institutions, we align education with emerging technologies and future-ready opportunities.",
   },
   {
     image: slide4,
     heading: "Building Confident Individuals for a Self-Reliant India",
-    text: "We empower learners to contribute, lead, and grow through structured skill-based programs.",
+    text:
+      "We empower learners to contribute, lead, and grow through focused skill-based programs and responsible education.",
     subtext:
-      "Supporting national skill missions with responsible education and focused mentorship.",
+      "Supporting national skill missions with inclusive training, mentorship, and sustainable learning models.",
   },
 ];
 
@@ -56,7 +60,7 @@ const Hero = () => {
     <section className="w-full mt-32">
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* HERO CONTAINER */}
+        {/* HERO */}
         <div
           className="
             relative w-full
@@ -65,11 +69,11 @@ const Hero = () => {
             rounded-2xl overflow-hidden shadow-sm
           "
         >
-          {/* Background Image */}
+          {/* Background */}
           <div
             className={`absolute inset-0 bg-cover bg-center bg-no-repeat
               transition-all duration-[2600ms] ease-out
-              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.03]"}
+              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.02]"}
             `}
             style={{ backgroundImage: `url(${slides[current].image})` }}
           />
@@ -77,57 +81,94 @@ const Hero = () => {
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/55 to-transparent" />
 
-          {/* Content */}
-          <div className="relative z-10 h-full flex items-start md:items-center py-10 md:py-0">
-            <div className="max-w-2xl px-6 md:px-8 space-y-[clamp(12px,3vw,24px)]">
-
+          {/* CONTENT */}
+          <div className="relative z-10 h-full flex items-center">
+            <div
+              className="
+                w-[96%] sm:w-[90%] md:w-[65%] lg:w-[55%] xl:w-[50%]
+                max-w-[720px]
+                px-6 md:px-8
+                space-y-[clamp(12px,2vw,22px)]
+              "
+            >
               {/* Brand */}
-              <p className="uppercase tracking-[0.32em] text-sky-100/70 text-[clamp(10px,2.5vw,11px)]">
+              <p
+                className="
+                  uppercase tracking-[0.32em]
+                  text-sky-100/70
+                  text-[clamp(9px,calc(0.6vw+0.4vh),11px)]
+                "
+              >
                 XCELED SOLUTIONS
               </p>
 
-              {/* Heading – auto scales */}
+              {/* Heading */}
               <h1
                 className={`font-semibold tracking-tight leading-[1.15]
                   text-white transition-opacity duration-700
-                  text-[clamp(26px,6vw,56px)]
+                  text-[clamp(22px,calc(3.5vw+1.2vh),48px)]
                   ${visible ? "opacity-100" : "opacity-0"}
                 `}
               >
                 {slides[current].heading}
               </h1>
 
-              {/* Main text – auto scales */}
+              {/* Main text */}
               <p
-                className={`leading-[1.6] max-w-xl
+                className={`leading-[1.55]
                   text-sky-50 transition-opacity duration-700
-                  text-[clamp(14px,3.8vw,18px)]
+                  text-[clamp(13px,calc(1.8vw+0.8vh),16px)]
                   ${visible ? "opacity-90" : "opacity-0"}
                 `}
               >
                 {slides[current].text}
               </p>
 
-              {/* Subtext – auto scales */}
+              {/* Subtext */}
               <p
-                className={`leading-[1.65] max-w-xl
+                className={`leading-[1.6] mb-7
                   text-sky-100 transition-opacity duration-700
-                  text-[clamp(13px,3.4vw,16px)]
+                  text-[clamp(12px,calc(1.5vw+0.7vh),15px)]
                   ${visible ? "opacity-85" : "opacity-0"}
                 `}
               >
                 {slides[current].subtext}
               </p>
 
-              {/* Trust line */}
-              <p className="tracking-wide text-sky-200/80 text-[clamp(11px,3vw,12px)]">
-                PMEGP Supported • MSME Registered • Women-Led Initiative
-              </p>
+              {/* CTA */}
+              <div
+                className={`flex gap-4 pt-[clamp(14px,3vw,26px)]
+                  transition-opacity duration-700
+                  ${visible ? "opacity-100" : "opacity-0"}
+                `}
+              >
+                <button
+                  className="
+                    px-6 py-2.5 rounded-full
+                    text-white font-medium
+                    text-[clamp(12px,calc(1vw+0.4vh),14px)]
+                    bg-white/15 backdrop-blur-md
+                    border border-white/30
+                    transition-all duration-300
+                    hover:bg-white/25 hover:border-white/50
+                  "
+                >
+                  Our Services
+                </button>
 
-              {/* Soft CTA */}
-              <p className="text-sky-100/85 text-[clamp(12px,3.2vw,13px)]">
-                Explore our training programs for students, institutions, and emerging professionals.
-              </p>
+                <button
+                  className="
+                    px-6 py-2.5 rounded-full
+                    text-sky-900 font-medium
+                    text-[clamp(12px,calc(1vw+0.4vh),14px)]
+                    bg-white
+                    transition-all duration-300
+                    hover:bg-sky-100
+                  "
+                >
+                  Contact Us
+                </button>
+              </div>
 
             </div>
           </div>

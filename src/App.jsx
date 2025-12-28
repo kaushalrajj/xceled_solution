@@ -1,10 +1,7 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/layout/Hero";
-import AboutSection from "./components/layout/AboutSection";
-import ServicesSection from "./components/layout/ServicesSection";
-import TrustSection from "./components/layout/TrustSection";
-import ImpactSection from "./components/layout/ImpactSection";
-import CTASection from "./components/layout/CTASection";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
 import Footer from "./components/layout/Footer";
 
 const App = () => {
@@ -17,16 +14,16 @@ const App = () => {
       {/* Fixed Navbar */}
       <Navbar />
 
-      {/* Main Content */}
+      {/* Routes */}
       <main className="relative z-10">
-        <Hero />
-        <AboutSection />
-        <ServicesSection />
-        <ImpactSection />
-        <TrustSection />
-        <CTASection />
-        <Footer />
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </main>
+            <Footer />
+
     </div>
   );
 };

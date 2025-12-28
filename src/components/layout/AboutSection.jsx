@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/hero/about.webp";
 
 const AboutSection = () => {
@@ -35,12 +36,10 @@ const AboutSection = () => {
           {/* TEXT CONTENT */}
           <div className="space-y-5 flex flex-col justify-center">
 
-            {/* Label */}
             <p className="uppercase tracking-[0.3em] text-xs text-sky-500 font-medium">
               Who We Are
             </p>
 
-            {/* Heading */}
             <h2 className="
               text-[30px] md:text-[36px] lg:text-[42px]
               font-semibold text-slate-800
@@ -49,7 +48,6 @@ const AboutSection = () => {
               Building Skills That Lead to Real Opportunity
             </h2>
 
-            {/* Core Description */}
             <p className="text-slate-600 text-[16px] leading-[1.7] max-w-xl">
               Xceled Solutions is a PMEGP-supported, women-led initiative focused on
               practical skill development and career-oriented education. We work with
@@ -57,22 +55,20 @@ const AboutSection = () => {
               confidence, employability, and real-world capability.
             </p>
 
-            {/* Added Differentiation Line (NEW, subtle but powerful) */}
             <p className="text-slate-600 text-[15px] leading-[1.7] max-w-xl">
               Our approach emphasizes hands-on learning, clear outcomes, and alignment
               with real industry and institutional needs.
             </p>
 
-            {/* Trust Strip */}
             <div className="text-slate-700 text-sm flex flex-wrap gap-x-6 gap-y-2 pt-1">
               <span>• PMEGP Supported</span>
               <span>• MSME Registered</span>
               <span>• Outcome-Driven Training</span>
             </div>
 
-            {/* CTA */}
-            <a
-              href="/about"
+            {/* CTA — ROUTED */}
+            <Link
+              to="/about"
               className="
                 inline-flex items-center gap-2
                 mt-4 w-fit
@@ -91,7 +87,7 @@ const AboutSection = () => {
             >
               Learn More About Xceled
               <span className="text-lg">→</span>
-            </a>
+            </Link>
 
           </div>
 
@@ -110,7 +106,6 @@ const AboutSection = () => {
               />
             </div>
 
-            {/* Decorative Accent */}
             <div
               className="
                 absolute -bottom-12 -left-12
