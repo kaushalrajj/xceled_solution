@@ -30,7 +30,7 @@ const About = () => {
 
   const [missionLang, setMissionLang] = useState("en");
   const [visionLang, setVisionLang] = useState("en");
-  const [founderLang, setFounderLang] = useState("en");
+  const [founderLang] = useState("en"); // unchanged
 
   const mission = {
     en: `Our mission is to empower the youth of India through quality education,
@@ -72,23 +72,15 @@ career counseling, and creative learning.
 
 Our collaborations with PM SHRI schools and Jawahar Navodaya Vidyalayas
 reflect our commitment to inclusive growth, institutional trust, and
-long-term national impact. We continue to work closely with educators,
-institutions, and communities to deliver meaningful outcomes.`,
-    hi: `XCELED Solutions की स्थापना प्रतिभा और अवसर के बीच की दूरी
-को कम करने के उद्देश्य से की गई।
-
-हम तकनीकी प्रशिक्षण, योग्यता विकास और करियर मार्गदर्शन के माध्यम से
-छात्रों को आत्मविश्वास और दिशा प्रदान करते हैं।
-
-PM SHRI स्कूलों और जवाहर नवोदय विद्यालयों के साथ हमारा सहयोग
-हमारी संस्थागत विश्वसनीयता और दीर्घकालिक प्रभाव को दर्शाता है।`,
+long-term national impact.`,
   };
 
   return (
     <section className="relative w-full pt-36 pb-32 bg-gradient-to-b from-sky-50 via-white to-white text-slate-800">
 
       {/* INTRO */}
-      <motion.div variants={fadeUp} initial="hidden" animate="visible" className="max-w-5xl mx-auto px-6 mb-32">
+      <motion.div variants={fadeUp} initial="hidden" animate="visible"
+        className="max-w-5xl mx-auto px-6 mb-32">
         <div className="bg-white/70 backdrop-blur-md rounded-3xl px-10 py-14 text-center shadow-sm border border-sky-100">
           <p className="uppercase tracking-[0.4em] text-xs text-sky-500 mb-5">
             About Us
@@ -109,7 +101,8 @@ PM SHRI स्कूलों और जवाहर नवोदय विद�
       </motion.div>
 
       {/* WHO WE ARE */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
+        viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center mb-20">
         <div>
           <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
@@ -133,20 +126,10 @@ PM SHRI स्कूलों और जवाहर नवोदय विद�
         </motion.div>
       </motion.div>
 
-      {/* TRUST STRIP */}
-      <div className="max-w-4xl mx-auto px-6 text-center text-sm text-slate-500 mb-24">
-        An MSME-registered organization supported under PMEGP, collaborating with
-        schools and institutions across India.
-      </div>
-
-      {/* ICON DIVIDER */}
-      <div className="flex justify-center my-24 opacity-40">
-        <div className="w-2 h-2 bg-sky-500 rounded-full" />
-      </div>
-
       {/* MISSION & VISION */}
       <div className="bg-sky-50 py-32 mb-36">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+
           {[{
             title: "Our Mission",
             icon: <Target className="w-6 h-6 text-sky-600" />,
@@ -175,9 +158,17 @@ PM SHRI स्कूलों और जवाहर नवोदय विद�
                   {item.icon}
                   <h3 className="text-2xl font-semibold">{item.title}</h3>
                 </div>
+
                 <button
-                  onClick={() => item.setLang(item.lang === "en" ? "hi" : "en")}
-                  className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full border hover:bg-slate-50"
+                  onClick={() =>
+                    item.setLang((prev) => (prev === "en" ? "hi" : "en"))
+                  }
+                  onTouchStart={() =>
+                    item.setLang((prev) => (prev === "en" ? "hi" : "en"))
+                  }
+                  className="flex items-center gap-2 text-sm px-4 py-1.5
+                             rounded-full border border-slate-300 text-slate-600
+                             hover:bg-slate-50 transition pointer-events-auto"
                 >
                   <Languages className="w-4 h-4" />
                   {item.lang === "en" ? "हिंदी" : "EN"}
@@ -193,7 +184,8 @@ PM SHRI स्कूलों और जवाहर नवोदय विद�
       </div>
 
       {/* FOUNDER MESSAGE */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible"
+        viewport={{ once: true }}
         className="relative py-32 bg-sky-50 mb-36">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center
                         bg-white/70 backdrop-blur rounded-3xl p-16 shadow-sm">
@@ -208,11 +200,9 @@ PM SHRI स्कूलों और जवाहर नवोदय विद�
 
           <div>
             <h3 className="text-3xl font-semibold mb-6">Founder’s Message</h3>
-
             <p className="text-slate-600 leading-[1.85] whitespace-pre-line mb-8">
-              {founder[founderLang]}
+              {founder.en}
             </p>
-
             <div className="border-t pt-5">
               <p className="font-medium">Moni Kumari</p>
               <p className="text-sm text-slate-500">
@@ -224,7 +214,8 @@ PM SHRI स्कूलों और जवाहर नवोदय विद�
       </motion.section>
 
       {/* CTA */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
+        viewport={{ once: true }}
         className="relative max-w-5xl mx-auto px-6 text-center py-20">
         <div className="absolute inset-0 bg-sky-50 rounded-3xl -z-10" />
 

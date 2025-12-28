@@ -65,7 +65,7 @@ const Hero = () => {
           className="
             relative w-full
             md:aspect-[21/9]
-            min-h-[420px] md:min-h-[480px]
+            min-h-[520px] sm:min-h-[460px] md:min-h-[480px]
             rounded-2xl overflow-hidden shadow-sm
           "
         >
@@ -82,13 +82,13 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/55 to-transparent" />
 
           {/* CONTENT */}
-          <div className="relative z-10 h-full flex items-center">
+          <div className="relative z-10 h-full flex items-start md:items-center pt-10 sm:pt-14 md:pt-0">
             <div
               className="
-                w-[96%] sm:w-[90%] md:w-[65%] lg:w-[55%] xl:w-[50%]
+                w-[98%] sm:w-[94%] md:w-[65%] lg:w-[55%] xl:w-[50%]
                 max-w-[720px]
-                px-6 md:px-8
-                space-y-[clamp(12px,2vw,22px)]
+                px-5 sm:px-6 md:px-8
+                space-y-[clamp(14px,3vw,22px)]
               "
             >
               {/* Brand */}
@@ -106,7 +106,7 @@ const Hero = () => {
               <h1
                 className={`font-semibold tracking-tight leading-[1.15]
                   text-white transition-opacity duration-700
-                  text-[clamp(22px,calc(3.5vw+1.2vh),48px)]
+                  text-[clamp(24px,calc(3.8vw+1.4vh),48px)]
                   ${visible ? "opacity-100" : "opacity-0"}
                 `}
               >
@@ -117,7 +117,7 @@ const Hero = () => {
               <p
                 className={`leading-[1.55]
                   text-sky-50 transition-opacity duration-700
-                  text-[clamp(13px,calc(1.8vw+0.8vh),16px)]
+                  text-[clamp(14px,calc(1.9vw+0.9vh),16px)]
                   ${visible ? "opacity-90" : "opacity-0"}
                 `}
               >
@@ -126,9 +126,9 @@ const Hero = () => {
 
               {/* Subtext */}
               <p
-                className={`leading-[1.6] mb-7
+                className={`leading-[1.6]
                   text-sky-100 transition-opacity duration-700
-                  text-[clamp(12px,calc(1.5vw+0.7vh),15px)]
+                  text-[clamp(13px,calc(1.6vw+0.8vh),15px)]
                   ${visible ? "opacity-85" : "opacity-0"}
                 `}
               >
@@ -137,16 +137,16 @@ const Hero = () => {
 
               {/* CTA */}
               <div
-                className={`flex gap-4 pt-[clamp(14px,3vw,26px)]
+                className={`flex flex-col sm:flex-row gap-4 pt-4 sm:pt-6 md:pt-[clamp(14px,3vw,26px)]
                   transition-opacity duration-700
                   ${visible ? "opacity-100" : "opacity-0"}
                 `}
               >
                 <button
                   className="
-                    px-6 py-2.5 rounded-full
+                    px-6 py-3 rounded-full
                     text-white font-medium
-                    text-[clamp(12px,calc(1vw+0.4vh),14px)]
+                    text-[clamp(13px,calc(1vw+0.4vh),14px)]
                     bg-white/15 backdrop-blur-md
                     border border-white/30
                     transition-all duration-300
@@ -158,9 +158,9 @@ const Hero = () => {
 
                 <button
                   className="
-                    px-6 py-2.5 rounded-full
+                    px-6 py-3 rounded-full
                     text-sky-900 font-medium
-                    text-[clamp(12px,calc(1vw+0.4vh),14px)]
+                    text-[clamp(13px,calc(1vw+0.4vh),14px)]
                     bg-white
                     transition-all duration-300
                     hover:bg-sky-100
