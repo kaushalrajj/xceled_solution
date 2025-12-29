@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import slide1 from "../../assets/images/hero/slider1.webp";
 import slide2 from "../../assets/images/hero/slider2.webp";
@@ -58,115 +59,121 @@ const Hero = () => {
 
   return (
     <section className="w-full mt-32">
-      <div className="relative max-w-7xl mx-auto px-6">
-
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div
           className="
             relative w-full
+            min-h-[480px] sm:min-h-[460px] md:min-h-[500px]
             md:aspect-[21/9]
-            min-h-[520px] sm:min-h-[460px] md:min-h-[480px]
             rounded-2xl overflow-hidden shadow-sm
           "
         >
-          {/* Background */}
+          {/* BACKGROUND */}
           <div
             className={`absolute inset-0 bg-cover bg-center bg-no-repeat
               transition-all duration-[2600ms] ease-out
-              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.02]"}
+              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.03]"}
             `}
             style={{ backgroundImage: `url(${slides[current].image})` }}
           />
 
-          {/* Overlay */}
+          {/* OVERLAY */}
           <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/55 to-transparent" />
 
           {/* CONTENT */}
           <div className="relative z-10 h-full flex items-start md:items-center pt-10 sm:pt-14 md:pt-0">
             <div
               className="
-                w-[98%] sm:w-[94%] md:w-[65%] lg:w-[55%] xl:w-[50%]
+                w-full sm:w-[94%] md:w-[65%] lg:w-[55%] xl:w-[50%]
                 max-w-[760px]
-                px-5 sm:px-6 md:px-8
-                space-y-[clamp(16px,3.2vw,26px)]
+                px-4 sm:px-6 md:px-8
+                space-y-[clamp(16px,3vw,28px)]
               "
             >
-              {/* Brand */}
+              {/* BRAND */}
               <p
                 className="
                   uppercase tracking-[0.34em]
-                  text-sky-100/75
-                  text-[clamp(10px,calc(0.7vw+0.5vh),12px)]
+                  text-sky-100/80
+                  text-[clamp(10px,0.8vw,12px)]
                 "
               >
                 XCELED SOLUTIONS
               </p>
 
-              {/* Heading (BIGGEST FOCUS) */}
+              {/* HEADING */}
               <h1
                 className={`font-semibold tracking-tight leading-[1.15]
                   text-white transition-opacity duration-700
-                  text-[clamp(28px,calc(4.6vw+1.6vh),56px)]
+                  text-[clamp(28px,4.8vw,56px)]
                   ${visible ? "opacity-100" : "opacity-0"}
                 `}
               >
                 {slides[current].heading}
               </h1>
 
-              {/* Main text */}
+              {/* MAIN TEXT */}
               <p
                 className={`leading-[1.6]
                   text-sky-50 transition-opacity duration-700
-                  text-[clamp(15px,calc(2.1vw+1vh),18px)]
+                  text-[clamp(15px,2.2vw,18px)]
                   ${visible ? "opacity-90" : "opacity-0"}
                 `}
               >
                 {slides[current].text}
               </p>
 
-              {/* Subtext */}
+              {/* SUBTEXT */}
               <p
                 className={`leading-[1.65]
                   text-sky-100 transition-opacity duration-700
-                  text-[clamp(14px,calc(1.9vw+0.9vh),16px)]
+                  text-[clamp(14px,2vw,16px)]
                   ${visible ? "opacity-85" : "opacity-0"}
                 `}
               >
                 {slides[current].subtext}
               </p>
 
-              {/* CTA */}
+              {/* CTA — SIDE BY SIDE ON ALL SCREENS */}
               <div
-                className={`flex flex-col sm:flex-row gap-4 pt-4 sm:pt-6 md:pt-[clamp(16px,3.4vw,28px)]
+                className={`flex flex-row flex-wrap gap-4
+                  pt-4 sm:pt-6
                   transition-opacity duration-700
                   ${visible ? "opacity-100" : "opacity-0"}
                 `}
               >
-                <button
-                  className="
-                    px-7 py-3.5 rounded-full
-                    text-white font-medium
-                    text-[clamp(14px,calc(1.1vw+0.45vh),15px)]
-                    bg-white/15 backdrop-blur-md
-                    border border-white/30
-                    transition-all duration-300
-                    hover:bg-white/25 hover:border-white/50
-                  "
-                >
-                  Our Services
-                </button>
+                <Link to="/services" className="flex-1 sm:flex-none">
+                  <button
+                    className="
+                      w-full sm:w-auto
+                      px-7 py-3.5 rounded-full
+                      text-white font-medium
+                      text-[clamp(14px,1.1vw,15px)]
+                      bg-white/15 backdrop-blur-md
+                      border border-white/30
+                      transition-all duration-300
+                      hover:bg-white/25 hover:border-white/50
+                    "
+                  >
+                    Our Services
+                  </button>
+                </Link>
 
-                <button
-                  className="
-                    px-7 py-3.5 rounded-full
-                    text-sky-900 font-medium
-                    text-[clamp(14px,calc(1.1vw+0.45vh),15px)]
-                    bg-white
-                    transition-all duration-300
-                    hover:bg-sky-100
-                  "
-                >
-                  Contact Us
-                </button>
+                <Link to="/contact" className="flex-1 sm:flex-none">
+                  <button
+                    className="
+                      w-full sm:w-auto
+                      px-7 py-3.5 rounded-full
+                      text-sky-900 font-medium
+                      text-[clamp(14px,1.1vw,15px)]
+                      bg-white
+                      transition-all duration-300
+                      hover:bg-sky-100
+                    "
+                  >
+                    Contact Us
+                  </button>
+                </Link>
               </div>
 
             </div>

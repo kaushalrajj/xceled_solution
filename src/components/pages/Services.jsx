@@ -1,159 +1,146 @@
 import {
   Laptop,
   School,
-  Users,
-  Briefcase,
   GraduationCap,
+  Users,
   ClipboardList,
-  Award,
-  Lightbulb,
-  Hammer,
-  Globe,
+  Package,
+  FlaskConical,
 } from "lucide-react";
+
+/* ================= IMAGE IMPORTS ================= */
+
+import online from "../../assets/images/services/online skill image.webp";
+import campus from "../../assets/images/services/on campus training.webp";
+import training from "../../assets/images/services/Career-Mentoring-Career-Counseling-Blog-Post.webp";
+import manpower from "../../assets/images/services/pro.webp";
+import stationery from "../../assets/images/services/certificate.webp";
+import kits from "../../assets/images/services/aptitude.webp";
+import labkits from "../../assets/images/services/insti.webp";
+
+/* ================= SERVICES DATA (EKWIK ONLY) ================= */
 
 const services = [
   {
-    title: "Online Skill Programs",
+    title: "Online Exams",
     description:
-      "Structured online programs focused on practical skills, guided learning, and career readiness.",
+      "Secure and scalable online examination solutions with monitoring, assessment, and result processing.",
     icon: Laptop,
-    type: "Online",
+    image: online,
   },
   {
-    title: "Offline / On-Campus Training",
+    title: "Offline Proctor-Based Exams",
     description:
-      "Instructor-led training programs delivered at institutions, schools, and partner campuses.",
+      "On-site, supervised examinations conducted with strict compliance and institutional standards.",
     icon: School,
-    type: "Offline",
+    image: campus,
   },
   {
-    title: "Institutional Programs",
+    title: "Educational Training",
     description:
-      "Long-term collaborations with schools and institutions for structured academic and vocational learning.",
-    icon: Users,
-    type: "Institutional",
-  },
-  {
-    title: "Career Guidance & Mentorship",
-    description:
-      "Aptitude assessment, counseling, and mentorship to help learners make informed career decisions.",
-    icon: Briefcase,
-    type: "Guidance",
-  },
-  {
-    title: "Internship & Placement Support",
-    description:
-      "Industry exposure, internship assistance, and employability-focused career support.",
+      "Structured academic and skill-based training programs for students, institutions, and organizations.",
     icon: GraduationCap,
-    type: "Career",
+    image: training,
   },
   {
-    title: "Aptitude & Soft Skills Training",
+    title: "Manpower Provider",
     description:
-      "Programs focused on communication, reasoning, confidence building, and workplace readiness.",
+      "Qualified manpower solutions for educational institutions, examinations, and operational needs.",
+    icon: Users,
+    image: manpower,
+  },
+  {
+    title: "Stationery & Uniforms",
+    description:
+      "Supply of standardized stationery items and uniforms tailored for educational institutions.",
     icon: ClipboardList,
-    type: "Training",
+    image: stationery,
   },
   {
-    title: "Certification Programs",
+    title: "Educational Kits",
     description:
-      "Skill certification programs aligned with industry requirements and institutional standards.",
-    icon: Award,
-    type: "Certification",
+      "Ready-to-use educational kits designed to support structured learning and curriculum needs.",
+    icon: Package,
+    image: kits,
   },
   {
-    title: "Workshops & Bootcamps",
+    title: "School Lab Kits",
     description:
-      "Short-term intensive workshops and bootcamps focused on practical learning and innovation.",
-    icon: Lightbulb,
-    type: "Workshop",
-  },
-  {
-    title: "Project-Based Learning",
-    description:
-      "Hands-on project work designed to bridge the gap between learning and real-world application.",
-    icon: Hammer,
-    type: "Projects",
-  },
-  {
-    title: "Community & Outreach Programs",
-    description:
-      "Educational outreach initiatives supporting community development and inclusive learning.",
-    icon: Globe,
-    type: "Outreach",
+      "Laboratory kits for schools supporting practical learning in science and technical subjects.",
+    icon: FlaskConical,
+    image: labkits,
   },
 ];
 
-const ServicesCards = () => {
+/* ================= COMPONENT ================= */
+
+const Services = () => {
   return (
-    <section className="w-full bg-sky-50 py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full bg-sky-50 py-24 sm:py-28 md:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* HEADER */}
-        <div className="max-w-3xl mb-20">
-          <p className="uppercase tracking-[0.35em] text-sky-600 text-xs mb-4">
-            Our Services
+        <div className="max-w-3xl mb-16 sm:mb-20">
+          <p className="uppercase tracking-[0.35em] text-sky-600 text-xs font-bold mb-4">
+            Services
           </p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-6">
-            Programs Designed for Real-World Impact
-          </h2>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            We offer a range of structured programs across online, offline,
-            and institutional formats, focused on skills, employability,
-            and long-term growth.
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 mb-6">
+            Solutions Delivered with Precision & Trust
+          </h1>
+
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Our services are designed to support educational institutions,
+            examinations, training, and operational requirements with reliability
+            and professionalism.
           </p>
         </div>
 
         {/* GRID */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const isLast = index === services.length - 1;
 
             return (
               <div
                 key={index}
-                className="
-                  group relative
-                  bg-white rounded-3xl p-8
-                  border border-slate-100
-                  shadow-sm
-                  transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-                  hover:-translate-y-2 hover:scale-[1.02]
-                  hover:shadow-xl
-                "
+                className={`
+                  group bg-white rounded-3xl overflow-hidden
+                  border border-slate-100 shadow-sm
+                  transition-all duration-500
+                  hover:-translate-y-2 hover:shadow-xl
+                  ${isLast ? "lg:col-start-2" : ""}
+                `}
               >
-                {/* soft glow */}
-                <div
-                  className="
-                    absolute inset-0 rounded-3xl
-                    ring-1 ring-transparent
-                    group-hover:ring-sky-200
-                    transition-all duration-500
-                  "
-                />
+                {/* IMAGE */}
+                <div className="relative h-44 sm:h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                    className="
+                      w-full h-full object-cover
+                      transition-transform duration-700
+                      group-hover:scale-110
+                    "
+                  />
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition" />
+                </div>
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div
-                      className="
-                        p-3 rounded-xl bg-sky-100
-                        transition-transform duration-500
-                        group-hover:scale-110
-                      "
-                    >
-                      <Icon className="w-7 h-7 text-sky-600" />
+                {/* CONTENT */}
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="p-3 rounded-xl bg-sky-100">
+                      <Icon className="w-6 h-6 text-sky-600" />
                     </div>
-
-                    <span className="text-xs font-medium uppercase tracking-wide text-sky-700 bg-sky-50 px-3 py-1 rounded-full">
-                      {service.type}
-                    </span>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">
                     {service.title}
                   </h3>
 
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                     {service.description}
                   </p>
                 </div>
@@ -167,4 +154,4 @@ const ServicesCards = () => {
   );
 };
 
-export default ServicesCards;
+export default Services;
