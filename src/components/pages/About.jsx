@@ -9,6 +9,7 @@ import directorImg from "../../assets/images/hero/director.webp";
 const About = () => {
   const shouldReduceMotion = useReducedMotion();
 
+  /* ------------------ Animations ------------------ */
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
     visible: {
@@ -28,10 +29,12 @@ const About = () => {
         },
       };
 
+  /* ------------------ Language States ------------------ */
   const [missionLang, setMissionLang] = useState("en");
   const [visionLang, setVisionLang] = useState("en");
-  const [founderLang] = useState("en"); // unchanged
+  const [founderLang, setFounderLang] = useState("en");
 
+  /* ------------------ Content ------------------ */
   const mission = {
     en: `Our mission is to empower the youth of India through quality education,
 skill-based training, and meaningful career guidance. We believe education
@@ -73,14 +76,30 @@ career counseling, and creative learning.
 Our collaborations with PM SHRI schools and Jawahar Navodaya Vidyalayas
 reflect our commitment to inclusive growth, institutional trust, and
 long-term national impact.`,
+    hi: `XCELED Solutions की स्थापना एक स्पष्ट उद्देश्य के साथ की गई —
+प्रतिभा और अवसर के बीच की खाई को पाटना।
+
+भारत भर में अनेक विद्यार्थी प्रतिभाशाली हैं, लेकिन उन्हें सही मार्गदर्शन,
+अनुभव और अवसर नहीं मिल पाते। हमारा कार्य तकनीकी प्रशिक्षण,
+योग्यता विकास, करियर मार्गदर्शन और व्यावहारिक शिक्षा के माध्यम से
+आत्मविश्वास और वास्तविक दुनिया की तैयारी पर केंद्रित है।
+
+PM SHRI विद्यालयों और जवाहर नवोदय विद्यालयों के साथ हमारा सहयोग
+समावेशी विकास, संस्थागत विश्वास और दीर्घकालिक
+राष्ट्रीय प्रभाव के प्रति हमारी प्रतिबद्धता को दर्शाता है।`,
   };
 
+  /* ================== JSX ================== */
   return (
     <section className="relative w-full pt-36 pb-32 bg-gradient-to-b from-sky-50 via-white to-white text-slate-800">
 
-      {/* INTRO */}
-      <motion.div variants={fadeUp} initial="hidden" animate="visible"
-        className="max-w-5xl mx-auto px-6 mb-32">
+      {/* ---------- INTRO ---------- */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto px-6 mb-32"
+      >
         <div className="bg-white/70 backdrop-blur-md rounded-3xl px-10 py-14 text-center shadow-sm border border-sky-100">
           <p className="uppercase tracking-[0.4em] text-xs text-sky-500 mb-5">
             About Us
@@ -100,10 +119,14 @@ long-term national impact.`,
         </div>
       </motion.div>
 
-      {/* WHO WE ARE */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
+      {/* ---------- WHO WE ARE ---------- */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center mb-20">
+        className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center mb-20"
+      >
         <div>
           <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
           <p className="text-slate-600 leading-relaxed mb-5">
@@ -126,24 +149,25 @@ long-term national impact.`,
         </motion.div>
       </motion.div>
 
-      {/* MISSION & VISION */}
+      {/* ---------- MISSION & VISION ---------- */}
       <div className="bg-sky-50 py-32 mb-36">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-
-          {[{
-            title: "Our Mission",
-            icon: <Target className="w-6 h-6 text-sky-600" />,
-            text: mission,
-            lang: missionLang,
-            setLang: setMissionLang,
-          },
-          {
-            title: "Our Vision",
-            icon: <Eye className="w-6 h-6 text-sky-600" />,
-            text: vision,
-            lang: visionLang,
-            setLang: setVisionLang,
-          }].map((item, i) => (
+          {[
+            {
+              title: "Our Mission",
+              icon: <Target className="w-6 h-6 text-sky-600" />,
+              text: mission,
+              lang: missionLang,
+              setLang: setMissionLang,
+            },
+            {
+              title: "Our Vision",
+              icon: <Eye className="w-6 h-6 text-sky-600" />,
+              text: vision,
+              lang: visionLang,
+              setLang: setVisionLang,
+            },
+          ].map((item, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
@@ -161,14 +185,11 @@ long-term national impact.`,
 
                 <button
                   onClick={() =>
-                    item.setLang((prev) => (prev === "en" ? "hi" : "en"))
-                  }
-                  onTouchStart={() =>
-                    item.setLang((prev) => (prev === "en" ? "hi" : "en"))
+                    item.setLang((p) => (p === "en" ? "hi" : "en"))
                   }
                   className="flex items-center gap-2 text-sm px-4 py-1.5
                              rounded-full border border-slate-300 text-slate-600
-                             hover:bg-slate-50 transition pointer-events-auto"
+                             hover:bg-slate-50 transition"
                 >
                   <Languages className="w-4 h-4" />
                   {item.lang === "en" ? "हिंदी" : "EN"}
@@ -183,10 +204,14 @@ long-term national impact.`,
         </div>
       </div>
 
-      {/* FOUNDER MESSAGE */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible"
+      {/* ---------- FOUNDER MESSAGE ---------- */}
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        className="relative py-32 bg-sky-50 mb-36">
+        className="relative py-32 bg-sky-50 mb-36"
+      >
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center
                         bg-white/70 backdrop-blur rounded-3xl p-16 shadow-sm">
 
@@ -199,10 +224,26 @@ long-term national impact.`,
           </motion.div>
 
           <div>
-            <h3 className="text-3xl font-semibold mb-6">Founder’s Message</h3>
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-3xl font-semibold">Founder’s Message</h3>
+
+              <button
+                onClick={() =>
+                  setFounderLang((p) => (p === "en" ? "hi" : "en"))
+                }
+                className="flex items-center gap-2 text-sm px-4 py-1.5
+                           rounded-full border border-slate-300 text-slate-600
+                           hover:bg-slate-50 transition"
+              >
+                <Languages className="w-4 h-4" />
+                {founderLang === "en" ? "हिंदी" : "EN"}
+              </button>
+            </div>
+
             <p className="text-slate-600 leading-[1.85] whitespace-pre-line mb-8">
-              {founder.en}
+              {founder[founderLang]}
             </p>
+
             <div className="border-t pt-5">
               <p className="font-medium">Moni Kumari</p>
               <p className="text-sm text-slate-500">
@@ -213,10 +254,14 @@ long-term national impact.`,
         </div>
       </motion.section>
 
-      {/* CTA */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
+      {/* ---------- CTA ---------- */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        className="relative max-w-5xl mx-auto px-6 text-center py-20">
+        className="relative max-w-5xl mx-auto px-6 text-center py-20"
+      >
         <div className="absolute inset-0 bg-sky-50 rounded-3xl -z-10" />
 
         <h3 className="text-3xl md:text-4xl font-semibold mb-6">
@@ -231,12 +276,16 @@ long-term national impact.`,
         </p>
 
         <div className="flex justify-center gap-5">
-          <Link to="/services"
-            className="px-9 py-3.5 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition">
+          <Link
+            to="/services"
+            className="px-9 py-3.5 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition"
+          >
             Explore Our Programs
           </Link>
-          <Link to="/contact"
-            className="px-9 py-3.5 rounded-full border border-sky-600 text-sky-600 hover:bg-sky-50 transition">
+          <Link
+            to="/contact"
+            className="px-9 py-3.5 rounded-full border border-sky-600 text-sky-600 hover:bg-sky-50 transition"
+          >
             Partner With Us
           </Link>
         </div>

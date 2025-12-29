@@ -22,7 +22,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="w-full mt-36 pb-32">
+    <section className="w-full mt-24 md:mt-36 pb-24 md:pb-32 relative z-10">
       <div
         ref={sectionRef}
         className="
@@ -31,31 +31,31 @@ const AboutSection = () => {
           transition-all duration-1000 ease-out
         "
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
-          {/* TEXT CONTENT */}
-          <div className="space-y-5 flex flex-col justify-center">
+          {/* ================= TEXT CONTENT ================= */}
+          <div className="space-y-5 flex flex-col justify-center relative z-20">
 
             <p className="uppercase tracking-[0.3em] text-xs text-sky-500 font-medium">
               Who We Are
             </p>
 
             <h2 className="
-              text-[30px] md:text-[36px] lg:text-[42px]
+              text-[28px] sm:text-[32px] md:text-[36px] lg:text-[42px]
               font-semibold text-slate-800
               leading-tight
             ">
               Building Skills That Lead to Real Opportunity
             </h2>
 
-            <p className="text-slate-600 text-[16px] leading-[1.7] max-w-xl">
+            <p className="text-slate-600 text-[15px] sm:text-[16px] leading-[1.7] max-w-xl">
               Xceled Solutions is a PMEGP-supported, women-led initiative focused on
               practical skill development and career-oriented education. We work with
               learners and institutions to deliver structured programs that build
               confidence, employability, and real-world capability.
             </p>
 
-            <p className="text-slate-600 text-[15px] leading-[1.7] max-w-xl">
+            <p className="text-slate-600 text-[14px] sm:text-[15px] leading-[1.7] max-w-xl">
               Our approach emphasizes hands-on learning, clear outcomes, and alignment
               with real industry and institutional needs.
             </p>
@@ -66,22 +66,27 @@ const AboutSection = () => {
               <span>• Outcome-Driven Training</span>
             </div>
 
-            {/* CTA — ROUTED */}
+            {/* ================= CTA (ABSOLUTE PRIORITY) ================= */}
             <Link
               to="/about"
               className="
-                inline-flex items-center gap-2
-                mt-4 w-fit
-                px-6 py-2.5
+                relative
+                z-[999]
+                pointer-events-auto
+                inline-flex items-center justify-center gap-2
+                mt-6
+                w-full sm:w-fit
+                px-7 py-3
                 rounded-full
                 border border-sky-400/60
                 text-sky-600
-                bg-sky-50/60
+                bg-sky-50/80
                 backdrop-blur-sm
-                shadow-sm
-                hover:bg-sky-100/70
+                shadow-md
+                hover:bg-sky-100/90
                 hover:border-sky-500
-                hover:shadow-md
+                hover:shadow-lg
+                active:scale-95
                 transition-all duration-300 ease-out
               "
             >
@@ -91,8 +96,8 @@ const AboutSection = () => {
 
           </div>
 
-          {/* IMAGE */}
-          <div className="relative">
+          {/* ================= IMAGE ================= */}
+          <div className="relative z-0 pointer-events-none lg:pointer-events-auto">
             <div className="relative max-h-[420px] overflow-hidden rounded-3xl shadow-sm">
               <img
                 src={aboutImg}

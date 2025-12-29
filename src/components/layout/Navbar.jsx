@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/hero/logo.jpeg";
 
-
 const navItems = [
   "Home",
   "About Us",
@@ -18,13 +17,14 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50">
       
-      {/* Navbar */}
+      {/* ================= NAVBAR ================= */}
       <nav className="w-full bg-sky-50/70 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
           {/* Logo → Home */}
           <Link
             to="/"
+            onClick={() => setMenuOpen(false)}
             className="group flex items-center gap-4 cursor-pointer transition-transform duration-500 ease-out hover:scale-[1.04]"
           >
             <img
@@ -48,19 +48,13 @@ const Navbar = () => {
               <li key={item} className="relative group">
 
                 {item === "Home" && (
-                  <Link
-                    to="/"
-                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
-                  >
+                  <Link to="/" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
                     Home
                   </Link>
                 )}
 
                 {item === "About Us" && (
-                  <Link
-                    to="/about"
-                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
-                  >
+                  <Link to="/about" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
                     About Us
                   </Link>
                 )}
@@ -79,7 +73,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden flex flex-col gap-[6px]"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(prev => !prev)}
             aria-label="Toggle Menu"
           >
             <span className="w-7 h-[2px] bg-slate-800"></span>
@@ -89,43 +83,43 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden w-full bg-sky-50/95 backdrop-blur-md shadow-sm transition-all duration-300
-          ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3 pointer-events-none"}`}
-      >
-        <ul className="flex flex-col items-center gap-8 py-10 text-lg font-semibold text-slate-700">
-          {navItems.map((item) => (
-            <li key={item} onClick={() => setMenuOpen(false)}>
+      {/* ================= MOBILE MENU (FIXED) ================= */}
+      {menuOpen && (
+        <div
+          className="
+            md:hidden
+            fixed top-20 left-0 w-full
+            bg-sky-50/95 backdrop-blur-md shadow-md
+            z-50
+          "
+        >
+          <ul className="flex flex-col items-center gap-8 py-10 text-lg font-semibold text-slate-700">
+            {navItems.map((item) => (
+              <li key={item} onClick={() => setMenuOpen(false)}>
 
-              {item === "Home" && (
-                <Link
-                  to="/"
-                  className="transition-all duration-300 hover:text-sky-600 hover:font-bold"
-                >
-                  Home
-                </Link>
-              )}
+                {item === "Home" && (
+                  <Link to="/" className="hover:text-sky-600 hover:font-bold transition-all">
+                    Home
+                  </Link>
+                )}
 
-              {item === "About Us" && (
-                <Link
-                  to="/about"
-                  className="transition-all duration-300 hover:text-sky-600 hover:font-bold"
-                >
-                  About Us
-                </Link>
-              )}
+                {item === "About Us" && (
+                  <Link to="/about" className="hover:text-sky-600 hover:font-bold transition-all">
+                    About Us
+                  </Link>
+                )}
 
-              {item !== "Home" && item !== "About Us" && (
-                <span className="cursor-pointer transition-all duration-300 hover:text-sky-600 hover:font-bold">
-                  {item}
-                </span>
-              )}
+                {item !== "Home" && item !== "About Us" && (
+                  <span className="cursor-pointer hover:text-sky-600 hover:font-bold transition-all">
+                    {item}
+                  </span>
+                )}
 
-            </li>
-          ))}
-        </ul>
-      </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 };
