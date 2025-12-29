@@ -48,18 +48,33 @@ const Navbar = () => {
               <li key={item} className="relative group">
 
                 {item === "Home" && (
-                  <Link to="/" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
+                  <Link
+                    to="/"
+                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
+                  >
                     Home
                   </Link>
                 )}
 
                 {item === "About Us" && (
-                  <Link to="/about" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
+                  <Link
+                    to="/about"
+                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
+                  >
                     About Us
                   </Link>
                 )}
 
-                {item !== "Home" && item !== "About Us" && (
+                {item === "Services" && (
+                  <Link
+                    to="/services"
+                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
+                  >
+                    Services
+                  </Link>
+                )}
+
+                {item !== "Home" && item !== "About Us" && item !== "Services" && (
                   <span className="cursor-pointer transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
                     {item}
                   </span>
@@ -83,7 +98,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* ================= MOBILE MENU (FIXED) ================= */}
+      {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
         <div
           className="
@@ -98,18 +113,33 @@ const Navbar = () => {
               <li key={item} onClick={() => setMenuOpen(false)}>
 
                 {item === "Home" && (
-                  <Link to="/" className="hover:text-sky-600 hover:font-bold transition-all">
+                  <Link
+                    to="/"
+                    className="hover:text-sky-600 hover:font-bold transition-all"
+                  >
                     Home
                   </Link>
                 )}
 
                 {item === "About Us" && (
-                  <Link to="/about" className="hover:text-sky-600 hover:font-bold transition-all">
+                  <Link
+                    to="/about"
+                    className="hover:text-sky-600 hover:font-bold transition-all"
+                  >
                     About Us
                   </Link>
                 )}
 
-                {item !== "Home" && item !== "About Us" && (
+                {item === "Services" && (
+                  <Link
+                    to="/services"
+                    className="hover:text-sky-600 hover:font-bold transition-all"
+                  >
+                    Services
+                  </Link>
+                )}
+
+                {item !== "Home" && item !== "About Us" && item !== "Services" && (
                   <span className="cursor-pointer hover:text-sky-600 hover:font-bold transition-all">
                     {item}
                   </span>
