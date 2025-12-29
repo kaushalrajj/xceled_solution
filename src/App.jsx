@@ -3,6 +3,8 @@ import Navbar from "./components/layout/Navbar";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Footer from "./components/layout/Footer";
+import Services from "./components/pages/Services";
+
 
 const App = () => {
   return (
@@ -20,10 +22,10 @@ const App = () => {
           <Route path="/Home" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </main>
-            <Footer />
-
+      <Footer />
     </div>
   );
 };
