@@ -48,7 +48,7 @@ const EducationalTraining = () => {
 
           {/* IMAGE WITH ZOOM */}
           <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <div className=" p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
               <img
                 src={e1}
                 alt="Educational Training Environment"
@@ -182,7 +182,7 @@ const EducationalTraining = () => {
 
           {/* IMAGE WITH ZOOM */}
           <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <div className=" p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
               <img
                 src={e2}
                 alt="Training Session"
