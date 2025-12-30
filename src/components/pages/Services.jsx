@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Laptop,
   School,
@@ -27,6 +28,7 @@ const services = [
       "Secure and scalable online examination solutions with monitoring, assessment, and result processing.",
     icon: Laptop,
     image: online,
+    path: "/services/online-exams",
   },
   {
     title: "Offline Proctor-Based Exams",
@@ -34,6 +36,7 @@ const services = [
       "On-site, supervised examinations conducted with strict compliance and institutional standards.",
     icon: School,
     image: campus,
+    path: "/services/offline-exams",
   },
   {
     title: "Educational Training",
@@ -41,6 +44,7 @@ const services = [
       "Structured academic and skill-based training programs for students, institutions, and organizations.",
     icon: GraduationCap,
     image: training,
+    path: "/services/educational-training",
   },
   {
     title: "Manpower Provider",
@@ -48,6 +52,7 @@ const services = [
       "Qualified manpower solutions for educational institutions, examinations, and operational needs.",
     icon: Users,
     image: manpower,
+    path: "/services/manpower-provider",
   },
   {
     title: "Stationery & Uniforms",
@@ -55,6 +60,7 @@ const services = [
       "Supply of standardized stationery items and uniforms tailored for educational institutions.",
     icon: ClipboardList,
     image: stationery,
+    path: "/services/stationery-uniforms",
   },
   {
     title: "Educational Kits",
@@ -62,6 +68,7 @@ const services = [
       "Ready-to-use educational kits designed to support structured learning and curriculum needs.",
     icon: Package,
     image: kits,
+    path: "/services/educational-kits",
   },
   {
     title: "School Lab Kits",
@@ -69,6 +76,7 @@ const services = [
       "Laboratory kits for schools supporting practical learning in science and technical subjects.",
     icon: FlaskConical,
     image: labkits,
+    path: "/services/school-lab-kits",
   },
 ];
 
@@ -103,10 +111,11 @@ const Services = () => {
             const isLast = index === services.length - 1;
 
             return (
-              <div
+              <Link
                 key={index}
+                to={service.path}
                 className={`
-                  group bg-white rounded-3xl overflow-hidden
+                  group block bg-white rounded-3xl overflow-hidden
                   border border-slate-100 shadow-sm
                   transition-all duration-500
                   hover:-translate-y-2 hover:shadow-xl
@@ -144,7 +153,7 @@ const Services = () => {
                     {service.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

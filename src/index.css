@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* =========================================================
-   Existing float animation (UNCHANGED – do not touch)
+   EXISTING FLOAT ANIMATION (UNCHANGED – DO NOT TOUCH)
    ========================================================= */
 @keyframes float {
   0% {
@@ -16,7 +16,7 @@
 }
 
 /* =========================================================
-   About section image drift (SUBTLE & PROFESSIONAL)
+   ABOUT SECTION IMAGE DRIFT (SUBTLE & PROFESSIONAL)
    ========================================================= */
 @keyframes imageDrift {
   0% {
@@ -35,7 +35,7 @@
 }
 
 /* =========================================================
-   Trust section logo horizontal scroll (NEW)
+   TRUST SECTION LOGO SCROLL (HORIZONTAL MARQUEE)
    ========================================================= */
 @keyframes logoScroll {
   0% {
@@ -51,7 +51,58 @@
 }
 
 /* =========================================================
-   Hide scrollbar (KEEP SCROLL FUNCTIONAL)
+   SERVICE PAGES – FADE UP (MICRO ANIMATION)
+   ========================================================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+/* Optional delay utilities */
+.animate-fadeUp.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-fadeUp.delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* =========================================================
+   SERVICE CARD HOVER POLISH (SUBTLE DEPTH)
+   ========================================================= */
+.service-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+}
+
+/* =========================================================
+   CTA BUTTON MICRO MOTION
+   ========================================================= */
+.cta-button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(2, 132, 199, 0.25);
+}
+
+/* =========================================================
+   HIDE SCROLLBAR (KEEP SCROLL FUNCTIONAL)
    ========================================================= */
 
 /* Chrome / Safari / Edge */
