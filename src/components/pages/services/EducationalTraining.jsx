@@ -1,11 +1,261 @@
-import React from 'react'
+import ServiceLayout from "./ServiceLayout";
+
+/* ================= IMAGES ================= */
+import e1 from "../../../assets/images/services/e1.webp";
+import e2 from "../../../assets/images/services/e2.webp";
+
+/* ================= ICONS ================= */
+import {
+  GraduationCap,
+  BookOpen,
+  FlaskConical,
+  Brain,
+  Users,
+  BadgeCheck,
+  School,
+  Building2,
+  Briefcase,
+  CheckCircle,
+  ShieldCheck,
+  Award,
+  Lightbulb,
+  Layers,
+} from "lucide-react";
 
 const EducationalTraining = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <ServiceLayout
+      title="Educational Training"
+      subtitle="Skill-based, outcome-driven educational training programs designed to enhance learning, innovation, and employability across institutions and industries."
+    >
+      {/* ================= INTRO ================= */}
+      <section className="mb-36">
+        <div className="grid lg:grid-cols-2 gap-16 items-center bg-sky-50 rounded-3xl px-10 py-16">
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+              Empowering Future Innovators Through Skill-Based Learning
+            </h2>
 
-export default EducationalTraining
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Xceled Solutions delivers structured, industry-aligned educational
+              training programs designed to equip learners with practical skills
+              and real-world readiness.
+            </p>
+
+            <p className="text-slate-700 leading-relaxed">
+              Our approach bridges academic learning and professional
+              application through experiential training, innovation-driven
+              methodologies, and outcome-focused program design.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="bg-white p-4 rounded-3xl shadow-xl transition hover:shadow-2xl">
+              <img
+                src={e1}
+                alt="Educational Training Environment"
+                className="w-full max-w-[460px] rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TRAINING PROGRAMS ================= */}
+      <section className="mb-36">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+          Our Comprehensive Training Programs
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {[
+            {
+              icon: GraduationCap,
+              title: "Vocational Education & Training",
+              points: [
+                "Industry-aligned skill development programs",
+                "Hands-on practical training modules",
+                "Job-oriented curriculum design",
+                "Certification and employability support",
+              ],
+            },
+            {
+              icon: BookOpen,
+              title: "Learning Enhancement Programs (LEP)",
+              points: [
+                "Academic reinforcement initiatives",
+                "Conceptual clarity and knowledge strengthening",
+                "Performance improvement strategies",
+                "Cognitive and analytical skill development",
+              ],
+            },
+            {
+              icon: FlaskConical,
+              title: "Rashtriya Avishkar Abhiyan (RAA)",
+              points: [
+                "Scientific temper development",
+                "Innovation-led experiential learning",
+                "Problem-solving and experimentation",
+                "Creativity and research mindset promotion",
+              ],
+            },
+            {
+              icon: Brain,
+              title: "Aptitude Testing & Career Counseling",
+              points: [
+                "Psychometric and aptitude assessments",
+                "Career mapping and guidance sessions",
+                "Strength and interest analysis",
+                "Informed career decision-making support",
+              ],
+            },
+            {
+              icon: Users,
+              title: "Specialized Workshops & Training",
+              points: [
+                "Faculty development programs",
+                "Institution-specific skill workshops",
+                "Short-term intensive training sessions",
+                "Customized learning interventions",
+              ],
+            },
+            {
+              icon: BadgeCheck,
+              title: "Skill-Based Certification Programs",
+              points: [
+                "Employability-focused certifications",
+                "Industry-recognized credentials",
+                "Outcome-based skill validation",
+                "Assessment-driven certification models",
+              ],
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="
+                bg-sky-50 border border-sky-100
+                rounded-3xl p-8
+                transition-all duration-300
+                hover:bg-white hover:-translate-y-2 hover:shadow-2xl
+              "
+            >
+              <item.icon className="h-8 w-8 text-sky-600 mb-5" />
+
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                {item.title}
+              </h3>
+
+              <ul className="space-y-2">
+                {item.points.map((point, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-slate-700"
+                  >
+                    <CheckCircle className="h-4 w-4 text-sky-600 mt-0.5" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= WHO CAN BENEFIT ================= */}
+      <section className="mb-36">
+        <div className="grid lg:grid-cols-2 gap-16 items-center bg-slate-50 rounded-3xl px-10 py-16">
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-900 mb-8">
+              Who Can Benefit?
+            </h2>
+
+            <div className="space-y-5 text-slate-700">
+              <p>
+                <strong>Schools & Colleges:</strong> Academic enrichment,
+                competitive exam readiness, and holistic skill development.
+              </p>
+              <p>
+                <strong>Government Exam Institutes:</strong> Training programs
+                for national and state-level examinations.
+              </p>
+              <p>
+                <strong>Vocational Training Centers:</strong> Skill
+                certification and employability-focused initiatives.
+              </p>
+              <p>
+                <strong>Recruitment Agencies:</strong> Candidate assessment,
+                screening, and job-readiness training.
+              </p>
+              <p>
+                <strong>Corporate Organizations:</strong> Workforce upskilling,
+                onboarding, and professional development programs.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="bg-white p-4 rounded-3xl shadow-xl transition hover:shadow-2xl">
+              <img
+                src={e2}
+                alt="Training Session"
+                className="w-full max-w-[460px] rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= WHY CHOOSE XCELED ================= */}
+      <section className="mb-28">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+          Why Choose Xceled Solutions?
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {[
+            {
+              icon: ShieldCheck,
+              title: "Government-Recognized & Certified",
+              text: "Recognized training initiatives aligned with national education and skill development frameworks.",
+            },
+            {
+              icon: Award,
+              title: "Experienced Faculty",
+              text: "Trainers and mentors with deep academic expertise and real-world industry exposure.",
+            },
+            {
+              icon: Lightbulb,
+              title: "Practical Learning Approach",
+              text: "Hands-on training methodologies emphasizing application, innovation, and experimentation.",
+            },
+            {
+              icon: Layers,
+              title: "Comprehensive Curriculum",
+              text: "Structured programs designed to meet evolving academic and industry standards.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="
+                bg-white border border-slate-200
+                rounded-3xl p-8 text-center
+                transition-all duration-300
+                hover:-translate-y-2 hover:shadow-2xl
+              "
+            >
+              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5" />
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                {item.title}
+              </h3>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </ServiceLayout>
+  );
+};
+
+export default EducationalTraining;
