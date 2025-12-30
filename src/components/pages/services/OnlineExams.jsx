@@ -60,46 +60,55 @@ const OnlineExams = () => {
       title="Online Examination Services"
       subtitle="Secure, scalable, and institution-ready online examination solutions delivered with operational excellence across India."
     >
-      {/* ================= INTRO ================= */}
-      <section className="grid lg:grid-cols-2 gap-16 items-center mb-36">
-        <div>
-          <h2 className="text-2xl font-semibold text-slate-900 mb-6">
-            Trusted Online Examination Platform
-          </h2>
+      {/* ================= INTRO (WITH LIGHT BACKGROUND) ================= */}
+      <section className="mb-36">
+        <div
+          className="
+            grid lg:grid-cols-2 gap-16 items-center
+            bg-sky-50/60
+            rounded-3xl
+            px-6 sm:px-10 py-12 sm:py-16
+          "
+        >
+          <div>
+            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+              Trusted Online Examination Platform
+            </h2>
 
-          <p className="text-slate-700 leading-relaxed mb-4">
-            Xceled Solutions delivers reliable and secure online examination
-            services designed for institutions that demand precision,
-            transparency, and scalability.
-          </p>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Xceled Solutions delivers reliable and secure online examination
+              services designed for institutions that demand precision,
+              transparency, and scalability.
+            </p>
 
-          <p className="text-slate-700 leading-relaxed mb-8">
-            With proven experience in managing large-scale assessments, our
-            solutions ensure seamless execution from candidate onboarding to
-            post-exam reporting — backed by strict compliance and operational
-            discipline.
-          </p>
+            <p className="text-slate-700 leading-relaxed mb-8">
+              With proven experience in managing large-scale assessments, our
+              solutions ensure seamless execution from candidate onboarding to
+              post-exam reporting — backed by strict compliance and operational
+              discipline.
+            </p>
 
-          <Link
-            to="/contact"
-            className="
-              inline-flex items-center gap-2
-              px-8 py-4 rounded-xl
-              bg-sky-600 text-white font-semibold
-              transition-all duration-300
-              hover:bg-sky-700 hover:-translate-y-1 hover:shadow-xl
-            "
-          >
-            Talk to Our Experts →
-          </Link>
-        </div>
+            <Link
+              to="/contact"
+              className="
+                inline-flex items-center gap-2
+                px-8 py-4 rounded-xl
+                bg-sky-600 text-white font-semibold
+                transition-all duration-300
+                hover:bg-sky-700 hover:-translate-y-1 hover:shadow-xl
+              "
+            >
+              Talk to Our Experts →
+            </Link>
+          </div>
 
-        <div className="flex justify-center">
-          <img
-            src={mainImage}
-            alt="Online Examination Setup"
-            className="w-full max-w-[420px] rounded-3xl shadow-2xl"
-          />
+          <div className="flex justify-center">
+            <img
+              src={mainImage}
+              alt="Online Examination Setup"
+              className="w-full max-w-[420px] rounded-3xl shadow-2xl"
+            />
+          </div>
         </div>
       </section>
 
