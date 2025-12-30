@@ -12,9 +12,6 @@ import {
   Brain,
   Users,
   BadgeCheck,
-  School,
-  Building2,
-  Briefcase,
   CheckCircle,
   ShieldCheck,
   Award,
@@ -49,12 +46,17 @@ const EducationalTraining = () => {
             </p>
           </div>
 
+          {/* IMAGE WITH ZOOM */}
           <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-3xl shadow-xl transition hover:shadow-2xl">
+            <div className="bg-white p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
               <img
                 src={e1}
                 alt="Educational Training Environment"
-                className="w-full max-w-[460px] rounded-2xl object-cover"
+                className="
+                  w-full max-w-[460px] rounded-2xl object-cover
+                  transition-transform duration-700 ease-out
+                  hover:scale-110
+                "
               />
             </div>
           </div>
@@ -139,7 +141,7 @@ const EducationalTraining = () => {
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <item.icon className="h-8 w-8 text-sky-600 mb-5" />
+              <item.icon className="h-8 w-8 text-sky-600 mb-5 transition-transform duration-300 hover:scale-110" />
 
               <h3 className="text-lg font-semibold text-slate-900 mb-4">
                 {item.title}
@@ -170,42 +172,32 @@ const EducationalTraining = () => {
             </h2>
 
             <div className="space-y-5 text-slate-700">
-              <p>
-                <strong>Schools & Colleges:</strong> Academic enrichment,
-                competitive exam readiness, and holistic skill development.
-              </p>
-              <p>
-                <strong>Government Exam Institutes:</strong> Training programs
-                for national and state-level examinations.
-              </p>
-              <p>
-                <strong>Vocational Training Centers:</strong> Skill
-                certification and employability-focused initiatives.
-              </p>
-              <p>
-                <strong>Recruitment Agencies:</strong> Candidate assessment,
-                screening, and job-readiness training.
-              </p>
-              <p>
-                <strong>Corporate Organizations:</strong> Workforce upskilling,
-                onboarding, and professional development programs.
-              </p>
+              <p><strong>Schools & Colleges:</strong> Academic enrichment and skill development.</p>
+              <p><strong>Government Exam Institutes:</strong> National and state exam training.</p>
+              <p><strong>Vocational Training Centers:</strong> Skill certification programs.</p>
+              <p><strong>Recruitment Agencies:</strong> Candidate assessment and screening.</p>
+              <p><strong>Corporate Organizations:</strong> Workforce upskilling programs.</p>
             </div>
           </div>
 
+          {/* IMAGE WITH ZOOM */}
           <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-3xl shadow-xl transition hover:shadow-2xl">
+            <div className="bg-white p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
               <img
                 src={e2}
                 alt="Training Session"
-                className="w-full max-w-[460px] rounded-2xl object-cover"
+                className="
+                  w-full max-w-[460px] rounded-2xl object-cover
+                  transition-transform duration-700 ease-out
+                  hover:scale-110
+                "
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE XCELED ================= */}
+      {/* ================= WHY CHOOSE ================= */}
       <section className="mb-28">
         <h2 className="text-2xl font-semibold text-slate-900 mb-14">
           Why Choose Xceled Solutions?
@@ -213,26 +205,10 @@ const EducationalTraining = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
-            {
-              icon: ShieldCheck,
-              title: "Government-Recognized & Certified",
-              text: "Recognized training initiatives aligned with national education and skill development frameworks.",
-            },
-            {
-              icon: Award,
-              title: "Experienced Faculty",
-              text: "Trainers and mentors with deep academic expertise and real-world industry exposure.",
-            },
-            {
-              icon: Lightbulb,
-              title: "Practical Learning Approach",
-              text: "Hands-on training methodologies emphasizing application, innovation, and experimentation.",
-            },
-            {
-              icon: Layers,
-              title: "Comprehensive Curriculum",
-              text: "Structured programs designed to meet evolving academic and industry standards.",
-            },
+            { icon: ShieldCheck, title: "Government-Recognized", text: "Aligned with national frameworks." },
+            { icon: Award, title: "Experienced Faculty", text: "Industry & academic experts." },
+            { icon: Lightbulb, title: "Practical Learning", text: "Hands-on methodologies." },
+            { icon: Layers, title: "Comprehensive Curriculum", text: "Future-ready programs." },
           ].map((item, i) => (
             <div
               key={i}
@@ -243,7 +219,7 @@ const EducationalTraining = () => {
                 hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5" />
+              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5 transition-transform duration-300 hover:scale-110" />
               <h3 className="text-lg font-semibold text-slate-900 mb-3">
                 {item.title}
               </h3>
