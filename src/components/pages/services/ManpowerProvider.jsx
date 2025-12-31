@@ -1,77 +1,63 @@
-import { Link } from "react-router-dom";
 import ServiceLayout from "./ServiceLayout";
 
 /* ================= IMAGES ================= */
-import m1 from "../../../assets/images/services/m1.webp";
-import m2 from "../../../assets/images/services/m2.webp";
+import k1 from "../../../assets/images/services/k2.webp";
+import k2 from "../../../assets/images/services/k3.webp";
 
-/* ================= ICONS (LUCIDE) ================= */
+/* ================= ICONS ================= */
 import {
-  Users,
-  UserCheck,
-  Briefcase,
-  ShieldCheck,
-  Scale,
-  Headset,
-  Factory,
-  Hospital,
-  HardHat,
+  FlaskConical,
+  Cpu,
+  Calculator,
+  Palette,
+  BookOpen,
   GraduationCap,
-  Truck,
-  ShoppingCart,
+  FileText,
+  CheckCircle,
+  Lightbulb,
+  Layers,
+  Headphones,
 } from "lucide-react";
 
-const ManpowerProvider = () => {
+const EducationalKits = () => {
   return (
     <ServiceLayout
-      title="Manpower Provider Services"
-      subtitle="Connecting skilled, semi-skilled, and unskilled manpower with organizations through structured recruitment, compliance-driven processes, and scalable workforce solutions."
+      title="Educational Kits"
+      subtitle="Hands-on, curriculum-aligned educational kits designed to foster curiosity, innovation, and experiential learning across age groups."
     >
-
-      {/* ================= INTRO ================= */}
-      <section className="mb-32">
+      {/* ================= HERO / INTRO (TEXT LEFT – IMAGE RIGHT) ================= */}
+      <section className="mb-36">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
+          
           {/* TEXT */}
           <div>
             <h2 className="text-2xl font-semibold text-slate-900 mb-6">
-              Connecting Talent with Opportunity
+              Empowering Learning Through Hands-On Experience
             </h2>
 
             <p className="text-slate-700 leading-relaxed mb-4">
-              Xceled Solutions provides end-to-end manpower services tailored to
-              meet the dynamic workforce requirements of businesses across
-              industries. Our structured hiring processes ensure access to
-              reliable, job-ready personnel aligned with operational needs.
+              At Xceled Solutions, we believe experiential learning is essential
+              for nurturing curiosity, creativity, and innovation among students.
             </p>
 
-            <p className="text-slate-700 leading-relaxed mb-8">
-              From short-term staffing to long-term workforce deployment, we
-              focus on quality, compliance, and workforce continuity—ensuring
-              organizations scale efficiently without operational disruptions.
+            <p className="text-slate-700 leading-relaxed">
+              Our educational kits combine practical tools with structured
+              learning to complement academic curricula and encourage exploration,
+              experimentation, and conceptual clarity.
             </p>
-
-            <Link
-              to="/contact"
-              className="
-                inline-flex items-center gap-2
-                px-8 py-4 rounded-xl
-                bg-sky-600 text-white font-semibold
-                transition-all duration-300
-                hover:bg-sky-700 hover:-translate-y-1 hover:shadow-xl
-              "
-            >
-              Talk to Our Experts →
-            </Link>
           </div>
 
           {/* IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-sky-50 p-4 rounded-3xl shadow-xl">
+            <div className="bg-sky-50 p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
               <img
-                src={m1}
-                alt="Workforce Deployment"
-                className="rounded-2xl w-full max-w-[460px] object-cover transition-transform duration-300 hover:scale-[1.02]"
+                src={k1}
+                alt="Educational Kits Learning"
+                className="
+                  w-full max-w-[460px] rounded-2xl object-cover
+                  transition-transform duration-700 ease-out
+                  hover:scale-110
+                "
               />
             </div>
           </div>
@@ -79,37 +65,53 @@ const ManpowerProvider = () => {
         </div>
       </section>
 
-      {/* ================= OUR COMPREHENSIVE SERVICES ================= */}
+      {/* ================= OUR EDUCATIONAL KITS ================= */}
       <section className="mb-36">
         <h2 className="text-2xl font-semibold text-slate-900 mb-14">
-          Our Comprehensive Services
+          Our Educational Kits
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
             {
-              icon: <Users />,
-              title: "Temporary Staffing",
-              text:
-                "Flexible workforce solutions for seasonal demands, short-term projects, and immediate staffing requirements.",
+              icon: FlaskConical,
+              title: "Science Exploration Kits",
+              points: [
+                "Interactive experiments in physics, chemistry, and biology",
+                "Safe and durable materials",
+                "Real-world scientific applications",
+                "Detailed instructional manuals",
+              ],
             },
             {
-              icon: <UserCheck />,
-              title: "Permanent Recruitment",
-              text:
-                "End-to-end hiring support to identify, screen, and onboard long-term employees aligned with organizational culture.",
+              icon: Cpu,
+              title: "Robotics & IoT Kits",
+              points: [
+                "Introduction to automation and programming",
+                "Basic to advanced robotics concepts",
+                "IoT modules and sensors",
+                "Hands-on coding experience",
+              ],
             },
             {
-              icon: <Briefcase />,
-              title: "Contractual Staffing",
-              text:
-                "Contract-based workforce deployment with compliance-managed contracts and structured workforce governance.",
+              icon: Calculator,
+              title: "Mathematics Learning Kits",
+              points: [
+                "Hands-on mathematical reasoning",
+                "Problem-solving activities",
+                "Visual aids for complex concepts",
+                "Conceptual clarity through practice",
+              ],
             },
             {
-              icon: <ShieldCheck />,
-              title: "Skilled & Unskilled Labor",
-              text:
-                "Deployment of trained personnel across technical, non-technical, skilled, and general workforce roles.",
+              icon: Palette,
+              title: "Art & Creativity Kits",
+              points: [
+                "Creative expression tools",
+                "Cross-subject integration",
+                "Project-based learning",
+                "Skill development through art",
+              ],
             },
           ].map((item, i) => (
             <div
@@ -121,15 +123,71 @@ const ManpowerProvider = () => {
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-sky-100 text-sky-600 mb-5">
-                {item.icon}
-              </div>
+              <item.icon className="h-8 w-8 text-sky-600 mb-5" />
 
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">
                 {item.title}
               </h3>
 
-              <p className="text-slate-700 text-sm leading-relaxed">
+              <ul className="space-y-2">
+                {item.points.map((point, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 text-sm text-slate-700"
+                  >
+                    <CheckCircle className="h-4 w-4 text-sky-600 mt-0.5" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= KEY FEATURES ================= */}
+      <section className="mb-36">
+        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+          Key Features
+        </h2>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {[
+            {
+              icon: BookOpen,
+              title: "Curriculum-Aligned",
+              text: "Developed in line with educational standards for relevance and effectiveness.",
+            },
+            {
+              icon: GraduationCap,
+              title: "Age-Appropriate Design",
+              text: "Designed for learners from primary to higher secondary levels.",
+            },
+            {
+              icon: FileText,
+              title: "Comprehensive Resources",
+              text: "Includes manuals, guides, and educator support material.",
+            },
+            {
+              icon: CheckCircle,
+              title: "Quality Assurance",
+              text: "Durable, safe, and reliable materials for long-term usage.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="
+                bg-white border border-slate-200
+                rounded-3xl p-8 text-center
+                transition-all duration-300
+                hover:-translate-y-2 hover:shadow-2xl
+              "
+            >
+              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5" />
+              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                {item.title}
+              </h3>
+              <p className="text-sm text-slate-700 leading-relaxed">
                 {item.text}
               </p>
             </div>
@@ -137,114 +195,55 @@ const ManpowerProvider = () => {
         </div>
       </section>
 
-      {/* ================= INDUSTRIES WE SERVE ================= */}
-      <section className="mb-36 bg-sky-50 rounded-3xl p-12">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-10">
-          Industries We Serve
-        </h2>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          {[
-            { icon: <Factory />, label: "Manufacturing" },
-            { icon: <Hospital />, label: "Healthcare" },
-            { icon: <HardHat />, label: "Construction" },
-            { icon: <ShoppingCart />, label: "Retail & E-commerce" },
-            { icon: <Truck />, label: "Logistics & Warehousing" },
-            { icon: <GraduationCap />, label: "Education" },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="
-                bg-white border border-slate-200
-                rounded-xl px-6 py-4
-                flex items-center gap-3
-                transition-all duration-300
-                hover:-translate-y-1 hover:shadow-lg
-              "
-            >
-              <span className="text-sky-600">{item.icon}</span>
-              <span className="font-semibold text-slate-800">
-                {item.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= WHY CHOOSE US (SIDE BY SIDE) ================= */}
-      <section className="mb-32">
+      {/* ================= WHY CHOOSE (TEXT LEFT – IMAGE RIGHT) ================= */}
+      <section className="mb-28">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-
-          {/* LEFT CONTENT */}
+          
+          {/* TEXT */}
           <div>
             <h2 className="text-2xl font-semibold text-slate-900 mb-8">
-              Why Choose Xceled Solutions
+              Why Choose Xceled Solutions’ Educational Kits?
             </h2>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {[
-                {
-                  icon: <Scale />,
-                  title: "Compliance & Ethics",
-                  text:
-                    "Strict adherence to labor laws, safety regulations, and ethical hiring practices.",
-                },
-                {
-                  icon: <Users />,
-                  title: "Extensive Talent Pool",
-                  text:
-                    "Access to verified and job-ready candidates across multiple regions.",
-                },
-                {
-                  icon: <ShieldCheck />,
-                  title: "Quality Assurance",
-                  text:
-                    "Structured screening, training, and performance monitoring standards.",
-                },
-                {
-                  icon: <Headset />,
-                  title: "Continuous Support",
-                  text:
-                    "Dedicated coordination and post-deployment workforce management.",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="
-                    bg-sky-50 border border-sky-100
-                    rounded-2xl p-6
-                    transition-all duration-300
-                    hover:bg-white hover:shadow-lg
-                  "
-                >
-                  <div className="text-sky-600 mb-3">{item.icon}</div>
-                  <h4 className="font-semibold text-slate-900 mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-slate-700 text-sm leading-relaxed">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
+            <div className="space-y-4 text-slate-700">
+              <p className="flex items-start gap-3">
+                <Lightbulb className="h-5 w-5 text-sky-600 mt-1" />
+                Expertly crafted by educators and industry professionals.
+              </p>
+              <p className="flex items-start gap-3">
+                <Layers className="h-5 w-5 text-sky-600 mt-1" />
+                Suitable for classrooms, workshops, and home learning.
+              </p>
+              <p className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-sky-600 mt-1" />
+                Promotes hands-on learning and critical thinking.
+              </p>
+              <p className="flex items-start gap-3">
+                <Headphones className="h-5 w-5 text-sky-600 mt-1" />
+                Training sessions and dedicated customer support.
+              </p>
             </div>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-sky-50 p-4 rounded-3xl shadow-xl">
+            <div className="bg-sky-50 p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
               <img
-                src={m2}
-                alt="Industrial Workforce"
-                className="rounded-2xl w-full max-w-[460px] object-cover transition-transform duration-300 hover:scale-[1.02]"
+                src={k2}
+                alt="Hands-on Educational Kits"
+                className="
+                  w-full max-w-[460px] rounded-2xl object-cover
+                  transition-transform duration-700 ease-out
+                  hover:scale-110
+                "
               />
             </div>
           </div>
 
         </div>
       </section>
-
     </ServiceLayout>
   );
 };
 
-export default ManpowerProvider;
+export default EducationalKits;
