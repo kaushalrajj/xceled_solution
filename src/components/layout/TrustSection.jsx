@@ -16,7 +16,7 @@ const logos = [
 
 const TrustSection = () => {
   return (
-    <section className="w-full mt-20 pb-24">
+    <section className="w-full mt-15 pb-24">
       <div className="max-w-7xl mx-auto px-6">
 
         <div

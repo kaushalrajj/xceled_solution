@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-    <section className="w-full mt-32 pb-32">
+    <section className="w-full mt-15 pb-32">
       <div className="max-w-7xl mx-auto px-6">
 
         <div

@@ -22,7 +22,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className="w-full mt-24 md:mt-36 pb-24 md:pb-32 relative z-10">
+    <section className="w-full mt-15 md:mt-36 pb-24 md:pb-32 relative z-10">
       <div
         ref={sectionRef}
         className="

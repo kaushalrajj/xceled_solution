@@ -28,7 +28,7 @@ const impacts = [
 
 const ImpactSection = () => {
   return (
-    <section className="w-full mt-32 pb-36">
+    <section className="w-full mt-15 pb-36">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
