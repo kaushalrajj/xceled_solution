@@ -11,11 +11,11 @@ const About = () => {
 
   /* ------------------ Animations ------------------ */
   const fadeUp = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 26 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 22 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: shouldReduceMotion ? 0 : 0.7, ease: "easeOut" },
+      transition: { duration: shouldReduceMotion ? 0 : 0.65, ease: "easeOut" },
     },
   };
 
@@ -23,9 +23,9 @@ const About = () => {
     ? {}
     : {
         whileHover: {
-          y: -6,
-          boxShadow: "0 28px 56px rgba(0,0,0,0.08)",
-          transition: { duration: 0.3 },
+          y: -5,
+          boxShadow: "0 22px 44px rgba(0,0,0,0.08)",
+          transition: { duration: 0.25 },
         },
       };
 
@@ -98,23 +98,27 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
   };
 
   return (
-    <section className="relative w-full pt-36 pb-36 bg-gradient-to-b from-sky-50 via-white to-white text-slate-800">
+    <section className="relative w-full pt-24 pb-24 bg-gradient-to-b from-sky-50 via-white to-white text-slate-800">
 
       {/* ---------- INTRO ---------- */}
-      <motion.div variants={fadeUp} initial="hidden" animate="visible"
-        className="max-w-5xl mx-auto px-6 mb-36">
-        <div className="bg-white/80 backdrop-blur rounded-3xl px-14 py-18 text-center shadow-sm border border-sky-100">
-          <p className="uppercase tracking-[0.45em] text-xs text-sky-500 mb-7">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="max-w-5xl mx-auto px-6 mb-24"
+      >
+        <div className="bg-white/80 backdrop-blur rounded-3xl px-12 py-14 text-center shadow-sm border border-sky-100">
+          <p className="uppercase tracking-[0.4em] text-xs text-sky-500 mb-6">
             About Us
           </p>
 
-          <h1 className="text-4xl md:text-5xl font-semibold mb-8">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-6">
             About <span className="text-sky-600">XCELED Solutions</span>
           </h1>
 
-          <div className="w-24 h-[2px] bg-sky-500 mx-auto mb-8 rounded-full" />
+          <div className="w-20 h-[2px] bg-sky-500 mx-auto mb-6 rounded-full" />
 
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.75]">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.7]">
             A PMEGP-supported, MSME-registered, women-led initiative dedicated to
             skill development, entrepreneurship, and employment-oriented education
             across India.
@@ -123,18 +127,21 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       </motion.div>
 
       {/* ---------- WHO WE ARE ---------- */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center mb-32">
-
+        className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mb-24"
+      >
         <div>
-          <h2 className="text-3xl font-semibold mb-8">Who We Are</h2>
-          <p className="text-slate-600 leading-[1.8] mb-6">
+          <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
+          <p className="text-slate-600 leading-[1.75] mb-4">
             XCELED Solutions operates at the intersection of education,
             skill development, and employability — supporting learners and
             institutions through structured, outcome-driven programs.
           </p>
-          <p className="text-slate-600 leading-[1.8]">
+          <p className="text-slate-600 leading-[1.75]">
             Our initiatives emphasize long-term capability building and
             institution-aligned educational impact.
           </p>
@@ -150,8 +157,8 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       </motion.div>
 
       {/* ---------- MISSION & VISION ---------- */}
-      <div className="bg-sky-50 py-36 mb-36">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24">
+      <div className="bg-sky-50 py-24 mb-24">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
           {[{
             title: "Our Mission",
             icon: <Target className="w-6 h-6 text-sky-600" />,
@@ -165,11 +172,16 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
             lang: visionLang,
             setLang: setVisionLang,
           }].map((item, i) => (
-            <motion.div key={i} variants={fadeUp} initial="hidden"
-              whileInView="visible" viewport={{ once: true }} {...hoverLift}
-              className="bg-white rounded-3xl p-14 shadow-sm">
-
-              <div className="flex justify-between items-center mb-8">
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              {...hoverLift}
+              className="bg-white rounded-3xl p-10 shadow-sm"
+            >
+              <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
                   {item.icon}
                   <h3 className="text-2xl font-semibold">{item.title}</h3>
@@ -179,13 +191,14 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                   onClick={() => item.setLang(p => (p === "en" ? "hi" : "en"))}
                   className="flex items-center gap-2 text-sm px-4 py-1.5
                              rounded-full border border-slate-300 text-slate-600
-                             hover:bg-slate-50 transition">
+                             hover:bg-slate-50 transition"
+                >
                   <Languages className="w-4 h-4" />
                   {item.lang === "en" ? "हिंदी" : "EN"}
                 </button>
               </div>
 
-              <p className="text-slate-600 leading-[1.85] whitespace-pre-line">
+              <p className="text-slate-600 leading-[1.8] whitespace-pre-line">
                 {item.text[item.lang]}
               </p>
             </motion.div>
@@ -194,38 +207,44 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       </div>
 
       {/* ---------- FOUNDER MESSAGE ---------- */}
-      <motion.section variants={fadeUp} initial="hidden" whileInView="visible"
-        viewport={{ once: true }} className="py-36 mb-36">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center
-                        bg-white/80 backdrop-blur rounded-3xl p-20 shadow-sm">
+      <motion.section
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="py-24 mb-24"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center
+                        bg-white/80 backdrop-blur rounded-3xl p-14 shadow-sm">
 
           <motion.div {...hoverLift} className="flex justify-center">
             <img
               src={directorImg}
               alt="Founder"
-              className="w-[320px] h-[420px] object-cover rounded-[2.75rem] shadow-xl"
+              className="w-[300px] h-[400px] object-cover rounded-[2.5rem] shadow-xl"
             />
           </motion.div>
 
           <div>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-6">
               <h3 className="text-3xl font-semibold">Founder’s Message</h3>
 
               <button
                 onClick={() => setFounderLang(p => (p === "en" ? "hi" : "en"))}
                 className="flex items-center gap-2 text-sm px-4 py-1.5
                            rounded-full border border-slate-300 text-slate-600
-                           hover:bg-slate-50 transition">
+                           hover:bg-slate-50 transition"
+              >
                 <Languages className="w-4 h-4" />
                 {founderLang === "en" ? "हिंदी" : "EN"}
               </button>
             </div>
 
-            <p className="text-slate-600 leading-[1.9] whitespace-pre-line mb-10">
+            <p className="text-slate-600 leading-[1.85] whitespace-pre-line mb-8">
               {founder[founderLang]}
             </p>
 
-            <div className="border-t pt-6">
+            <div className="border-t pt-5">
               <p className="font-medium">Moni Kumari</p>
               <p className="text-sm text-slate-500">
                 Founder & Director, XCELED Solutions
@@ -236,27 +255,35 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       </motion.section>
 
       {/* ---------- CTA ---------- */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
-        viewport={{ once: true }} className="max-w-5xl mx-auto px-6 text-center py-24">
-
-        <h3 className="text-3xl md:text-4xl font-semibold mb-8">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-5xl mx-auto px-6 text-center py-16"
+      >
+        <h3 className="text-3xl md:text-4xl font-semibold mb-6">
           Empowering learners today,
           <br className="hidden md:block" />
           shaping responsible nation builders for tomorrow
         </h3>
 
-        <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mb-12">
+        <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mb-10">
           Partner with us in creating meaningful, institution-aligned
           educational impact across India.
         </p>
 
-        <div className="flex justify-center gap-6">
-          <Link to="/services"
-            className="px-10 py-3.5 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition">
+        <div className="flex justify-center gap-5">
+          <Link
+            to="/services"
+            className="px-9 py-3.5 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition"
+          >
             Explore Our Programs
           </Link>
-          <Link to="/contact"
-            className="px-10 py-3.5 rounded-full border border-sky-600 text-sky-600 hover:bg-sky-50 transition">
+          <Link
+            to="/contact"
+            className="px-9 py-3.5 rounded-full border border-sky-600 text-sky-600 hover:bg-sky-50 transition"
+          >
             Partner With Us
           </Link>
         </div>
