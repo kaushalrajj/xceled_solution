@@ -12,6 +12,7 @@ import Services from "./components/pages/Services";
 import Products from "./components/pages/Products";
 import Carrer from "./components/pages/Carrer";
 import Gallery from "./components/pages/Gallery";
+import Contact from "./components/pages/Contact";
 
 /* ===== Service Detail Pages ===== */
 import OnlineExams from "./components/pages/services/OnlineExams";
@@ -59,11 +60,15 @@ const App = () => {
             path="/services/educational-kits"
             element={<EducationalKits />}
           />
-          <Route path="/services/school-lab-kits" element={<SchoolLabKits />} />
+          <Route
+            path="/services/school-lab-kits"
+            element={<SchoolLabKits />}
+          />
 
           <Route path="/products" element={<Products />} />
           <Route path="/career" element={<Carrer />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 

@@ -59,19 +59,20 @@ const Footer = () => {
 
               <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-600">
                 <span className="hover:text-sky-600 transition-colors">
-                  📞 +91 8235505513
-                </span>
-                <span className="hover:text-sky-600 transition-colors">
-                  +91 7669156969
+                  📞 +91 76691 56969
                 </span>
               </div>
 
               <p className="text-sm text-slate-600 hover:text-sky-600 transition-colors">
-                ✉️ sales@ekwiksolution.com
+                ✉️ sales@xceledsolutions.com
               </p>
 
               <p className="text-sm text-slate-600">
-                📍 Patna, Bihar, India
+                📍 Lane No – 3, Aryasamaj Road, Patna – 801503
+              </p>
+
+              <p className="text-sm text-slate-600">
+                A-20, Gurunanak Pura, Laxmi Nagar, New Delhi – 110092
               </p>
             </div>
 
