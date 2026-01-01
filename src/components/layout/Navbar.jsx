@@ -48,36 +48,43 @@ const Navbar = () => {
               <li key={item} className="relative group">
 
                 {item === "Home" && (
-                  <Link
-                    to="/"
-                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
-                  >
+                  <Link to="/" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
                     Home
                   </Link>
                 )}
 
                 {item === "About Us" && (
-                  <Link
-                    to="/about"
-                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
-                  >
+                  <Link to="/about" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
                     About Us
                   </Link>
                 )}
 
                 {item === "Services" && (
-                  <Link
-                    to="/services"
-                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
-                  >
+                  <Link to="/services" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
                     Services
                   </Link>
                 )}
 
-                {item !== "Home" && item !== "About Us" && item !== "Services" && (
-                  <span className="cursor-pointer transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
-                    {item}
-                  </span>
+                {item === "Products" && (
+                  <Link to="/products" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
+                    Products
+                  </Link>
+                )}
+
+                {item === "Career" && (
+                  <Link to="/career" className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold">
+                    Career
+                  </Link>
+                )}
+
+                {/* ✅ ONLY CHANGE: GALLERY ROUTE */}
+                {item === "Gallery" && (
+                  <Link
+                    to="/gallery"
+                    className="transition-all duration-300 group-hover:text-sky-600 group-hover:font-bold"
+                  >
+                    Gallery
+                  </Link>
                 )}
 
                 <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
@@ -112,38 +119,14 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li key={item} onClick={() => setMenuOpen(false)}>
 
-                {item === "Home" && (
-                  <Link
-                    to="/"
-                    className="hover:text-sky-600 hover:font-bold transition-all"
-                  >
-                    Home
-                  </Link>
-                )}
+                {item === "Home" && <Link to="/">Home</Link>}
+                {item === "About Us" && <Link to="/about">About Us</Link>}
+                {item === "Services" && <Link to="/services">Services</Link>}
+                {item === "Products" && <Link to="/products">Products</Link>}
+                {item === "Career" && <Link to="/career">Career</Link>}
 
-                {item === "About Us" && (
-                  <Link
-                    to="/about"
-                    className="hover:text-sky-600 hover:font-bold transition-all"
-                  >
-                    About Us
-                  </Link>
-                )}
-
-                {item === "Services" && (
-                  <Link
-                    to="/services"
-                    className="hover:text-sky-600 hover:font-bold transition-all"
-                  >
-                    Services
-                  </Link>
-                )}
-
-                {item !== "Home" && item !== "About Us" && item !== "Services" && (
-                  <span className="cursor-pointer hover:text-sky-600 hover:font-bold transition-all">
-                    {item}
-                  </span>
-                )}
+                {/* ✅ ONLY CHANGE: GALLERY ROUTE */}
+                {item === "Gallery" && <Link to="/gallery">Gallery</Link>}
 
               </li>
             ))}

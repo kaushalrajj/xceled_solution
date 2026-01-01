@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 /* ===== Layout ===== */
 import Navbar from "./components/layout/Navbar";
@@ -8,6 +9,9 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
+import Products from "./components/pages/Products";
+import Carrer from "./components/pages/Carrer";
+import Gallery from "./components/pages/Gallery";
 
 /* ===== Service Detail Pages ===== */
 import OnlineExams from "./components/pages/services/OnlineExams";
@@ -21,6 +25,8 @@ import SchoolLabKits from "./components/pages/services/SchoolLabKits";
 const App = () => {
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-sky-50 via-white to-white text-slate-800 antialiased">
+      {/* Scroll reset on every route change */}
+      <ScrollToTop />
 
       {/* Decorative blobs */}
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
@@ -37,11 +43,27 @@ const App = () => {
 
           <Route path="/services/online-exams" element={<OnlineExams />} />
           <Route path="/services/offline-exams" element={<OfflineExams />} />
-          <Route path="/services/educational-training" element={<EducationalTraining />} />
-          <Route path="/services/manpower-provider" element={<ManpowerProvider />} />
-          <Route path="/services/stationery-uniforms" element={<StationeryUniforms />} />
-          <Route path="/services/educational-kits" element={<EducationalKits />} />
+          <Route
+            path="/services/educational-training"
+            element={<EducationalTraining />}
+          />
+          <Route
+            path="/services/manpower-provider"
+            element={<ManpowerProvider />}
+          />
+          <Route
+            path="/services/stationery-uniforms"
+            element={<StationeryUniforms />}
+          />
+          <Route
+            path="/services/educational-kits"
+            element={<EducationalKits />}
+          />
           <Route path="/services/school-lab-kits" element={<SchoolLabKits />} />
+
+          <Route path="/products" element={<Products />} />
+          <Route path="/career" element={<Carrer />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </main>
 

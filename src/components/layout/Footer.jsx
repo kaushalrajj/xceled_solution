@@ -3,7 +3,7 @@ import logo from "../../assets/images/hero/logo.jpeg";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-15 relative overflow-hidden">
+    <footer className="w-full mt-2 relative overflow-hidden">
 
       {/* animated top accent */}
       <div className="absolute top-0 left-0 w-full h-[2px]
