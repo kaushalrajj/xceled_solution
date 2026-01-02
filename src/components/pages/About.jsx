@@ -1,10 +1,33 @@
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Target, Eye, Languages } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Languages,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
 import aboutImg from "../../assets/images/hero/edit1.webp";
 import directorImg from "../../assets/images/hero/director.webp";
+
+/* ================= TEAM IMAGES ================= */
+import team1 from "../../assets/images/gallery/team1.jpg";
+import team2 from "../../assets/images/gallery/team2.jpg";
+import team3 from "../../assets/images/gallery/team3.jpg";
+import team4 from "../../assets/images/gallery/team4.jpg";
+import team5 from "../../assets/images/gallery/team5.jpg";
+import team6 from "../../assets/images/gallery/team6.jpg";
+import team7 from "../../assets/images/gallery/team7.jpg";
+import team8 from "../../assets/images/gallery/team8.jpg";
+import team9 from "../../assets/images/gallery/team9.jpg";
+import team10 from "../../assets/images/gallery/team10.jpg";
+import team11 from "../../assets/images/gallery/team11.jpg";
+import team12 from "../../assets/images/gallery/team12.jpg";
+import team13 from "../../assets/images/gallery/team13.jpg";
+import team14 from "../../assets/images/gallery/team14.jpg";
+import team15 from "../../assets/images/gallery/team15.jpg";
 
 const About = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -19,7 +42,7 @@ const About = () => {
     },
   };
 
-  const hoverLift = shouldReduceMotion
+  const softHover = shouldReduceMotion
     ? {}
     : {
         whileHover: {
@@ -34,7 +57,7 @@ const About = () => {
   const [visionLang, setVisionLang] = useState("en");
   const [founderLang, setFounderLang] = useState("en");
 
-  /* ------------------ Content ------------------ */
+  /* ------------------ CONTENT ------------------ */
   const mission = {
     en: `Our mission is to empower the youth of India through quality education,
 skill-based training, and meaningful career guidance. We believe education
@@ -44,8 +67,8 @@ Driven by purpose rather than profit, our initiatives focus on nurturing
 confidence, self-reliance, ethical values, and industry-relevant skills.
 Through structured learning and practical exposure, we prepare individuals
 to contribute responsibly to society and national development.`,
-    hi: `हमारा उद्देश्य गुणवत्तापूर्ण शिक्षा, कौशल-आधारित प्रशिक्षण और सार्थक
-करियर मार्गदर्शन के माध्यम से भारत के युवाओं को सशक्त बनाना है।
+    hi: `हमारा उद्देश्य गुणवत्तापूर्ण शिक्षा, कौशल-आधारित प्रशिक्षण और
+सार्थक करियर मार्गदर्शन के माध्यम से भारत के युवाओं को सशक्त बनाना है।
 हम मानते हैं कि शिक्षा कोई व्यवसाय नहीं, बल्कि राष्ट्र की सेवा है।
 
 लाभ के बजाय उद्देश्य से प्रेरित होकर, हमारी पहल आत्मविश्वास,
@@ -97,23 +120,57 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
 दीर्घकालिक राष्ट्रीय प्रभाव के प्रति हमारी प्रतिबद्धता को दर्शाता है।`,
   };
 
+  /* ------------------ TEAM DATA ------------------ */
+  const teamMembers = [
+    { name: "Team Member 1", role: "Training Lead", image: team1 },
+    { name: "Team Member 2", role: "Academic Advisor", image: team2 },
+    { name: "Team Member 3", role: "Operations", image: team3 },
+    { name: "Team Member 4", role: "Program Manager", image: team4 },
+    { name: "Team Member 5", role: "Coordinator", image: team5 },
+    { name: "Team Member 6", role: "Technical Trainer", image: team6 },
+    { name: "Team Member 7", role: "Mentor", image: team7 },
+    { name: "Team Member 8", role: "Faculty Support", image: team8 },
+    { name: "Team Member 9", role: "Outreach", image: team9 },
+    { name: "Team Member 10", role: "Academic Support", image: team10 },
+    { name: "Team Member 11", role: "Coordinator", image: team11 },
+    { name: "Team Member 12", role: "Trainer", image: team12 },
+    { name: "Team Member 13", role: "Advisor", image: team13 },
+    { name: "Team Member 14", role: "Assistant Trainer", image: team14 },
+    { name: "Team Member 15", role: "Support Staff", image: team15 },
+  ];
+
+  /* ------------------ TEAM SLIDER (MOBILE FIXED) ------------------ */
+  const [index, setIndex] = useState(0);
+  const cardRef = useRef(null);
+
+  const next = () =>
+    setIndex((prev) => (prev + 1) % teamMembers.length);
+
+  const prev = () =>
+    setIndex((prev) =>
+      prev === 0 ? teamMembers.length - 1 : prev - 1
+    );
+
+  const getTranslateX = () => {
+    if (!cardRef.current) return 0;
+    const cardWidth = cardRef.current.offsetWidth;
+    const gap = 40;
+    return index * (cardWidth + gap);
+  };
+
   return (
     <section className="relative w-full pt-24 pb-24 bg-slate-50 text-slate-800">
 
-      {/* ---------- INTRO ---------- */}
+      {/* INTRO */}
       <motion.div variants={fadeUp} initial="hidden" animate="visible"
         className="max-w-5xl mx-auto px-6 mb-24">
         <div className="bg-white rounded-3xl px-12 py-14 text-center shadow-sm border border-slate-200">
           <p className="uppercase tracking-[0.35em] text-xs text-sky-600 mb-6">
             About Us
           </p>
-
           <h1 className="text-4xl md:text-5xl font-semibold mb-6">
             About <span className="text-sky-600">XCELED Solutions</span>
           </h1>
-
-          <div className="w-20 h-[2px] bg-sky-500 mx-auto mb-6 rounded-full" />
-
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.7]">
             A PMEGP-supported, MSME-registered, women-led initiative dedicated to
             skill development, entrepreneurship, and employment-oriented education
@@ -122,11 +179,10 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </motion.div>
 
-      {/* ---------- WHO WE ARE ---------- */}
+      {/* WHO WE ARE */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mb-24">
-
         <div>
           <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
           <p className="text-slate-600 leading-[1.75] mb-4">
@@ -138,17 +194,13 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
             institution-aligned educational impact.
           </p>
         </div>
-
-        <motion.div {...hoverLift}>
-          <img
-            src={aboutImg}
-            alt="XCELED training environment"
-            className="rounded-3xl shadow-lg w-full object-cover"
-          />
+        <motion.div {...softHover}>
+          <img src={aboutImg} alt="XCELED environment"
+            className="rounded-3xl shadow-lg w-full object-cover" />
         </motion.div>
       </motion.div>
 
-      {/* ---------- MISSION & VISION ---------- */}
+      {/* MISSION & VISION */}
       <div className="bg-sky-50/60 py-24 mb-24">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
           {[{
@@ -165,15 +217,13 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
             setLang: setVisionLang,
           }].map((item, i) => (
             <motion.div key={i} variants={fadeUp} initial="hidden"
-              whileInView="visible" viewport={{ once: true }} {...hoverLift}
+              whileInView="visible" viewport={{ once: true }} {...softHover}
               className="bg-white rounded-3xl p-10 shadow-sm border border-slate-200">
-
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
                   {item.icon}
                   <h3 className="text-2xl font-semibold">{item.title}</h3>
                 </div>
-
                 <button
                   onClick={() => item.setLang(p => (p === "en" ? "hi" : "en"))}
                   className="flex items-center gap-2 text-sm px-4 py-1.5
@@ -183,7 +233,6 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                   {item.lang === "en" ? "हिंदी" : "EN"}
                 </button>
               </div>
-
               <p className="text-slate-600 leading-[1.8] whitespace-pre-line">
                 {item.text[item.lang]}
               </p>
@@ -192,25 +241,21 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </div>
 
-      {/* ---------- FOUNDER MESSAGE ---------- */}
+      {/* FOUNDER MESSAGE */}
       <motion.section variants={fadeUp} initial="hidden" whileInView="visible"
         viewport={{ once: true }} className="py-24 mb-24">
-
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center
                         bg-white rounded-3xl p-14 shadow-sm border border-slate-200">
-
-          <motion.div {...hoverLift} className="flex justify-center">
+          <motion.div {...softHover} className="flex justify-center">
             <img
               src={directorImg}
               alt="Founder"
               className="w-[300px] h-[400px] object-cover rounded-[2.5rem] shadow-lg"
             />
           </motion.div>
-
           <div>
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-3xl font-semibold">Founder’s Message</h3>
-
               <button
                 onClick={() => setFounderLang(p => (p === "en" ? "hi" : "en"))}
                 className="flex items-center gap-2 text-sm px-4 py-1.5
@@ -220,11 +265,9 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 {founderLang === "en" ? "हिंदी" : "EN"}
               </button>
             </div>
-
             <p className="text-slate-600 leading-[1.85] whitespace-pre-line mb-8">
               {founder[founderLang]}
             </p>
-
             <div className="border-t pt-5">
               <p className="font-medium">Moni Kumari</p>
               <p className="text-sm text-slate-500">
@@ -235,22 +278,61 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </motion.section>
 
-      {/* ---------- CTA ---------- */}
+      {/* TEAM */}
+      <motion.section variants={fadeUp} initial="hidden" whileInView="visible"
+        viewport={{ once: true }}
+        className="max-w-7xl mx-auto px-6 mb-24">
+        <h2 className="text-3xl font-semibold text-center mb-14">Our Team</h2>
+
+        <div className="overflow-hidden">
+          <motion.div
+            animate={{ x: `-${getTranslateX()}px` }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="flex gap-10">
+            {teamMembers.map((m, i) => (
+              <motion.div
+                ref={i === 0 ? cardRef : null}
+                key={i}
+                {...softHover}
+                className="min-w-[85vw] sm:min-w-[360px] lg:min-w-[380px]
+                           bg-white rounded-3xl p-8 text-center
+                           shadow-sm border border-slate-200">
+                <div className="w-44 h-44 mx-auto mb-6 rounded-2xl overflow-hidden bg-slate-100">
+                  <img src={m.image} alt={m.name}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.04]" />
+                </div>
+                <h4 className="text-lg font-semibold">{m.name}</h4>
+                <p className="text-sm text-slate-500">{m.role}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="flex justify-center gap-6 mt-14">
+          <button onClick={prev}
+            className="p-3 rounded-full border border-slate-300 hover:bg-slate-100 transition">
+            <ChevronLeft />
+          </button>
+          <button onClick={next}
+            className="p-3 rounded-full border border-slate-300 hover:bg-slate-100 transition">
+            <ChevronRight />
+          </button>
+        </div>
+      </motion.section>
+
+      {/* CTA */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
         viewport={{ once: true }}
         className="max-w-5xl mx-auto px-6 text-center py-16 bg-slate-100 rounded-3xl">
-
         <h3 className="text-3xl md:text-4xl font-semibold mb-6">
           Empowering learners today,
           <br className="hidden md:block" />
           shaping responsible nation builders for tomorrow
         </h3>
-
         <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mb-10">
           Partner with us in creating meaningful, institution-aligned
           educational impact across India.
         </p>
-
         <div className="flex justify-center gap-5">
           <Link to="/services"
             className="px-9 py-3.5 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition">
