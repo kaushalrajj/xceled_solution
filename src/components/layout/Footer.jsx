@@ -66,10 +66,10 @@ const Footer = () => {
               <p className="text-sm text-slate-600 hover:text-sky-600 transition-colors">
                 ✉️ sales@xceledsolutions.com
               </p>
-
+{/* 
               <p className="text-sm text-slate-600">
                 📍 Lane No – 3, Aryasamaj Road, Patna – 801503
-              </p>
+              </p> */}
 
               <p className="text-sm text-slate-600">
                 A-20, Gurunanak Pura, Laxmi Nagar, New Delhi – 110092
