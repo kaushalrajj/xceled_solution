@@ -28,75 +28,90 @@ const impacts = [
 
 const ImpactSection = () => {
   return (
-    <section className="w-full mt-15 pb-36">
+    <section className="relative w-full mt-15 pb-40">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Header */}
-        <div className="max-w-2xl mb-20">
-          <p className="uppercase tracking-[0.3em] text-xs text-sky-500 font-medium">
-            Our Impact
-          </p>
+        {/* ================= HEADER ================= */}
+        <div className="max-w-2xl mb-24 space-y-6">
 
-          <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 mt-3 leading-tight">
+          {/* SECTION MARKER — LOCKED SYSTEM */}
+          <div className="flex items-center gap-4">
+            <span className="block w-10 h-[3px] bg-sky-500 rounded-full"></span>
+            <p className="uppercase tracking-[0.32em] text-[clamp(0.875rem,1.2vw,1rem)] font-bold text-sky-600">
+              Our Impact
+            </p>
+          </div>
+
+          <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 leading-tight">
             Learning That Extends Beyond the Classroom
           </h2>
 
-          <p className="text-slate-600 mt-4 leading-relaxed text-[15.5px]">
+          <p className="text-slate-600 leading-relaxed text-[15.5px]">
             Through hands-on programs, institutional collaboration, and guided learning,
             we focus on building capability, confidence, and practical understanding.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        {/* ================= IMPACT GRID ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-24">
           {impacts.map((item, index) => (
-            <div
+            <article
               key={index}
               className="
-                group bg-white/70 backdrop-blur-sm
-                border border-slate-100
-                rounded-2xl overflow-hidden
-                shadow-sm
-                transition-all duration-500 ease-out
-                hover:-translate-y-2 hover:shadow-lg
+                group relative
+                transition-transform duration-700 ease-out
+                hover:-translate-y-3
               "
             >
-              {/* Image */}
-              <div className="relative overflow-hidden">
+              {/* IMAGE */}
+              <div className="relative overflow-hidden rounded-3xl">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="
-                    w-full h-64 object-cover object-center
-                    transition-transform duration-[1600ms] ease-out
-                    group-hover:scale-[1.06]
+                    w-full h-[300px] object-cover object-center
+                    transition-transform duration-[1800ms] ease-out
+                    group-hover:scale-[1.08]
                   "
                 />
 
-                <div
-                  className="
-                    absolute inset-0
-                    bg-gradient-to-t from-black/10 to-transparent
-                    opacity-0 group-hover:opacity-100
-                    transition-opacity duration-500
-                  "
-                />
+                {/* GRADIENT FOR DEPTH */}
+                <div className="
+                  absolute inset-0
+                  bg-gradient-to-t from-black/35 via-black/10 to-transparent
+                  opacity-60
+                " />
               </div>
 
-              {/* Text */}
-              <div className="p-6 space-y-2">
-                <h3 className="text-[17px] font-semibold text-slate-800">
+              {/* TEXT */}
+              <div className="pt-6">
+                <h3 className="text-[17px] font-semibold text-slate-800 mb-2">
                   {item.title}
                 </h3>
+
                 <p className="text-slate-600 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
-            </div>
+
+              {/* BRAND ACCENT */}
+              <span
+                className="
+                  absolute -bottom-4 left-0
+                  h-[3px] w-0
+                  bg-sky-500
+                  transition-all duration-700
+                  group-hover:w-16
+                "
+              />
+            </article>
           ))}
         </div>
 
       </div>
+
+      {/* ================= DECORATIVE BACKDROP ================= */}
+      <div className="absolute -top-40 -right-40 w-[420px] h-[420px] bg-sky-200/40 rounded-full blur-3xl pointer-events-none" />
     </section>
   );
 };

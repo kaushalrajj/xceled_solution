@@ -27,23 +27,28 @@ const TrustSection = () => {
             px-8 md:px-14 py-14
           "
         >
-          {/* Heading */}
-          <div className="text-center mb-10">
-            <p className="uppercase tracking-widest text-sm text-sky-500 font-medium">
-              Trusted & Recognized By
-            </p>
+          {/* ================= HEADING ================= */}
+          <div className="text-center mb-12 space-y-4">
 
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mt-3">
+            {/* STRONG SECTION MARKER (TEXT UNCHANGED) */}
+            <div className="flex items-center justify-center gap-4">
+              <span className="block w-10 h-[3px] bg-sky-500 rounded-full"></span>
+              <p className="uppercase tracking-widest text-sm text-sky-500 font-medium">
+                Trusted & Recognized By
+              </p>
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-semibold text-slate-800">
               Government & Industry Affiliations
             </h2>
 
-            <p className="text-sm text-slate-600 mt-3 max-w-xl mx-auto">
+            <p className="text-sm text-slate-600 max-w-xl mx-auto">
               Registered, certified, and recognized under various Government of India
               and industry initiatives.
             </p>
           </div>
 
-          {/* Logo slider */}
+          {/* ================= LOGO STRIP ================= */}
           <div className="relative overflow-hidden">
             <div
               className="
@@ -59,7 +64,7 @@ const TrustSection = () => {
                   className="
                     flex items-center justify-center
                     min-w-[180px]
-                    transition-transform duration-300
+                    transition-transform duration-300 ease-out
                     hover:scale-105
                   "
                 >

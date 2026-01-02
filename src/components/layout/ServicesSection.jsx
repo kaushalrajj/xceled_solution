@@ -43,24 +43,36 @@ const ServicesSection = () => {
             border border-sky-100
           "
         >
-          {/* Heading */}
-          <div className="max-w-2xl mb-16">
-            <p className="uppercase tracking-[0.3em] text-xs text-sky-500 font-medium">
-              What We Enable
-            </p>
+          {/* ================= HEADING ================= */}
+          <div className="max-w-2xl mb-16 space-y-5">
 
-            <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 mt-3 leading-tight">
+            {/* WHAT WE ENABLE — YOUR WAY */}
+            <div className="flex items-center gap-4">
+              <span className="block w-10 h-[3px] bg-sky-500 rounded-full"></span>
+              <p
+                className="
+                  uppercase tracking-[0.32em]
+                  text-[clamp(0.875rem,1.2vw,1rem)]
+                  font-bold
+                  text-sky-600
+                "
+              >
+                What We Enable
+              </p>
+            </div>
+
+            <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 leading-tight">
               Focus Areas That Create Impact
             </h2>
 
-            <p className="text-slate-600 mt-4 leading-relaxed text-[15.5px]">
+            <p className="text-slate-600 leading-relaxed text-[15.5px]">
               Our work spans a few focused areas where structured learning, guidance,
               and innovation create long-term value for learners and institutions.
             </p>
           </div>
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* ================= SERVICES (UNCHANGED) ================= */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 ml-3 lg:grid-cols-4 gap-10">
             {services.map((service, index) => {
               const Icon = service.icon;
 
@@ -69,38 +81,36 @@ const ServicesSection = () => {
                   key={index}
                   className="
                     group relative
-                    p-8 rounded-2xl
-                    backdrop-blur-sm
-                    
                     transition-all duration-500 ease-out
                     hover:-translate-y-1.5
-                    hover:shadow-md
                   "
                 >
-                  {/* soft hover glow */}
+                  {/* subtle hover accent */}
                   <div
                     className="
-                      absolute inset-0 rounded-2xl
-                      bg-gradient-to-br from-sky-100/40 via-transparent to-transparent
-                      opacity-0 group-hover:opacity-100
-                      transition-opacity duration-500
-                      pointer-events-none
+                      absolute inset-x-0 -bottom-4
+                      h-[2px]
+                      bg-sky-400
+                      scale-x-0
+                      origin-left
+                      transition-transform duration-500
+                      group-hover:scale-x-100
                     "
                   />
 
                   <Icon
                     className="
-                      h-10 w-10 text-sky-500 mb-6 relative z-10
+                      h-10 w-10 text-sky-500 mb-6
                       transition-transform duration-700 ease-out
                       group-hover:-translate-y-0.5
                     "
                   />
 
-                  <h3 className="text-[17px] font-semibold text-slate-800 mb-2 relative z-10">
+                  <h3 className="text-[17px] font-semibold text-slate-800 mb-2">
                     {service.title}
                   </h3>
 
-                  <p className="text-slate-600 text-sm leading-relaxed relative z-10">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {service.desc}
                   </p>
                 </div>
@@ -108,7 +118,7 @@ const ServicesSection = () => {
             })}
           </div>
 
-          {/* CTA */}
+          {/* ================= CTA (UNCHANGED) ================= */}
           <div className="mt-16 text-center">
             <Link
               to="/services"

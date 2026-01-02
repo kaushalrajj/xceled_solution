@@ -59,7 +59,7 @@ const Hero = () => {
 
   return (
     <section className="relative w-screen min-h-[100svh] overflow-hidden">
-      {/* BACKGROUND IMAGE */}
+      {/* Background */}
       <div
         className={`
           absolute inset-0 bg-cover bg-center bg-no-repeat
@@ -69,55 +69,49 @@ const Hero = () => {
         style={{ backgroundImage: `url(${slides[current].image})` }}
       />
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/85 via-sky-900/65 to-transparent" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/80 via-sky-900/60 to-transparent" />
 
-      {/* CONTENT */}
+      {/* Content */}
       <div className="relative z-10 min-h-[100svh] flex items-center">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-[760px] space-y-[clamp(18px,3vw,30px)]">
-            
-            {/* BRAND */}
-            <p
-              className="
-                uppercase tracking-[0.35em]
-                text-sky-100/70
-                text-[clamp(10px,0.85vw,12px)]
-              "
-            >
+          <div className="max-w-[43.75rem] space-y-6">
+
+            {/* Brand */}
+            <p className="uppercase tracking-[0.35em] text-sky-100/70 text-[clamp(0.625rem,0.85vw,0.75rem)]">
               XCELED SOLUTIONS
             </p>
 
-            {/* HEADING */}
+            {/* Heading */}
             <h1
               className={`
-                font-semibold tracking-tight leading-[1.15]
+                font-bold leading-[1.12] tracking-tight
                 text-white transition-opacity duration-700
-                text-[clamp(30px,5vw,58px)]
+                text-[clamp(2rem,5.2vw,3.75rem)]
                 ${visible ? "opacity-100" : "opacity-0"}
               `}
             >
               {slides[current].heading}
             </h1>
 
-            {/* MAIN TEXT */}
+            {/* Main Text */}
             <p
               className={`
                 leading-[1.65]
                 text-sky-50 transition-opacity duration-700
-                text-[clamp(15px,2.3vw,18px)]
+                text-[clamp(0.9375rem,2.2vw,1.125rem)]
                 ${visible ? "opacity-90" : "opacity-0"}
               `}
             >
               {slides[current].text}
             </p>
 
-            {/* SUBTEXT */}
+            {/* Subtext */}
             <p
               className={`
                 leading-[1.7]
                 text-sky-100 transition-opacity duration-700
-                text-[clamp(14px,2vw,16px)]
+                text-[clamp(0.875rem,2vw,1rem)]
                 ${visible ? "opacity-85" : "opacity-0"}
               `}
             >
@@ -127,7 +121,7 @@ const Hero = () => {
             {/* CTA */}
             <div
               className={`
-                flex flex-row flex-wrap gap-4 pt-6
+                flex flex-wrap gap-4 pt-8
                 transition-opacity duration-700
                 ${visible ? "opacity-100" : "opacity-0"}
               `}
@@ -138,7 +132,7 @@ const Hero = () => {
                     w-full sm:w-auto
                     px-8 py-3.5 rounded-full
                     text-white font-medium
-                    text-[clamp(14px,1.1vw,15px)]
+                    text-[clamp(0.875rem,1.1vw,0.9375rem)]
                     bg-white/15 backdrop-blur-md
                     border border-white/30
                     transition-all duration-300
@@ -156,7 +150,7 @@ const Hero = () => {
                     w-full sm:w-auto
                     px-8 py-3.5 rounded-full
                     text-sky-900 font-medium
-                    text-[clamp(14px,1.1vw,15px)]
+                    text-[clamp(0.875rem,1.1vw,0.9375rem)]
                     bg-white
                     transition-all duration-300
                     hover:bg-sky-100
