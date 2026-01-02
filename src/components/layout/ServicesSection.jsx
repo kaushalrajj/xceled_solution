@@ -70,9 +70,8 @@ const ServicesSection = () => {
                   className="
                     group relative
                     p-8 rounded-2xl
-                    bg-white/70 backdrop-blur-sm
-                    border border-slate-100
-                    shadow-sm
+                    backdrop-blur-sm
+                    
                     transition-all duration-500 ease-out
                     hover:-translate-y-1.5
                     hover:shadow-md
