@@ -19,7 +19,7 @@ import stationery from "../../assets/images/services/certificate.webp";
 import kits from "../../assets/images/services/aptitude.webp";
 import labkits from "../../assets/images/services/insti.webp";
 
-/* ================= SERVICES DATA (EKWIK ONLY) ================= */
+/* ================= SERVICES DATA ================= */
 
 const services = [
   {
@@ -83,13 +83,15 @@ const services = [
 /* ================= COMPONENT ================= */
 
 const Services = () => {
+  const isOdd = services.length % 2 !== 0;
+
   return (
     <section className="w-full bg-sky-50 py-24 sm:py-28 md:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
 
         {/* HEADER */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <p className="uppercase tracking-[0.35em] text-sky-600 text-xs font-bold mb-4">
+          <p className="uppercase tracking-[0.35em] text-sky-600 text-xs font-semibold mb-4">
             Services
           </p>
 
@@ -116,10 +118,15 @@ const Services = () => {
                 to={service.path}
                 className={`
                   group block bg-white rounded-3xl overflow-hidden
-                  border border-slate-100 shadow-sm
-                  transition-all duration-500
-                  hover:-translate-y-2 hover:shadow-xl
-                  ${isLast ? "lg:col-start-2" : ""}
+                  border border-slate-100
+                  shadow-[0_6px_24px_rgba(0,0,0,0.04)]
+                  transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]
+                  hover:-translate-y-2 hover:shadow-[0_18px_48px_rgba(0,0,0,0.12)]
+                  ${
+                    isLast && isOdd
+                      ? "lg:col-span-2 lg:col-start-2"
+                      : ""
+                  }
                 `}
               >
                 {/* IMAGE */}
@@ -130,11 +137,11 @@ const Services = () => {
                     loading="lazy"
                     className="
                       w-full h-full object-cover
-                      transition-transform duration-700
+                      transition-transform duration-700 ease-out
                       group-hover:scale-110
                     "
                   />
-                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition" />
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* CONTENT */}

@@ -58,125 +58,116 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="w-full mt-32">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div
-          className="
-            relative w-full
-            min-h-[480px] sm:min-h-[460px] md:min-h-[500px]
-            md:aspect-[21/9]
-            rounded-2xl overflow-hidden shadow-sm
-          "
-        >
-          {/* BACKGROUND */}
-          <div
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat
-              transition-all duration-[2600ms] ease-out
-              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.03]"}
-            `}
-            style={{ backgroundImage: `url(${slides[current].image})` }}
-          />
+    <section className="relative w-screen min-h-[100svh] overflow-hidden">
+      {/* BACKGROUND IMAGE */}
+      <div
+        className={`
+          absolute inset-0 bg-cover bg-center bg-no-repeat
+          transition-all duration-[2800ms] ease-[cubic-bezier(.16,1,.3,1)]
+          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.04]"}
+        `}
+        style={{ backgroundImage: `url(${slides[current].image})` }}
+      />
 
-          {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-r from-sky-900/70 via-sky-800/55 to-transparent" />
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/85 via-sky-900/65 to-transparent" />
 
-          {/* CONTENT */}
-          <div className="relative z-10 h-full flex items-start md:items-center pt-10 sm:pt-14 md:pt-0">
-            <div
+      {/* CONTENT */}
+      <div className="relative z-10 min-h-[100svh] flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="max-w-[760px] space-y-[clamp(18px,3vw,30px)]">
+            
+            {/* BRAND */}
+            <p
               className="
-                w-full sm:w-[94%] md:w-[65%] lg:w-[55%] xl:w-[50%]
-                max-w-[760px]
-                px-4 sm:px-6 md:px-8
-                space-y-[clamp(16px,3vw,28px)]
+                uppercase tracking-[0.35em]
+                text-sky-100/70
+                text-[clamp(10px,0.85vw,12px)]
               "
             >
-              {/* BRAND */}
-              <p
-                className="
-                  uppercase tracking-[0.34em]
-                  text-sky-100/80
-                  text-[clamp(10px,0.8vw,12px)]
-                "
-              >
-                XCELED SOLUTIONS
-              </p>
+              XCELED SOLUTIONS
+            </p>
 
-              {/* HEADING */}
-              <h1
-                className={`font-semibold tracking-tight leading-[1.15]
-                  text-white transition-opacity duration-700
-                  text-[clamp(28px,4.8vw,56px)]
-                  ${visible ? "opacity-100" : "opacity-0"}
-                `}
-              >
-                {slides[current].heading}
-              </h1>
+            {/* HEADING */}
+            <h1
+              className={`
+                font-semibold tracking-tight leading-[1.15]
+                text-white transition-opacity duration-700
+                text-[clamp(30px,5vw,58px)]
+                ${visible ? "opacity-100" : "opacity-0"}
+              `}
+            >
+              {slides[current].heading}
+            </h1>
 
-              {/* MAIN TEXT */}
-              <p
-                className={`leading-[1.6]
-                  text-sky-50 transition-opacity duration-700
-                  text-[clamp(15px,2.2vw,18px)]
-                  ${visible ? "opacity-90" : "opacity-0"}
-                `}
-              >
-                {slides[current].text}
-              </p>
+            {/* MAIN TEXT */}
+            <p
+              className={`
+                leading-[1.65]
+                text-sky-50 transition-opacity duration-700
+                text-[clamp(15px,2.3vw,18px)]
+                ${visible ? "opacity-90" : "opacity-0"}
+              `}
+            >
+              {slides[current].text}
+            </p>
 
-              {/* SUBTEXT */}
-              <p
-                className={`leading-[1.65]
-                  text-sky-100 transition-opacity duration-700
-                  text-[clamp(14px,2vw,16px)]
-                  ${visible ? "opacity-85" : "opacity-0"}
-                `}
-              >
-                {slides[current].subtext}
-              </p>
+            {/* SUBTEXT */}
+            <p
+              className={`
+                leading-[1.7]
+                text-sky-100 transition-opacity duration-700
+                text-[clamp(14px,2vw,16px)]
+                ${visible ? "opacity-85" : "opacity-0"}
+              `}
+            >
+              {slides[current].subtext}
+            </p>
 
-              {/* CTA — SIDE BY SIDE ON ALL SCREENS */}
-              <div
-                className={`flex flex-row flex-wrap gap-4
-                  pt-4 sm:pt-6
-                  transition-opacity duration-700
-                  ${visible ? "opacity-100" : "opacity-0"}
-                `}
-              >
-                <Link to="/services" className="flex-1 sm:flex-none">
-                  <button
-                    className="
-                      w-full sm:w-auto
-                      px-7 py-3.5 rounded-full
-                      text-white font-medium
-                      text-[clamp(14px,1.1vw,15px)]
-                      bg-white/15 backdrop-blur-md
-                      border border-white/30
-                      transition-all duration-300
-                      hover:bg-white/25 hover:border-white/50
-                    "
-                  >
-                    Our Services
-                  </button>
-                </Link>
+            {/* CTA */}
+            <div
+              className={`
+                flex flex-row flex-wrap gap-4 pt-6
+                transition-opacity duration-700
+                ${visible ? "opacity-100" : "opacity-0"}
+              `}
+            >
+              <Link to="/services" className="flex-1 sm:flex-none">
+                <button
+                  className="
+                    w-full sm:w-auto
+                    px-8 py-3.5 rounded-full
+                    text-white font-medium
+                    text-[clamp(14px,1.1vw,15px)]
+                    bg-white/15 backdrop-blur-md
+                    border border-white/30
+                    transition-all duration-300
+                    hover:bg-white/25 hover:border-white/50
+                    active:scale-[0.97]
+                  "
+                >
+                  Our Services
+                </button>
+              </Link>
 
-                <Link to="/contact" className="flex-1 sm:flex-none">
-                  <button
-                    className="
-                      w-full sm:w-auto
-                      px-7 py-3.5 rounded-full
-                      text-sky-900 font-medium
-                      text-[clamp(14px,1.1vw,15px)]
-                      bg-white
-                      transition-all duration-300
-                      hover:bg-sky-100
-                    "
-                  >
-                    Contact Us
-                  </button>
-                </Link>
-              </div>
-
+              <Link to="/contact" className="flex-1 sm:flex-none">
+                <button
+                  className="
+                    w-full sm:w-auto
+                    px-8 py-3.5 rounded-full
+                    text-sky-900 font-medium
+                    text-[clamp(14px,1.1vw,15px)]
+                    bg-white
+                    transition-all duration-300
+                    hover:bg-sky-100
+                    active:scale-[0.97]
+                  "
+                >
+                  Contact Us
+                </button>
+              </Link>
             </div>
+
           </div>
         </div>
       </div>
