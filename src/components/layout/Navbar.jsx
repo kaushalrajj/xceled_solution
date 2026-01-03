@@ -9,6 +9,7 @@ const navItems = [
   "Products",
   "Career",
   "Gallery",
+  "Contact Us", // ✅ ADDED
 ];
 
 const Navbar = () => {
@@ -45,13 +46,13 @@ const Navbar = () => {
           <ul className="hidden md:flex items-center gap-9 text-[15px] font-medium text-slate-700">
             {navItems.map((item) => (
               <li key={item} className="relative group">
-
                 {item === "Home" && <Link to="/">Home</Link>}
                 {item === "About Us" && <Link to="/about">About Us</Link>}
                 {item === "Services" && <Link to="/services">Services</Link>}
                 {item === "Products" && <Link to="/products">Products</Link>}
                 {item === "Career" && <Link to="/career">Career</Link>}
                 {item === "Gallery" && <Link to="/gallery">Gallery</Link>}
+                {item === "Contact Us" && <Link to="/contact">Contact Us</Link>} {/* ✅ ADDED */}
 
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
               </li>
@@ -61,7 +62,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden flex flex-col gap-[7px]"
-            onClick={() => setMenuOpen(prev => !prev)}
+            onClick={() => setMenuOpen((prev) => !prev)}
             aria-label="Toggle Menu"
           >
             <span className="w-7 h-[2.5px] bg-slate-800"></span>
@@ -77,7 +78,11 @@ const Navbar = () => {
           md:hidden fixed top-[72px] left-0 w-full
           bg-sky-50/95 backdrop-blur-md shadow-md
           transition-all duration-300 ease-out
-          ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"}
+          ${
+            menuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-4 pointer-events-none"
+          }
         `}
       >
         <ul className="flex flex-col items-center gap-8 py-10 text-lg font-semibold text-slate-700">
@@ -89,6 +94,7 @@ const Navbar = () => {
               {item === "Products" && <Link to="/products">Products</Link>}
               {item === "Career" && <Link to="/career">Career</Link>}
               {item === "Gallery" && <Link to="/gallery">Gallery</Link>}
+              {item === "Contact Us" && <Link to="/contact">Contact Us</Link>} {/* ✅ ADDED */}
             </li>
           ))}
         </ul>
