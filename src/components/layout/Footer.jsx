@@ -6,9 +6,11 @@ const Footer = () => {
     <footer className="w-full mt-2 relative overflow-hidden">
 
       {/* animated top accent */}
-      <div className="absolute top-0 left-0 w-full h-[2px]
+      <div className="
+        absolute top-0 left-0 w-full h-[2px]
         bg-gradient-to-r from-transparent via-sky-400 to-transparent
-        animate-pulse opacity-60" />
+        animate-pulse opacity-60
+      " />
 
       {/* footer body */}
       <div
@@ -21,7 +23,7 @@ const Footer = () => {
       >
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start md:items-center">
 
             {/* Brand */}
             <div className="space-y-4 group">
@@ -31,12 +33,12 @@ const Footer = () => {
                   alt="Xceled Solutions"
                   className="
                     h-10 w-auto object-contain
-                    transition-all duration-500 ease-out
+                    transition-transform duration-500 ease-out
                     group-hover:scale-110
                   "
                 />
                 <div className="leading-tight">
-                  <h3 className="text-lg font-bold tracking-wide text-sky-600">
+                  <h3 className="text-lg font-extrabold tracking-wider text-sky-700">
                     XCELED
                   </h3>
                   <p className="text-[11px] tracking-[0.4em] text-slate-500">
@@ -57,23 +59,19 @@ const Footer = () => {
                 Contact
               </h4>
 
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-slate-600">
+              <div className="flex flex-col gap-1 text-sm text-slate-600">
                 <span className="hover:text-sky-600 transition-colors">
                   📞 +91 76691 56969
                 </span>
+
+                <span className="hover:text-sky-600 transition-colors">
+                  ✉️ sales@xceledsolutions.com
+                </span>
+
+                <span className="text-slate-600">
+                  A-20, Gurunanak Pura, Laxmi Nagar, New Delhi – 110092
+                </span>
               </div>
-
-              <p className="text-sm text-slate-600 hover:text-sky-600 transition-colors">
-                ✉️ sales@xceledsolutions.com
-              </p>
-{/* 
-              <p className="text-sm text-slate-600">
-                📍 Lane No – 3, Aryasamaj Road, Patna – 801503
-              </p> */}
-
-              <p className="text-sm text-slate-600">
-                A-20, Gurunanak Pura, Laxmi Nagar, New Delhi – 110092
-              </p>
             </div>
 
             {/* CTA */}
@@ -81,16 +79,15 @@ const Footer = () => {
               <Link
                 to="/contact"
                 className="
-                  relative inline-flex items-center gap-3
-                  px-7 py-3 rounded-full
+                  inline-flex items-center gap-3
+                  px-8 py-3 rounded-full
                   text-sky-600 font-medium text-sm
                   bg-white/70 backdrop-blur
                   border border-sky-400/60
                   shadow-sm
-                  hover:shadow-md
-                  hover:border-sky-500
-                  hover:gap-4
                   transition-all duration-300 ease-out
+                  hover:shadow-md hover:border-sky-500
+                  active:scale-[0.97]
                 "
               >
                 Connect With Us

@@ -39,40 +39,42 @@ const ServicesSection = () => {
           className="
             relative
             bg-sky-50/50 backdrop-blur-sm
-            rounded-3xl px-8 md:px-14 py-20
+            rounded-3xl
+            px-6 sm:px-10 md:px-14
+            py-20
             border border-sky-100
           "
         >
           {/* ================= HEADING ================= */}
           <div className="max-w-2xl mb-16 space-y-5">
 
-            {/* WHAT WE ENABLE — YOUR WAY */}
             <div className="flex items-center gap-4">
-              <span className="block w-10 h-[3px] bg-sky-500 rounded-full"></span>
-              <p
-                className="
-                  uppercase tracking-[0.32em]
-                  text-[clamp(0.875rem,1.2vw,1rem)]
-                  font-bold
-                  text-sky-600
-                "
-              >
+              <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+              <p className="
+                uppercase tracking-[0.32em]
+                text-xs sm:text-sm
+                font-bold text-sky-600
+              ">
                 What We Enable
               </p>
             </div>
 
-            <h2 className="text-[30px] md:text-[36px] lg:text-[42px] font-semibold text-slate-800 leading-tight">
+            <h2 className="
+              font-bold tracking-tight text-slate-800
+              text-[clamp(1.9rem,3.6vw,2.7rem)]
+              leading-tight
+            ">
               Focus Areas That Create Impact
             </h2>
 
-            <p className="text-slate-600 leading-relaxed text-[15.5px]">
+            <p className="text-slate-600 leading-[1.75] text-[0.95rem] sm:text-[1rem]">
               Our work spans a few focused areas where structured learning, guidance,
               and innovation create long-term value for learners and institutions.
             </p>
           </div>
 
-          {/* ================= SERVICES (UNCHANGED) ================= */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 ml-3 lg:grid-cols-4 gap-10">
+          {/* ================= SERVICES ================= */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {services.map((service, index) => {
               const Icon = service.icon;
 
@@ -91,8 +93,7 @@ const ServicesSection = () => {
                       absolute inset-x-0 -bottom-4
                       h-[2px]
                       bg-sky-400
-                      scale-x-0
-                      origin-left
+                      scale-x-0 origin-left
                       transition-transform duration-500
                       group-hover:scale-x-100
                     "
@@ -100,17 +101,17 @@ const ServicesSection = () => {
 
                   <Icon
                     className="
-                      h-10 w-10 text-sky-500 mb-6
+                      h-10 w-10 text-sky-500 mb-5
                       transition-transform duration-700 ease-out
                       group-hover:-translate-y-0.5
                     "
                   />
 
-                  <h3 className="text-[17px] font-semibold text-slate-800 mb-2">
+                  <h3 className="text-[16.5px] font-semibold text-slate-800 mb-2">
                     {service.title}
                   </h3>
 
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-[0.9rem] leading-[1.7]">
                     {service.desc}
                   </p>
                 </div>
@@ -118,19 +119,21 @@ const ServicesSection = () => {
             })}
           </div>
 
-          {/* ================= CTA (UNCHANGED) ================= */}
+          {/* ================= CTA ================= */}
           <div className="mt-16 text-center">
             <Link
               to="/services"
               className="
                 inline-flex items-center gap-3
-                px-8 py-3 rounded-full
+                px-9 py-3.5
+                rounded-full
                 border border-sky-400/60
                 text-sky-600 font-medium
                 bg-sky-50/60
                 hover:bg-sky-100/70
                 hover:border-sky-500
                 shadow-sm hover:shadow-md
+                active:scale-[0.97]
                 transition-all duration-300 ease-out
               "
             >

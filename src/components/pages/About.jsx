@@ -139,23 +139,17 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
     { name: "Team Member 15", role: "Support Staff", image: team15 },
   ];
 
-  /* ------------------ TEAM SLIDER (MOBILE FIXED) ------------------ */
+  /* ------------------ TEAM SLIDER ------------------ */
   const [index, setIndex] = useState(0);
   const cardRef = useRef(null);
 
-  const next = () =>
-    setIndex((prev) => (prev + 1) % teamMembers.length);
-
+  const next = () => setIndex((p) => (p + 1) % teamMembers.length);
   const prev = () =>
-    setIndex((prev) =>
-      prev === 0 ? teamMembers.length - 1 : prev - 1
-    );
+    setIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1));
 
   const getTranslateX = () => {
     if (!cardRef.current) return 0;
-    const cardWidth = cardRef.current.offsetWidth;
-    const gap = 40;
-    return index * (cardWidth + gap);
+    return index * (cardRef.current.offsetWidth + 40);
   };
 
   return (
@@ -168,7 +162,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
           <p className="uppercase tracking-[0.35em] text-xs text-sky-600 mb-6">
             About Us
           </p>
-          <h1 className="text-4xl md:text-5xl font-semibold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             About <span className="text-sky-600">XCELED Solutions</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.7]">
@@ -184,7 +178,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mb-24">
         <div>
-          <h2 className="text-3xl font-semibold mb-6">Who We Are</h2>
+          <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
           <p className="text-slate-600 leading-[1.75] mb-4">
             XCELED Solutions operates at the intersection of education,
             skill development, and employability.
@@ -195,8 +189,11 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
           </p>
         </div>
         <motion.div {...softHover}>
-          <img src={aboutImg} alt="XCELED environment"
-            className="rounded-3xl shadow-lg w-full object-cover" />
+          <img
+            src={aboutImg}
+            alt="XCELED environment"
+            className="rounded-3xl shadow-lg w-full object-cover"
+          />
         </motion.div>
       </motion.div>
 
@@ -222,7 +219,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
                   {item.icon}
-                  <h3 className="text-2xl font-semibold">{item.title}</h3>
+                  <h3 className="text-2xl font-bold">{item.title}</h3>
                 </div>
                 <button
                   onClick={() => item.setLang(p => (p === "en" ? "hi" : "en"))}
@@ -255,7 +252,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
           </motion.div>
           <div>
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-3xl font-semibold">Founder’s Message</h3>
+              <h3 className="text-3xl font-bold">Founder’s Message</h3>
               <button
                 onClick={() => setFounderLang(p => (p === "en" ? "hi" : "en"))}
                 className="flex items-center gap-2 text-sm px-4 py-1.5
@@ -282,7 +279,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       <motion.section variants={fadeUp} initial="hidden" whileInView="visible"
         viewport={{ once: true }}
         className="max-w-7xl mx-auto px-6 mb-24">
-        <h2 className="text-3xl font-semibold text-center mb-14">Our Team</h2>
+        <h2 className="text-3xl font-bold text-center mb-14">Our Team</h2>
 
         <div className="overflow-hidden">
           <motion.div
@@ -294,12 +291,15 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 ref={i === 0 ? cardRef : null}
                 key={i}
                 {...softHover}
-                className="min-w-[85vw] sm:min-w-[360px] lg:min-w-[380px]
+                className="min-w-[85vw] sm:min-w-[360px]
                            bg-white rounded-3xl p-8 text-center
                            shadow-sm border border-slate-200">
-                <div className="w-44 h-44 mx-auto mb-6 rounded-2xl overflow-hidden bg-slate-100">
-                  <img src={m.image} alt={m.name}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.04]" />
+                <div className="w-44 h-44 mx-auto mb-6 rounded-2xl overflow-hidden">
+                  <img
+                    src={m.image}
+                    alt={m.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h4 className="text-lg font-semibold">{m.name}</h4>
                 <p className="text-sm text-slate-500">{m.role}</p>
@@ -320,11 +320,11 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </motion.section>
 
-      {/* CTA */}
+      {/* FINAL CTA */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible"
         viewport={{ once: true }}
         className="max-w-5xl mx-auto px-6 text-center py-16 bg-slate-100 rounded-3xl">
-        <h3 className="text-3xl md:text-4xl font-semibold mb-6">
+        <h3 className="text-3xl md:text-4xl font-bold mb-6">
           Empowering learners today,
           <br className="hidden md:block" />
           shaping responsible nation builders for tomorrow

@@ -59,66 +59,68 @@ const Hero = () => {
 
   return (
     <section className="relative w-screen min-h-[100svh] overflow-hidden">
-      {/* Background */}
-      <div
-        className={`
-          absolute inset-0 bg-cover bg-center bg-no-repeat
-          transition-all duration-[2800ms] ease-[cubic-bezier(.16,1,.3,1)]
-          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.04]"}
-        `}
-        style={{ backgroundImage: `url(${slides[current].image})` }}
-      />
+      
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={slides[current].image}
+          alt=""
+          className={`
+            w-full h-full object-cover object-top
+            transition-all duration-[2600ms] ease-[cubic-bezier(.16,1,.3,1)]
+            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.035]"}
+          `}
+        />
+      </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/80 via-sky-900/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/85 via-sky-900/65 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 min-h-[100svh] flex items-center">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-[43.75rem] space-y-6">
+          <div className="max-w-[44rem] space-y-6">
 
-            {/* Brand */}
-            <p className="uppercase tracking-[0.35em] text-sky-100/70 text-[clamp(0.625rem,0.85vw,0.75rem)]">
+            <p className="uppercase tracking-[0.38em] text-sky-100/70 text-xs">
               XCELED SOLUTIONS
             </p>
 
-            {/* Heading */}
             <h1
               className={`
-                font-bold leading-[1.12] tracking-tight
-                text-white transition-opacity duration-700
-                text-[clamp(2rem,5.2vw,3.75rem)]
+                font-extrabold tracking-tight leading-[1.1]
+                text-white
+                text-[clamp(2.2rem,5.4vw,3.9rem)]
+                transition-opacity duration-700
                 ${visible ? "opacity-100" : "opacity-0"}
               `}
             >
               {slides[current].heading}
             </h1>
 
-            {/* Main Text */}
             <p
               className={`
-                leading-[1.65]
-                text-sky-50 transition-opacity duration-700
-                text-[clamp(0.9375rem,2.2vw,1.125rem)]
+                text-sky-50
+                leading-[1.7]
+                text-[clamp(1rem,2.2vw,1.15rem)]
+                transition-opacity duration-700
                 ${visible ? "opacity-90" : "opacity-0"}
               `}
             >
               {slides[current].text}
             </p>
 
-            {/* Subtext */}
             <p
               className={`
+                text-sky-100
                 leading-[1.7]
-                text-sky-100 transition-opacity duration-700
-                text-[clamp(0.875rem,2vw,1rem)]
+                text-[0.95rem]
+                transition-opacity duration-700
                 ${visible ? "opacity-85" : "opacity-0"}
               `}
             >
               {slides[current].subtext}
             </p>
 
-            {/* CTA */}
             <div
               className={`
                 flex flex-wrap gap-4 pt-8
@@ -127,36 +129,30 @@ const Hero = () => {
               `}
             >
               <Link to="/services" className="flex-1 sm:flex-none">
-                <button
-                  className="
-                    w-full sm:w-auto
-                    px-8 py-3.5 rounded-full
-                    text-white font-medium
-                    text-[clamp(0.875rem,1.1vw,0.9375rem)]
-                    bg-white/15 backdrop-blur-md
-                    border border-white/30
-                    transition-all duration-300
-                    hover:bg-white/25 hover:border-white/50
-                    active:scale-[0.97]
-                  "
-                >
+                <button className="
+                  w-full sm:w-auto
+                  px-8 py-3.5 rounded-full
+                  text-white font-medium
+                  bg-white/15 backdrop-blur-md
+                  border border-white/30
+                  transition-all duration-300
+                  hover:bg-white/25 hover:border-white/50
+                  active:scale-[0.97]
+                ">
                   Our Services
                 </button>
               </Link>
 
               <Link to="/contact" className="flex-1 sm:flex-none">
-                <button
-                  className="
-                    w-full sm:w-auto
-                    px-8 py-3.5 rounded-full
-                    text-sky-900 font-medium
-                    text-[clamp(0.875rem,1.1vw,0.9375rem)]
-                    bg-white
-                    transition-all duration-300
-                    hover:bg-sky-100
-                    active:scale-[0.97]
-                  "
-                >
+                <button className="
+                  w-full sm:w-auto
+                  px-8 py-3.5 rounded-full
+                  text-sky-900 font-medium
+                  bg-white
+                  transition-all duration-300
+                  hover:bg-sky-100
+                  active:scale-[0.97]
+                ">
                   Contact Us
                 </button>
               </Link>

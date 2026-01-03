@@ -24,25 +24,32 @@ const TrustSection = () => {
             bg-sky-50/60
             border border-sky-100
             rounded-3xl
-            px-8 md:px-14 py-14
+            px-6 sm:px-10 md:px-14
+            py-14
           "
         >
           {/* ================= HEADING ================= */}
           <div className="text-center mb-12 space-y-4">
 
-            {/* STRONG SECTION MARKER (TEXT UNCHANGED) */}
             <div className="flex items-center justify-center gap-4">
-              <span className="block w-10 h-[3px] bg-sky-500 rounded-full"></span>
-              <p className="uppercase tracking-widest text-sm text-sky-500 font-medium">
+              <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+              <p className="
+                uppercase tracking-widest
+                text-xs sm:text-sm
+                text-sky-500 font-medium
+              ">
                 Trusted & Recognized By
               </p>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-800">
+            <h2 className="
+              font-bold tracking-tight text-slate-800
+              text-[clamp(1.6rem,3vw,2.2rem)]
+            ">
               Government & Industry Affiliations
             </h2>
 
-            <p className="text-sm text-slate-600 max-w-xl mx-auto">
+            <p className="text-sm sm:text-[0.95rem] text-slate-600 max-w-xl mx-auto leading-relaxed">
               Registered, certified, and recognized under various Government of India
               and industry initiatives.
             </p>
@@ -52,7 +59,7 @@ const TrustSection = () => {
           <div className="relative overflow-hidden">
             <div
               className="
-                flex items-center gap-20
+                flex items-center gap-16 sm:gap-20
                 animate-logoScroll
                 hover:[animation-play-state:paused]
                 w-max
@@ -63,16 +70,16 @@ const TrustSection = () => {
                   key={index}
                   className="
                     flex items-center justify-center
-                    min-w-[180px]
+                    min-w-[140px] sm:min-w-[160px] md:min-w-[180px]
                     transition-transform duration-300 ease-out
-                    hover:scale-105
+                    hover:scale-[1.04]
                   "
                 >
                   <img
                     src={logo}
                     alt="Affiliation Logo"
                     className="
-                      h-16 md:h-18 lg:h-20
+                      h-14 sm:h-16 md:h-18 lg:h-20
                       w-auto object-contain
                       opacity-80 grayscale
                       transition-all duration-300
