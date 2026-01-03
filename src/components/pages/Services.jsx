@@ -89,7 +89,7 @@ const Services = () => {
 
         {/* HEADER */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <p className="uppercase tracking-[0.35em] text-sky-600 text-xs font-semibold mb-4">
+          <p className="uppercase tracking-[0.35em] font-bold text-sky-600 text-s font-semibold mb-4">
             Services
           </p>
 

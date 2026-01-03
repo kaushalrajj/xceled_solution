@@ -1,8 +1,9 @@
 import impactEducation from "../../assets/images/hero/i1.webp";
 import impactClassroom from "../../assets/images/hero/i2.webp";
-import impactTeaching from "../../assets/images/hero/i3.webp";
-import impactWorkshop from "../../assets/images/hero/i4.webp";
+import impactTeaching from "../../assets/images/hero/i4.webp";
+import impactWorkshop from "../../assets/images/hero/i3.webp";
 
+/* ================= DATA ================= */
 const impacts = [
   {
     image: impactEducation,
@@ -26,30 +27,22 @@ const impacts = [
   },
 ];
 
+/* ================= COMPONENT ================= */
 const ImpactSection = () => {
   return (
-    <section className="relative w-full mt-15 pb-40">
+    <section className="relative w-full mt-15 pb-40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ================= HEADER ================= */}
-        <div className="max-w-2xl mb-24 space-y-6">
-
+        <header className="max-w-2xl mb-24 space-y-6">
           <div className="flex items-center gap-4">
             <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
-            <p className="
-              uppercase tracking-[0.32em]
-              text-xs sm:text-sm
-              font-bold text-sky-600
-            ">
+            <p className="uppercase tracking-[0.32em] text-xs sm:text-sm font-bold text-sky-600">
               Our Impact
             </p>
           </div>
 
-          <h2 className="
-            font-bold tracking-tight text-slate-800
-            text-[clamp(1.9rem,3.6vw,2.7rem)]
-            leading-tight
-          ">
+          <h2 className="font-bold tracking-tight text-slate-800 text-[clamp(1.9rem,3.6vw,2.7rem)] leading-tight">
             Learning That Extends Beyond the Classroom
           </h2>
 
@@ -57,9 +50,9 @@ const ImpactSection = () => {
             Through hands-on programs, institutional collaboration, and guided learning,
             we focus on building capability, confidence, and practical understanding.
           </p>
-        </div>
+        </header>
 
-        {/* ================= IMPACT GRID ================= */}
+        {/* ================= GRID ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-14 gap-y-20">
           {impacts.map((item, index) => (
             <article
@@ -68,30 +61,32 @@ const ImpactSection = () => {
                 group relative
                 transition-transform duration-700 ease-out
                 hover:-translate-y-2
+                will-change-transform
               "
             >
-              {/* IMAGE */}
-              <div className="relative overflow-hidden rounded-3xl">
+              {/* ================= IMAGE ================= */}
+              <div className="relative overflow-hidden rounded-3xl aspect-[4/3]">
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 640px) 100vw,
+                         (max-width: 1024px) 50vw,
+                         25vw"
                   className="
-                    w-full h-[280px] sm:h-[300px]
+                    w-full h-full
                     object-cover object-center
                     transition-transform duration-[1600ms] ease-out
                     group-hover:scale-[1.06]
                   "
                 />
 
-                {/* GRADIENT FOR DEPTH */}
-                <div className="
-                  absolute inset-0
-                  bg-gradient-to-t from-black/35 via-black/10 to-transparent
-                  opacity-60
-                " />
+                {/* Depth Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent opacity-60" />
               </div>
 
-              {/* TEXT */}
+              {/* ================= CONTENT ================= */}
               <div className="pt-6">
                 <h3 className="text-[16.5px] font-semibold text-slate-800 mb-2">
                   {item.title}
@@ -102,7 +97,7 @@ const ImpactSection = () => {
                 </p>
               </div>
 
-              {/* BRAND ACCENT */}
+              {/* ================= BRAND ACCENT ================= */}
               <span
                 className="
                   absolute -bottom-4 left-0
@@ -115,7 +110,6 @@ const ImpactSection = () => {
             </article>
           ))}
         </div>
-
       </div>
 
       {/* ================= DECORATIVE BACKDROP ================= */}

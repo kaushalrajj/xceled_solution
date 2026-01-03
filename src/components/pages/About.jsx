@@ -159,7 +159,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       <motion.div variants={fadeUp} initial="hidden" animate="visible"
         className="max-w-5xl mx-auto px-6 mb-24">
         <div className="bg-white rounded-3xl px-12 py-14 text-center shadow-sm border border-slate-200">
-          <p className="uppercase tracking-[0.35em] text-xs text-sky-600 mb-6">
+          <p className="uppercase tracking-[0.35em] text-sm font-bold text-sky-600 mb-6">
             About Us
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
