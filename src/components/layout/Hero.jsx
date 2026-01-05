@@ -9,35 +9,35 @@ import slide4 from "../../assets/images/hero/slider4.webp";
 const slides = [
   {
     image: slide1,
-    heading: "Industry-Focused Skill Training for Tomorrow’s Leaders",
+    heading: "Shaping Industry-Ready Professionals, Not Just Learners",
     text:
-      "A PMEGP-backed, women-led initiative delivering practical skill development through structured, career-ready learning programs.",
+      "A PMEGP-backed, women-led initiative delivering structured, hands-on skill development aligned directly with real industry requirements.",
     subtext:
-      "We work with students, institutions, and communities to build confidence, capability, and long-term employability.",
+      "We don’t focus on certificates alone — we focus on competence, confidence, and long-term career sustainability.",
   },
   {
     image: slide2,
-    heading: "Education With Purpose That Creates Real Outcomes",
+    heading: "Education Designed for Outcomes, Not Just Academics",
     text:
-      "We believe education should go beyond theory and focus on hands-on learning that builds clarity, skills, and self-reliance.",
+      "Our programs bridge the gap between classrooms and careers through practical learning, applied exposure, and guided mentorship.",
     subtext:
-      "Our programs are designed to support vocational training, real-world exposure, and meaningful career pathways.",
+      "Every curriculum is outcome-driven, measurable, and aligned with employability and real-world performance.",
   },
   {
     image: slide3,
-    heading: "Skills That Translate Into Real-World Impact",
+    heading: "Skills That Convert Potential Into Performance",
     text:
-      "Practical training, guided mentorship, and structured learning designed to meet today’s evolving industry needs.",
+      "Through industry-relevant training, expert guidance, and structured learning paths, we prepare individuals to perform from day one.",
     subtext:
-      "From schools to institutions, we align education with emerging technologies and future-ready opportunities.",
+      "From emerging technologies to foundational skills, our approach stays aligned with evolving workforce demands.",
   },
   {
     image: slide4,
-    heading: "Building Confident Individuals for a Self-Reliant India",
+    heading: "Empowering a Skilled, Self-Reliant, Confident India",
     text:
-      "We empower learners to contribute, lead, and grow through focused skill-based programs and responsible education.",
+      "We enable individuals to contribute meaningfully to the economy through responsible education and inclusive skill development.",
     subtext:
-      "Supporting national skill missions with inclusive training, mentorship, and sustainable learning models.",
+      "Aligned with national skill missions, our work focuses on scale, sustainability, and lasting social impact.",
   },
 ];
 
@@ -48,18 +48,18 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(false);
+
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
         setVisible(true);
       }, 900);
-    }, 6500);
+    }, 7200);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative w-screen min-h-[100svh] overflow-hidden">
-      
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -67,21 +67,27 @@ const Hero = () => {
           alt=""
           className={`
             w-full h-full object-cover object-top
-            transition-all duration-[2600ms] ease-[cubic-bezier(.16,1,.3,1)]
-            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.035]"}
+            transition-all duration-[3200ms] ease-[cubic-bezier(.16,1,.3,1)]
+            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.065]"}
           `}
         />
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/85 via-sky-900/65 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/70 to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 min-h-[100svh] flex items-center">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-[44rem] space-y-6">
 
-            <p className="uppercase tracking-[0.38em] text-sky-100/70 text-xs">
+            <p
+              className={`
+                uppercase tracking-[0.38em] text-sky-100/70 text-xs
+                transition-all duration-700
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
+              `}
+            >
               XCELED SOLUTIONS
             </p>
 
@@ -90,8 +96,8 @@ const Hero = () => {
                 font-extrabold tracking-tight leading-[1.1]
                 text-white
                 text-[clamp(2.2rem,5.4vw,3.9rem)]
-                transition-opacity duration-700
-                ${visible ? "opacity-100" : "opacity-0"}
+                transition-all duration-900 delay-100
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
               `}
             >
               {slides[current].heading}
@@ -99,11 +105,10 @@ const Hero = () => {
 
             <p
               className={`
-                text-sky-50
-                leading-[1.7]
+                text-sky-50 leading-[1.7]
                 text-[clamp(1rem,2.2vw,1.15rem)]
-                transition-opacity duration-700
-                ${visible ? "opacity-90" : "opacity-0"}
+                transition-all duration-900 delay-200
+                ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-5"}
               `}
             >
               {slides[current].text}
@@ -111,11 +116,9 @@ const Hero = () => {
 
             <p
               className={`
-                text-sky-100
-                leading-[1.7]
-                text-[0.95rem]
-                transition-opacity duration-700
-                ${visible ? "opacity-85" : "opacity-0"}
+                text-sky-100 leading-[1.7] text-[0.95rem]
+                transition-all duration-900 delay-300
+                ${visible ? "opacity-85 translate-y-0" : "opacity-0 translate-y-4"}
               `}
             >
               {slides[current].subtext}
@@ -124,36 +127,40 @@ const Hero = () => {
             <div
               className={`
                 flex flex-wrap gap-4 pt-8
-                transition-opacity duration-700
-                ${visible ? "opacity-100" : "opacity-0"}
+                transition-all duration-900 delay-400
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
               `}
             >
               <Link to="/services" className="flex-1 sm:flex-none">
-                <button className="
-                  w-full sm:w-auto
-                  px-8 py-3.5 rounded-full
-                  text-white font-medium
-                  bg-white/15 backdrop-blur-md
-                  border border-white/30
-                  transition-all duration-300
-                  hover:bg-white/25 hover:border-white/50
-                  active:scale-[0.97]
-                ">
-                  Our Services
+                <button
+                  className="
+                    w-full sm:w-auto
+                    px-8 py-3.5 rounded-full
+                    text-white font-medium
+                    bg-white/15 backdrop-blur-md
+                    border border-white/30
+                    transition-all duration-300
+                    hover:bg-white/25 hover:border-white/50
+                    active:scale-[0.96]
+                  "
+                >
+                  View Our Programs
                 </button>
               </Link>
 
               <Link to="/contact" className="flex-1 sm:flex-none">
-                <button className="
-                  w-full sm:w-auto
-                  px-8 py-3.5 rounded-full
-                  text-sky-900 font-medium
-                  bg-white
-                  transition-all duration-300
-                  hover:bg-sky-100
-                  active:scale-[0.97]
-                ">
-                  Contact Us
+                <button
+                  className="
+                    w-full sm:w-auto
+                    px-8 py-3.5 rounded-full
+                    text-sky-900 font-medium
+                    bg-white
+                    transition-all duration-300
+                    hover:bg-sky-100
+                    active:scale-[0.96]
+                  "
+                >
+                  Partner With Us
                 </button>
               </Link>
             </div>
