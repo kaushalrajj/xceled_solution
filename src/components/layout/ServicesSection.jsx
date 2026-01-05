@@ -9,22 +9,22 @@ import {
 const services = [
   {
     title: "Skill-Based Learning",
-    desc: "Hands-on programs focused on practical skills that build confidence and real-world capability.",
+    desc: "Outcome-oriented programs focused on practical skills that improve confidence, competence, and real-world readiness.",
     icon: AcademicCapIcon,
   },
   {
     title: "Institutional Education",
-    desc: "Structured initiatives designed in collaboration with schools and academic institutions.",
+    desc: "Collaborative initiatives with schools and institutions to deliver structured, industry-aligned learning experiences.",
     icon: UserGroupIcon,
   },
   {
     title: "Career Clarity & Guidance",
-    desc: "Aptitude assessment, mentorship, and guidance to help learners make informed academic and career choices.",
+    desc: "Structured assessment, mentorship, and guidance that help learners make informed academic and career decisions.",
     icon: BriefcaseIcon,
   },
   {
     title: "Innovation & Community Programs",
-    desc: "Workshops and outreach initiatives that encourage innovation, creativity, and learning beyond classrooms.",
+    desc: "Workshops and outreach initiatives that foster innovation, creativity, and applied learning beyond traditional classrooms.",
     icon: LightBulbIcon,
   },
 ];
@@ -50,26 +50,31 @@ const ServicesSection = () => {
 
             <div className="flex items-center gap-4">
               <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
-              <p className="
-                uppercase tracking-[0.32em]
-                text-xs sm:text-sm
-                font-bold text-sky-600
-              ">
+              <p
+                className="
+                  uppercase tracking-[0.32em]
+                  text-xs sm:text-sm
+                  font-bold text-sky-600
+                "
+              >
                 What We Enable
               </p>
             </div>
 
-            <h2 className="
-              font-bold tracking-tight text-slate-800
-              text-[clamp(1.9rem,3.6vw,2.7rem)]
-              leading-tight
-            ">
-              Focus Areas That Create Impact
+            <h2
+              className="
+                font-bold tracking-tight text-slate-800
+                text-[clamp(1.95rem,3.6vw,2.7rem)]
+                leading-tight
+              "
+            >
+              Focus Areas Designed for Real Outcomes
             </h2>
 
             <p className="text-slate-600 leading-[1.75] text-[0.95rem] sm:text-[1rem]">
-              Our work spans a few focused areas where structured learning, guidance,
-              and innovation create long-term value for learners and institutions.
+              Our services are built around a few focused capabilities where structured
+              learning, mentorship, and innovation translate directly into measurable
+              educational and career outcomes.
             </p>
           </div>
 
@@ -83,7 +88,7 @@ const ServicesSection = () => {
                   key={index}
                   className="
                     group relative
-                    transition-all duration-500 ease-out
+                    transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]
                     hover:-translate-y-1.5
                   "
                 >
@@ -137,7 +142,7 @@ const ServicesSection = () => {
                 transition-all duration-300 ease-out
               "
             >
-              Explore Programs
+              Explore Our Programs
               <span className="text-lg">→</span>
             </Link>
           </div>

@@ -8,22 +8,22 @@ const impacts = [
   {
     image: impactEducation,
     title: "Learner-Centered Engagement",
-    desc: "Hands-on learning environments that encourage curiosity, confidence, and active participation.",
+    desc: "Structured, hands-on learning environments that actively improve participation, confidence, and practical understanding.",
   },
   {
     image: impactClassroom,
     title: "Institutional Collaboration",
-    desc: "Working closely with schools and institutions to deliver structured, skill-focused programs.",
+    desc: "Long-term collaboration with schools and institutions to deliver aligned, skill-focused educational programs.",
   },
   {
     image: impactWorkshop,
     title: "Applied Skill Development",
-    desc: "Workshops designed to bridge theoretical understanding with real-world application.",
+    desc: "Workshops designed to convert theoretical knowledge into usable, real-world skills through guided practice.",
   },
   {
     image: impactTeaching,
     title: "Mentorship & Direction",
-    desc: "Focused guidance that supports clarity, discipline, and long-term academic and career thinking.",
+    desc: "Consistent mentorship that builds clarity, discipline, and informed academic and career decision-making.",
   },
 ];
 
@@ -42,13 +42,14 @@ const ImpactSection = () => {
             </p>
           </div>
 
-          <h2 className="font-bold tracking-tight text-slate-800 text-[clamp(1.9rem,3.6vw,2.7rem)] leading-tight">
-            Learning That Extends Beyond the Classroom
+          <h2 className="font-bold tracking-tight text-slate-800 text-[clamp(1.95rem,3.6vw,2.7rem)] leading-tight">
+            Measurable Learning. Meaningful Outcomes.
           </h2>
 
           <p className="text-slate-600 leading-[1.75] text-[0.95rem] sm:text-[1rem]">
-            Through hands-on programs, institutional collaboration, and guided learning,
-            we focus on building capability, confidence, and practical understanding.
+            Our initiatives focus on delivering tangible educational outcomes through
+            hands-on engagement, institutional collaboration, and guided skill development.
+            The result is learning that extends beyond classrooms into real-world readiness.
           </p>
         </header>
 
@@ -59,7 +60,7 @@ const ImpactSection = () => {
               key={index}
               className="
                 group relative
-                transition-transform duration-700 ease-out
+                transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)]
                 hover:-translate-y-2
                 will-change-transform
               "
@@ -77,7 +78,7 @@ const ImpactSection = () => {
                   className="
                     w-full h-full
                     object-cover object-center
-                    transition-transform duration-[1600ms] ease-out
+                    transition-transform duration-[1800ms] ease-out
                     group-hover:scale-[1.06]
                   "
                 />
