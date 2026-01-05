@@ -185,7 +185,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mb-24"
       >
         <div>
-          <p className="uppercase tracking-widest text-l font-semibold font-bold text-sky-600 mb-3">
+          <p className="uppercase tracking-widest text-s font-semibold font-bold text-sky-600 mb-3">
             Who We Are
           </p>
 
