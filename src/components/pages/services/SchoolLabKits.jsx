@@ -50,7 +50,7 @@ const SchoolLabKits = () => {
 
           {/* IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-white p-4 rounded-3xl shadow-xl overflow-hidden group">
+            <div className=" p-4 rounded-3xl shadow-xl overflow-hidden group">
               <img
                 src={l1}
                 alt="School Laboratory Kit"

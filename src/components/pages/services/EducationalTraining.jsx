@@ -1,7 +1,7 @@
 import ServiceLayout from "./ServiceLayout";
 
 /* ================= IMAGES ================= */
-import e1 from "../../../assets/images/services/e1.webp";
+import e1 from "../../../assets/images/services/online-exam-benefit.webp";
 import e2 from "../../../assets/images/services/e2.webp";
 
 /* ================= ICONS ================= */

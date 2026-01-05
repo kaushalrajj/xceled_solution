@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
-import aboutImg from "../../assets/images/hero/edit1.webp";
+import aboutImg from "../../assets/images/hero/edit2.webp";
 import directorImg from "../../assets/images/hero/director.webp";
 
 /* ================= TEAM IMAGES ================= */

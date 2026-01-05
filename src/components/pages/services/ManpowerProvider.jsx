@@ -6,44 +6,51 @@ import k2 from "../../../assets/images/services/k3.webp";
 
 /* ================= ICONS ================= */
 import {
-  FlaskConical,
-  Cpu,
-  Calculator,
-  Palette,
-  BookOpen,
+  Users,
+  Briefcase,
+  FileCheck,
+  HardHat,
+  Monitor,
+  Factory,
+  Hospital,
+  ShoppingCart,
+  Hotel,
+  Plane,
   GraduationCap,
-  FileText,
+  Building2,
   CheckCircle,
-  Lightbulb,
+  ShieldCheck,
   Layers,
   Headphones,
+  Lightbulb,
 } from "lucide-react";
 
-const EducationalKits = () => {
+const ManpowerServices = () => {
   return (
     <ServiceLayout
-      title="Educational Kits"
-      subtitle="Hands-on, curriculum-aligned educational kits designed to foster curiosity, innovation, and experiential learning across age groups."
+      title="Manpower & Staffing Solutions"
+      subtitle="Connecting talent with opportunity through reliable, compliant, and industry-focused manpower solutions."
     >
-      {/* ================= HERO / INTRO (TEXT LEFT – IMAGE RIGHT) ================= */}
+      {/* ================= HERO / INTRO ================= */}
       <section className="mb-36">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* TEXT */}
           <div>
             <h2 className="text-2xl font-semibold text-slate-900 mb-6">
-              Empowering Learning Through Hands-On Experience
+              Connecting Talent with Opportunity
             </h2>
 
             <p className="text-slate-700 leading-relaxed mb-4">
-              At Xceled Solutions, we believe experiential learning is essential
-              for nurturing curiosity, creativity, and innovation among students.
+              At Ekwik Solution, we specialize in delivering tailored manpower
+              solutions that align with the unique needs of businesses across
+              various sectors.
             </p>
 
             <p className="text-slate-700 leading-relaxed">
-              Our educational kits combine practical tools with structured
-              learning to complement academic curricula and encourage exploration,
-              experimentation, and conceptual clarity.
+              Our commitment to excellence ensures organizations receive
+              competent, reliable personnel while job seekers find roles that
+              match their skills and aspirations.
             </p>
           </div>
 
@@ -52,7 +59,7 @@ const EducationalKits = () => {
             <div className="bg-sky-50 p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
               <img
                 src={k1}
-                alt="Educational Kits Learning"
+                alt="Manpower Services"
                 className="
                   w-full max-w-[460px] rounded-2xl object-cover
                   transition-transform duration-700 ease-out
@@ -65,52 +72,52 @@ const EducationalKits = () => {
         </div>
       </section>
 
-      {/* ================= OUR EDUCATIONAL KITS ================= */}
+      {/* ================= OUR SERVICES ================= */}
       <section className="mb-36">
         <h2 className="text-2xl font-semibold text-slate-900 mb-14">
-          Our Educational Kits
+          Our Comprehensive Services
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
             {
-              icon: FlaskConical,
-              title: "Science Exploration Kits",
+              icon: Users,
+              title: "Temporary Staffing",
               points: [
-                "Interactive experiments in physics, chemistry, and biology",
-                "Safe and durable materials",
-                "Real-world scientific applications",
-                "Detailed instructional manuals",
+                "Flexible staffing options for short-term projects",
+                "Seasonal demand management",
+                "Quick deployment of workforce",
+                "Efficient and cost-effective solutions",
               ],
             },
             {
-              icon: Cpu,
-              title: "Robotics & IoT Kits",
+              icon: Briefcase,
+              title: "Permanent Recruitment",
               points: [
-                "Introduction to automation and programming",
-                "Basic to advanced robotics concepts",
-                "IoT modules and sensors",
-                "Hands-on coding experience",
+                "Long-term workforce placement",
+                "Cultural and skill-based fit",
+                "Comprehensive screening",
+                "Reliable talent acquisition",
               ],
             },
             {
-              icon: Calculator,
-              title: "Mathematics Learning Kits",
+              icon: FileCheck,
+              title: "Contractual Staffing",
               points: [
-                "Hands-on mathematical reasoning",
-                "Problem-solving activities",
-                "Visual aids for complex concepts",
-                "Conceptual clarity through practice",
+                "Skilled professionals for defined durations",
+                "Flexible contract terms",
+                "Specialized skill deployment",
+                "Compliance-managed workforce",
               ],
             },
             {
-              icon: Palette,
-              title: "Art & Creativity Kits",
+              icon: HardHat,
+              title: "Skilled & Unskilled Labor",
               points: [
-                "Creative expression tools",
-                "Cross-subject integration",
-                "Project-based learning",
-                "Skill development through art",
+                "Industry-specific manpower",
+                "Operational readiness",
+                "Reliable workforce supply",
+                "On-demand labor solutions",
               ],
             },
           ].map((item, i) => (
@@ -145,34 +152,22 @@ const EducationalKits = () => {
         </div>
       </section>
 
-      {/* ================= KEY FEATURES ================= */}
+      {/* ================= INDUSTRIES ================= */}
       <section className="mb-36">
         <h2 className="text-2xl font-semibold text-slate-900 mb-14">
-          Key Features
+          Industries We Serve
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {[
-            {
-              icon: BookOpen,
-              title: "Curriculum-Aligned",
-              text: "Developed in line with educational standards for relevance and effectiveness.",
-            },
-            {
-              icon: GraduationCap,
-              title: "Age-Appropriate Design",
-              text: "Designed for learners from primary to higher secondary levels.",
-            },
-            {
-              icon: FileText,
-              title: "Comprehensive Resources",
-              text: "Includes manuals, guides, and educator support material.",
-            },
-            {
-              icon: CheckCircle,
-              title: "Quality Assurance",
-              text: "Durable, safe, and reliable materials for long-term usage.",
-            },
+            { icon: Monitor, title: "IT" },
+            { icon: Factory, title: "Manufacturing" },
+            { icon: Hospital, title: "Healthcare" },
+            { icon: ShoppingCart, title: "Retail & E-commerce" },
+            { icon: Hotel, title: "Hospitality" },
+            { icon: Plane, title: "Tourism" },
+            { icon: Building2, title: "Construction" },
+            { icon: GraduationCap, title: "Education" },
           ].map((item, i) => (
             <div
               key={i}
@@ -183,44 +178,41 @@ const EducationalKits = () => {
                 hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5" />
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-4" />
+              <p className="text-sm font-medium text-slate-800">
                 {item.title}
-              </h3>
-              <p className="text-sm text-slate-700 leading-relaxed">
-                {item.text}
               </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE (TEXT LEFT – IMAGE RIGHT) ================= */}
+      {/* ================= WHY CHOOSE ================= */}
       <section className="mb-28">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* TEXT */}
           <div>
             <h2 className="text-2xl font-semibold text-slate-900 mb-8">
-              Why Choose Xceled Solutions’ Educational Kits?
+              Why Choose Ekwik Solution?
             </h2>
 
             <div className="space-y-4 text-slate-700">
               <p className="flex items-start gap-3">
                 <Lightbulb className="h-5 w-5 text-sky-600 mt-1" />
-                Expertly crafted by educators and industry professionals.
+                Customized manpower solutions tailored to client needs.
               </p>
               <p className="flex items-start gap-3">
                 <Layers className="h-5 w-5 text-sky-600 mt-1" />
-                Suitable for classrooms, workshops, and home learning.
+                Extensive talent pool with quick and precise matching.
               </p>
               <p className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-sky-600 mt-1" />
-                Promotes hands-on learning and critical thinking.
+                <ShieldCheck className="h-5 w-5 text-sky-600 mt-1" />
+                Strict compliance with legal and ethical standards.
               </p>
               <p className="flex items-start gap-3">
                 <Headphones className="h-5 w-5 text-sky-600 mt-1" />
-                Training sessions and dedicated customer support.
+                Continuous support for both clients and candidates.
               </p>
             </div>
           </div>
@@ -230,7 +222,7 @@ const EducationalKits = () => {
             <div className="bg-sky-50 p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
               <img
                 src={k2}
-                alt="Hands-on Educational Kits"
+                alt="Manpower Workforce"
                 className="
                   w-full max-w-[460px] rounded-2xl object-cover
                   transition-transform duration-700 ease-out
@@ -246,4 +238,4 @@ const EducationalKits = () => {
   );
 };
 
-export default EducationalKits;
+export default ManpowerServices;
