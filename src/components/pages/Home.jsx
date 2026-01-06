@@ -16,7 +16,6 @@ const Home = () => {
       <ImpactSection />
       <TrustSection />
       <CTASection />
-      <Footer />
     </main>
   );
 };
