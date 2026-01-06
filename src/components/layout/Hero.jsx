@@ -59,33 +59,47 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-screen min-h-[100svh] overflow-hidden">
-      {/* Background Image */}
+    <section
+      className="
+        relative w-screen
+        min-h-[65svh] sm:min-h-[75svh] lg:min-h-[85svh]
+        overflow-hidden
+      "
+    >
+      {/* ================= BACKGROUND IMAGE ================= */}
       <div className="absolute inset-0">
         <img
           src={slides[current].image}
           alt=""
           className={`
-            w-full h-full object-cover object-top
-            transition-all duration-[3200ms] ease-[cubic-bezier(.16,1,.3,1)]
-            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.065]"}
+            w-full h-full
+            object-cover object-center
+            transition-all duration-[2800ms] ease-[cubic-bezier(.16,1,.3,1)]
+            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.05]"}
           `}
         />
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/70 to-transparent" />
+      {/* ================= OVERLAY ================= */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/65 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10 min-h-[100svh] flex items-center">
+      {/* ================= CONTENT ================= */}
+      <div
+        className="
+          relative z-10
+          min-h-[65svh] sm:min-h-[75svh] lg:min-h-[85svh]
+          flex items-center
+        "
+      >
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-[44rem] space-y-6">
+          <div className="max-w-[38rem] space-y-4 sm:space-y-5">
 
             <p
               className={`
-                uppercase tracking-[0.38em] text-sky-100/70 text-xs
-                transition-all duration-700
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
+                uppercase tracking-[0.34em]
+                text-sky-100/70 text-[0.7rem]
+                transition-all duration-600
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
               `}
             >
               XCELED SOLUTIONS
@@ -93,11 +107,11 @@ const Hero = () => {
 
             <h1
               className={`
-                font-extrabold tracking-tight leading-[1.1]
+                font-extrabold tracking-tight leading-[1.08]
                 text-white
-                text-[clamp(2.2rem,5.4vw,3.9rem)]
-                transition-all duration-900 delay-100
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+                text-[clamp(1.85rem,4.8vw,3.3rem)]
+                transition-all duration-800 delay-75
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
               `}
             >
               {slides[current].heading}
@@ -105,10 +119,10 @@ const Hero = () => {
 
             <p
               className={`
-                text-sky-50 leading-[1.7]
-                text-[clamp(1rem,2.2vw,1.15rem)]
-                transition-all duration-900 delay-200
-                ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-5"}
+                text-sky-50 leading-[1.6]
+                text-[0.95rem]
+                transition-all duration-800 delay-150
+                ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-3"}
               `}
             >
               {slides[current].text}
@@ -116,50 +130,31 @@ const Hero = () => {
 
             <p
               className={`
-                text-sky-100 leading-[1.7] text-[0.95rem]
-                transition-all duration-900 delay-300
-                ${visible ? "opacity-85 translate-y-0" : "opacity-0 translate-y-4"}
+                text-sky-100 leading-[1.6]
+                text-[0.88rem]
+                transition-all duration-800 delay-250
+                ${visible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-3"}
               `}
             >
               {slides[current].subtext}
             </p>
 
+            {/* ================= CTA ================= */}
             <div
               className={`
-                flex flex-wrap gap-4 pt-8
-                transition-all duration-900 delay-400
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+                flex flex-wrap gap-3 pt-5
+                transition-all duration-800 delay-350
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
               `}
             >
-              <Link to="/services" className="flex-1 sm:flex-none">
-                <button
-                  className="
-                    w-full sm:w-auto
-                    px-8 py-3.5 rounded-full
-                    text-white font-medium
-                    bg-white/15 backdrop-blur-md
-                    border border-white/30
-                    transition-all duration-300
-                    hover:bg-white/25 hover:border-white/50
-                    active:scale-[0.96]
-                  "
-                >
+              <Link to="/services">
+                <button className="px-7 py-3 rounded-full bg-white/15 border border-white/30 text-white">
                   View Our Programs
                 </button>
               </Link>
 
-              <Link to="/contact" className="flex-1 sm:flex-none">
-                <button
-                  className="
-                    w-full sm:w-auto
-                    px-8 py-3.5 rounded-full
-                    text-sky-900 font-medium
-                    bg-white
-                    transition-all duration-300
-                    hover:bg-sky-100
-                    active:scale-[0.96]
-                  "
-                >
+              <Link to="/contact">
+                <button className="px-7 py-3 rounded-full bg-white text-sky-900">
                   Partner With Us
                 </button>
               </Link>

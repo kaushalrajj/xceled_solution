@@ -8,14 +8,16 @@ import Footer from "../layout/Footer";
 
 const Home = () => {
   return (
-    <>
+    // OFFSET CONTENT BELOW FIXED NAVBAR
+    <main className="pt-14 sm:pt-16">
       <Hero />
       <AboutSection />
       <ServicesSection />
       <ImpactSection />
       <TrustSection />
       <CTASection />
-    </>
+      <Footer />
+    </main>
   );
 };
 

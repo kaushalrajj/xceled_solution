@@ -6,7 +6,6 @@ import {
   LightBulbIcon,
 } from "@heroicons/react/24/outline";
 
-/* ================= SERVICES DATA ================= */
 const services = [
   {
     title: "Skill-Based Learning",
@@ -32,14 +31,24 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    /* ===== FULL-WIDTH BLUE BACKGROUND ===== */
-    <section className="w-full bg-sky-50/60 py-24">
+    // FULL-WIDTH SECTION
+    <section className="w-full py-24 bg-gradient-to-b from-white via-sky-50/40 to-white">
 
-      {/* OUTER PADDING (FULL WIDTH) */}
+      {/* FULL-WIDTH WRAPPER — NO MAX WIDTH */}
       <div className="w-full px-6 lg:px-16">
 
-        {/* CONTENT WIDTH CONTROL */}
-        <div className="max-w-7xl mx-auto">
+        {/* CONTENT CONTAINER (ONLY CONTENT IS CENTERED, BACKGROUND IS FULL WIDTH) */}
+        <div
+          className="
+            relative
+            w-full
+            bg-sky-50/60 backdrop-blur-sm
+            rounded-[2.25rem]
+            px-6 sm:px-10 md:px-14
+            py-20
+            border border-sky-100
+          "
+        >
 
           {/* ================= HEADING ================= */}
           <div className="max-w-2xl mb-16 space-y-5">
@@ -57,12 +66,12 @@ const ServicesSection = () => {
 
             <p className="text-slate-600 leading-[1.75] text-[0.95rem] sm:text-[1rem]">
               Our services focus on clearly defined capabilities where structured
-              learning, mentorship, and innovation translate into measurable
-              academic and career impact.
+              learning, mentorship, and innovation translate into measurable academic
+              and career impact.
             </p>
           </div>
 
-          {/* ================= SERVICES GRID ================= */}
+          {/* ================= SERVICES ================= */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
             {services.map((service, index) => {
@@ -77,7 +86,6 @@ const ServicesSection = () => {
                     hover:-translate-y-1
                   "
                 >
-                  {/* hover underline */}
                   <div
                     className="
                       absolute inset-x-0 -bottom-4
@@ -113,7 +121,7 @@ const ServicesSection = () => {
                 rounded-full
                 border border-sky-400/70
                 text-sky-600 font-medium
-                bg-white
+                bg-sky-50
                 hover:bg-sky-100
                 hover:border-sky-500
                 shadow-sm hover:shadow-md

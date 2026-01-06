@@ -1,36 +1,10 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import aboutImg from "../../assets/images/hero/about.webp";
 
 const AboutSection = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          section.classList.add("opacity-100", "translate-y-0");
-        }
-      },
-      { threshold: 0.35 }
-    );
-
-    if (section) observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section className="w-full mt-15 md:mt-36 pb-24 md:pb-32 relative z-10">
-      <div
-        ref={sectionRef}
-        className="
-          max-w-7xl mx-auto px-6
-          opacity-0 translate-y-12
-          transition-all duration-[1100ms] ease-[cubic-bezier(.16,1,.3,1)]
-        "
-      >
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* ================= TEXT ================= */}
