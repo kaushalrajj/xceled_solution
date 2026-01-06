@@ -25,17 +25,21 @@ import SchoolLabKits from "./components/pages/services/SchoolLabKits";
 
 const App = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-b from-sky-50 via-white to-white text-slate-800 antialiased">
+    <div className="min-h-screen relative bg-gradient-to-b from-sky-50 via-white to-white text-slate-800 antialiased">
+      
       {/* Scroll reset on every route change */}
       <ScrollToTop />
 
-      {/* Decorative blobs */}
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/3 -right-40 w-[420px] h-[420px] bg-yellow-200/40 rounded-full blur-3xl pointer-events-none"></div>
+      {/* Decorative blobs (isolated overflow control) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 -right-40 w-[420px] h-[420px] bg-yellow-200/40 rounded-full blur-3xl" />
+      </div>
 
       <Navbar />
 
-      <main className="relative z-10">
+      {/* MAIN CONTENT — FULL WIDTH */}
+      <main className="relative z-10 w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
