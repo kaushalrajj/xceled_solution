@@ -3,41 +3,52 @@ import aboutImg from "../../assets/images/hero/about.webp";
 
 const AboutSection = () => {
   return (
-    <section className="w-full mt-15 md:mt-36 pb-24 md:pb-32 relative z-10">
+    <section
+      className="
+        w-full mt-15 md:mt-36
+        pb-24 md:pb-32
+        relative z-10
+      "
+      style={{ fontFamily: "Inter, sans-serif" }}
+    >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ================= TEXT ================= */}
           <div className="space-y-6 flex flex-col justify-center relative z-20 max-w-xl">
 
             {/* SECTION MARKER */}
             <div className="flex items-center gap-4">
-              <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+              <span className="block w-9 h-[2.5px] bg-sky-500 rounded-full" />
               <p
                 className="
-                  uppercase tracking-[0.32em]
-                  text-xs sm:text-sm
-                  font-bold text-sky-600
+                  uppercase tracking-[0.34em]
+                  text-[0.7rem] sm:text-xs
+                  font-semibold text-sky-600
                 "
               >
                 Who We Are
               </p>
             </div>
 
+            {/* HEADING */}
             <h2
               className="
-                font-bold tracking-tight text-slate-800 leading-tight
-                text-[clamp(1.95rem,3.6vw,2.7rem)]
+                font-semibold tracking-tight
+                text-slate-800
+                leading-[1.15]
+                text-[clamp(1.85rem,3.4vw,2.6rem)]
               "
             >
               Building Skills That Translate Into Real Opportunity
             </h2>
 
+            {/* BODY */}
             <p
               className="
                 text-slate-600
                 text-[0.95rem] sm:text-[1rem]
-                leading-[1.75]
+                leading-[1.7]
               "
             >
               Xceled Solutions is a PMEGP-supported, women-led initiative dedicated
@@ -51,7 +62,7 @@ const AboutSection = () => {
               className="
                 text-slate-600
                 text-[0.9rem] sm:text-[0.95rem]
-                leading-[1.75]
+                leading-[1.7]
               "
             >
               Our focus remains clear — practical learning, measurable outcomes,
@@ -60,10 +71,12 @@ const AboutSection = () => {
               credentials.
             </p>
 
+            {/* HIGHLIGHTS */}
             <div
               className="
-                text-slate-700 text-[0.85rem]
-                flex flex-wrap gap-x-6 gap-y-2 pt-2
+                text-slate-700
+                text-[0.82rem]
+                flex flex-wrap gap-x-6 gap-y-2 pt-1
               "
             >
               <span>• PMEGP Supported Initiative</span>
@@ -75,34 +88,32 @@ const AboutSection = () => {
             <Link
               to="/about"
               className="
-                inline-flex items-center justify-center gap-3
+                inline-flex items-center justify-center gap-2.5
                 mt-6 w-full sm:w-fit
-                px-8 py-3.5
+                px-7 py-3
                 rounded-full
-                border border-sky-400/60
-                text-sky-600 font-medium
-                bg-sky-50/80 backdrop-blur-sm
-                shadow-md
-                hover:bg-sky-100 hover:border-sky-500 hover:shadow-lg
-                active:scale-[0.97]
+                border border-sky-400/50
+                text-sky-700 font-medium text-sm
+                bg-white
+                shadow-sm
+                hover:bg-sky-50 hover:border-sky-500
+                active:scale-[0.98]
                 transition-all duration-300 ease-out
               "
             >
               Learn More About Our Approach
-              <span className="text-lg transition-transform group-hover:translate-x-1">
-                →
-              </span>
+              <span className="text-base">→</span>
             </Link>
 
           </div>
 
           {/* ================= IMAGE ================= */}
-          <div className="relative z-0 pointer-events-none lg:pointer-events-auto">
+          <div className="relative z-0">
             <div
               className="
-                relative max-h-[26rem]
+                relative max-h-[24rem]
                 overflow-hidden rounded-3xl
-                shadow-sm
+                shadow-md
               "
             >
               <img
@@ -111,17 +122,17 @@ const AboutSection = () => {
                 className="
                   w-full h-full object-cover
                   transition-transform duration-700 ease-out
-                  hover:scale-[1.04]
+                  hover:scale-[1.03]
                 "
               />
             </div>
 
-            {/* Soft accent */}
+            {/* SUBTLE ACCENT */}
             <div
               className="
-                absolute -bottom-10 -left-10
-                w-40 h-40
-                bg-sky-200/40
+                absolute -bottom-8 -left-8
+                w-32 h-32
+                bg-sky-200/30
                 rounded-full blur-3xl
                 -z-10
               "

@@ -2,47 +2,43 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
-/* ================= INSTITUTIONAL GALLERY IMAGES ================= */
-import alirajpur from "../../assets/images/gallery/JNV Alirajpur.jpg";
-import arariya from "../../assets/images/gallery/JNV Arariya.jpg";
-import bankura from "../../assets/images/gallery/Jnv Bankura.jpg";
-import chatra from "../../assets/images/gallery/JNV Chatra.jpg";
-import diu from "../../assets/images/gallery/Jnv Diu.jpg";
-import eastKameng from "../../assets/images/gallery/JNV East Kameng.jpg";
-import jaisalmer from "../../assets/images/gallery/JNV Jaisalmer.jpg";
-import malkangiri from "../../assets/images/gallery/JNV Malkangiri.jpg";
-import navsar from "../../assets/images/gallery/JNV Navsar.jpg";
-import neemuch from "../../assets/images/gallery/JNV Neemuch.jpg";
-import raygada from "../../assets/images/gallery/Jnv Raygada.jpg";
-import garoHills from "../../assets/images/gallery/JNV South West Garo Hills.jpg";
-import subansiri from "../../assets/images/gallery/JNV Upper Subansiri.jpg";
+/* ================= UPDATED GALLERY IMAGES (1200 × 900) ================= */
+import img1 from "../../assets/images/gallery/1.webp";
+import img2 from "../../assets/images/gallery/2.webp";
+import img3 from "../../assets/images/gallery/3.webp";
+import img4 from "../../assets/images/gallery/4.webp";
+import img5 from "../../assets/images/gallery/5.webp";
+import img6 from "../../assets/images/gallery/6.webp";
+import img7 from "../../assets/images/gallery/7.webp";
+import img8 from "../../assets/images/gallery/8.webp";
+import img9 from "../../assets/images/gallery/9.webp";
+import img10 from "../../assets/images/gallery/10.webp";
+import img11 from "../../assets/images/gallery/11.webp";
 
 /* ================= DATA ================= */
 const galleryItems = [
-  { title: "JNV Alirajpur", image: alirajpur },
-  { title: "JNV Arariya", image: arariya },
-  { title: "JNV Bankura", image: bankura },
-  { title: "JNV Chatra", image: chatra },
-  { title: "JNV Diu", image: diu },
-  { title: "JNV East Kameng", image: eastKameng },
-  { title: "JNV Jaisalmer", image: jaisalmer },
-  { title: "JNV Malkangiri", image: malkangiri },
-  { title: "JNV Navsar", image: navsar },
-  { title: "JNV Neemuch", image: neemuch },
-  { title: "JNV Raygada", image: raygada },
-  { title: "JNV South West Garo Hills", image: garoHills },
-  { title: "JNV Upper Subansiri", image: subansiri },
+  { title: "Institutional Training Session", image: img1 },
+  { title: "Student Engagement Workshop", image: img2 },
+  { title: "Hands-on Learning Program", image: img3 },
+  { title: "Classroom Interaction", image: img4 },
+  { title: "Skill Development Session", image: img5 },
+  { title: "Educational Outreach Program", image: img6 },
+  { title: "Collaborative Learning Activity", image: img7 },
+  { title: "Training & Mentorship", image: img8 },
+  { title: "On-Ground Program Highlights", image: img9 },
+  { title: "Institutional Group Interaction", image: img10 },
+  { title: "Program Completion Snapshot", image: img11 },
 ];
 
 /* ================= COMPONENT ================= */
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState(null);
 
-  /* ESC to close fullscreen */
+  /* ESC key closes fullscreen */
   useEffect(() => {
-    const esc = (e) => e.key === "Escape" && setActiveImage(null);
-    window.addEventListener("keydown", esc);
-    return () => window.removeEventListener("keydown", esc);
+    const escHandler = (e) => e.key === "Escape" && setActiveImage(null);
+    window.addEventListener("keydown", escHandler);
+    return () => window.removeEventListener("keydown", escHandler);
   }, []);
 
   return (
@@ -63,41 +59,43 @@ const Gallery = () => {
             </h1>
             <div className="w-20 h-[2px] bg-sky-500 mb-6 rounded-full" />
             <p className="text-slate-600 text-lg leading-relaxed">
-              A curated visual journal capturing our institutional engagements,
-              on-ground training programs, and educational initiatives across
-              diverse regions of India.
+              A professional visual showcase highlighting our institutional
+              programs, student engagement activities, and on-ground training
+              initiatives across multiple regions.
             </p>
           </motion.div>
 
           {/* GRID */}
           <h2 className="text-2xl font-semibold text-slate-800 mb-12">
-            Institutional Engagements
+            Program Highlights
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {galleryItems.map((item, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, ease: "easeOut" }}
                 whileHover={{
                   y: -6,
-                  boxShadow: "0 22px 45px rgba(0,0,0,0.08)",
+                  boxShadow: "0 28px 55px rgba(0,0,0,0.10)",
                 }}
                 onClick={() => setActiveImage(item)}
-                className="cursor-zoom-in bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden"
+                className="cursor-zoom-in bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden transition-all"
               >
-                <div className="aspect-[4/5] bg-slate-50 flex items-center justify-center">
+                {/* IMAGE */}
+                <div className="aspect-[4/3] bg-slate-50 flex items-center justify-center overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="max-w-full max-h-full object-contain transition-transform duration-500 hover:scale-[1.02]"
                     loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.04]"
                   />
                 </div>
 
+                {/* TITLE */}
                 <div className="px-5 py-4 border-t border-slate-100">
                   <h3 className="font-medium text-slate-800 tracking-wide">
                     {item.title}
@@ -126,22 +124,21 @@ const Gallery = () => {
               onClick={() => setActiveImage(null)}
               className="absolute top-6 right-6 z-50
                          bg-black/60 hover:bg-black/80
-                         text-white p-2 rounded-full
-                         transition"
+                         text-white p-2 rounded-full transition"
               aria-label="Close image"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* IMAGE */}
+            {/* FULL IMAGE */}
             <motion.img
               src={activeImage.image}
               alt={activeImage.title}
-              initial={{ scale: 0.94, opacity: 0 }}
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.96, opacity: 0 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="max-w-[92%] max-h-[88%] object-contain rounded-lg shadow-2xl"
+              className="max-w-[94%] max-h-[90%] object-contain rounded-xl shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>

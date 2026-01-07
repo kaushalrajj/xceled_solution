@@ -6,38 +6,47 @@ import slide2 from "../../assets/images/hero/slider2.webp";
 import slide3 from "../../assets/images/hero/slider3.webp";
 import slide4 from "../../assets/images/hero/slider4.webp";
 
+/* ================= GOOGLE FONT ================= */
+const FontLoader = () => (
+  <style>
+    {`
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    `}
+  </style>
+);
+
 const slides = [
   {
     image: slide1,
-    heading: "Shaping Industry-Ready Professionals, Not Just Learners",
+    heading: "Developing Industry-Ready Professionals",
     text:
-      "A PMEGP-backed, women-led initiative delivering structured, hands-on skill development aligned directly with real industry requirements.",
+      "A PMEGP-backed, women-led initiative delivering structured, hands-on skill development aligned with real industry needs.",
     subtext:
-      "We don’t focus on certificates alone — we focus on competence, confidence, and long-term career sustainability.",
+      "Our focus is long-term capability building — not short-term certification outcomes.",
   },
   {
     image: slide2,
-    heading: "Education Designed for Outcomes, Not Just Academics",
+    heading: "Outcome-Driven Education for Real Careers",
     text:
-      "Our programs bridge the gap between classrooms and careers through practical learning, applied exposure, and guided mentorship.",
+      "We bridge the gap between academic learning and workplace expectations through applied training and guided mentorship.",
     subtext:
-      "Every curriculum is outcome-driven, measurable, and aligned with employability and real-world performance.",
+      "Each program is measurable, practical, and aligned with employability benchmarks.",
   },
   {
     image: slide3,
-    heading: "Skills That Convert Potential Into Performance",
+    heading: "Turning Potential Into Workplace Performance",
     text:
-      "Through industry-relevant training, expert guidance, and structured learning paths, we prepare individuals to perform from day one.",
+      "Through industry-aligned curriculum and expert-led instruction, we prepare individuals to contribute from day one.",
     subtext:
-      "From emerging technologies to foundational skills, our approach stays aligned with evolving workforce demands.",
+      "Our training evolves continuously with changing workforce demands.",
   },
   {
     image: slide4,
-    heading: "Empowering a Skilled, Self-Reliant, Confident India",
+    heading: "Building a Skilled and Self-Reliant India",
     text:
-      "We enable individuals to contribute meaningfully to the economy through responsible education and inclusive skill development.",
+      "We enable inclusive and responsible skill development that supports economic participation and long-term impact.",
     subtext:
-      "Aligned with national skill missions, our work focuses on scale, sustainability, and lasting social impact.",
+      "Our initiatives align with national missions and sustainable growth goals.",
   },
 ];
 
@@ -59,111 +68,143 @@ const Hero = () => {
   }, []);
 
   return (
-    <section
-      className="
-        relative w-screen
-        min-h-[65svh] sm:min-h-[75svh] lg:min-h-[85svh]
-        overflow-hidden
-      "
-    >
-      {/* ================= BACKGROUND IMAGE ================= */}
-      <div className="absolute inset-0">
-        <img
-          src={slides[current].image}
-          alt=""
-          className={`
-            w-full h-full
-            object-cover object-center
-            transition-all duration-[2800ms] ease-[cubic-bezier(.16,1,.3,1)]
-            ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.05]"}
-          `}
-        />
-      </div>
+    <>
+      <FontLoader />
 
-      {/* ================= OVERLAY ================= */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/65 to-transparent" />
-
-      {/* ================= CONTENT ================= */}
-      <div
+      <section
+        style={{ fontFamily: "Inter, sans-serif" }}
         className="
-          relative z-10
-          min-h-[65svh] sm:min-h-[75svh] lg:min-h-[85svh]
-          flex items-center
+          relative w-screen
+          min-h-[62svh] sm:min-h-[72svh] lg:min-h-[84svh]
+          overflow-hidden
         "
       >
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="max-w-[38rem] space-y-4 sm:space-y-5">
+        {/* BACKGROUND IMAGE */}
+        <div className="absolute inset-0">
+          <img
+            src={slides[current].image}
+            alt=""
+            className={`
+              w-full h-full object-cover object-center
+              transition-all duration-[3000ms]
+              ease-[cubic-bezier(.16,1,.3,1)]
+              ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.05]"}
+            `}
+          />
+        </div>
 
-            <p
-              className={`
-                uppercase tracking-[0.34em]
-                text-sky-100/70 text-[0.7rem]
-                transition-all duration-600
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
-              `}
-            >
-              XCELED SOLUTIONS
-            </p>
+        {/* OVERLAY (lighter, cleaner) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/60 to-sky-900/10" />
 
-            <h1
-              className={`
-                font-extrabold tracking-tight leading-[1.08]
-                text-white
-                text-[clamp(1.85rem,4.8vw,3.3rem)]
-                transition-all duration-800 delay-75
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
-              `}
-            >
-              {slides[current].heading}
-            </h1>
+        {/* CONTENT */}
+        <div
+          className="
+            relative z-10
+            min-h-[62svh] sm:min-h-[72svh] lg:min-h-[84svh]
+            flex items-center
+          "
+        >
+          <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="max-w-[40rem] space-y-5">
 
-            <p
-              className={`
-                text-sky-50 leading-[1.6]
-                text-[0.95rem]
-                transition-all duration-800 delay-150
-                ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-3"}
-              `}
-            >
-              {slides[current].text}
-            </p>
+              {/* Eyebrow */}
+              <p
+                className={`
+                  uppercase tracking-[0.34em]
+                  text-sky-200/70 text-[0.65rem]
+                  font-medium
+                  transition-all duration-600
+                  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
+                `}
+              >
+                XCELED SOLUTIONS
+              </p>
 
-            <p
-              className={`
-                text-sky-100 leading-[1.6]
-                text-[0.88rem]
-                transition-all duration-800 delay-250
-                ${visible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-3"}
-              `}
-            >
-              {slides[current].subtext}
-            </p>
+              {/* Heading (slimmer) */}
+              <h1
+                className={`
+                  font-bold tracking-tight
+                  leading-[1.1]
+                  text-white
+                  text-[clamp(1.75rem,4.6vw,3.1rem)]
+                  transition-all duration-800 delay-75
+                  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+                `}
+              >
+                {slides[current].heading}
+              </h1>
 
-            {/* ================= CTA ================= */}
-            <div
-              className={`
-                flex flex-wrap gap-3 pt-5
-                transition-all duration-800 delay-350
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
-              `}
-            >
-              <Link to="/services">
-                <button className="px-7 py-3 rounded-full bg-white/15 border border-white/30 text-white">
-                  View Our Programs
-                </button>
-              </Link>
+              {/* Main Text */}
+              <p
+                className={`
+                  text-sky-50/90
+                  leading-[1.65]
+                  text-[0.94rem]
+                  max-w-[34rem]
+                  transition-all duration-800 delay-150
+                  ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-3"}
+                `}
+              >
+                {slides[current].text}
+              </p>
 
-              <Link to="/contact">
-                <button className="px-7 py-3 rounded-full bg-white text-sky-900">
-                  Partner With Us
-                </button>
-              </Link>
+              {/* Sub Text */}
+              <p
+                className={`
+                  text-sky-200/80
+                  leading-[1.6]
+                  text-[0.86rem]
+                  max-w-[32rem]
+                  transition-all duration-800 delay-250
+                  ${visible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-3"}
+                `}
+              >
+                {slides[current].subtext}
+              </p>
+
+              {/* CTA (slimmer, executive style) */}
+              <div
+                className={`
+                  flex flex-wrap gap-3 pt-6
+                  transition-all duration-800 delay-350
+                  ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
+                `}
+              >
+                <Link to="/services">
+                  <button
+                    className="
+                      px-7 py-3 rounded-full
+                      bg-white/10 backdrop-blur
+                      border border-white/25
+                      text-white text-sm font-medium
+                      hover:bg-white/20
+                      transition
+                    "
+                  >
+                    Our Programs
+                  </button>
+                </Link>
+
+                <Link to="/contact">
+                  <button
+                    className="
+                      px-7 py-3 rounded-full
+                      bg-white
+                      text-sky-900 text-sm font-semibold
+                      hover:bg-sky-100
+                      transition
+                    "
+                  >
+                    Partner With Us
+                  </button>
+                </Link>
+              </div>
+
             </div>
-
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
