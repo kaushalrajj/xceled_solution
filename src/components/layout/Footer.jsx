@@ -3,7 +3,7 @@ import logo from "../../assets/images/hero/logo.jpeg";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-2 relative overflow-hidden group">
+    <footer className="w-full mt-4 relative overflow-hidden group">
 
       {/* top accent */}
       <div
@@ -22,17 +22,18 @@ const Footer = () => {
           w-full
           bg-gradient-to-b from-sky-50/85 via-white to-sky-50/70
           backdrop-blur-md
-          py-12
+          py-10 sm:py-12
           transition-all duration-300 ease-out
           group-hover:shadow-[0_-8px_40px_-14px_rgba(56,189,248,0.35)]
         "
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start md:items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 items-start">
 
-            {/* Brand */}
+            {/* ================= BRAND ================= */}
             <div className="space-y-4">
+
               <div className="flex items-center gap-3 group/logo">
 
                 {/* Logo */}
@@ -41,7 +42,7 @@ const Footer = () => {
                     src={logo}
                     alt="Xceled Solutions"
                     className="
-                      h-10 w-auto object-contain
+                      h-9 sm:h-10 w-auto object-contain
                       transition-transform duration-300
                       group-hover/logo:scale-110
                     "
@@ -63,20 +64,23 @@ const Footer = () => {
                 <div className="leading-tight">
                   <h3
                     className="
-                      text-lg font-extrabold tracking-wider text-sky-700
+                      text-base sm:text-lg
+                      font-extrabold tracking-wider
+                      text-sky-700
                       transition-all duration-300
                       group-hover:text-sky-800
-                      group-hover:-translate-y-[1px]
                     "
                   >
                     XCELED
                   </h3>
                   <p
                     className="
-                      text-[11px] tracking-[0.4em] text-slate-500
+                      text-[10px] sm:text-[11px]
+                      tracking-[0.38em]
+                      text-slate-500
                       transition-all duration-300
                       group-hover:text-slate-600
-                      group-hover:tracking-[0.45em]
+                      group-hover:tracking-[0.42em]
                     "
                   >
                     SOLUTIONS
@@ -86,7 +90,9 @@ const Footer = () => {
 
               <p
                 className="
-                  text-sm text-slate-600 leading-relaxed max-w-sm
+                  text-sm text-slate-600
+                  leading-relaxed
+                  max-w-sm
                   transition-colors duration-300
                   group-hover:text-slate-700
                 "
@@ -96,11 +102,12 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <div className="space-y-3">
               <h4
                 className="
-                  text-xs font-semibold tracking-widest text-sky-500 uppercase
+                  text-xs font-semibold tracking-widest
+                  text-sky-500 uppercase
                   transition-colors duration-300
                   group-hover:text-sky-600
                 "
@@ -108,7 +115,7 @@ const Footer = () => {
                 Contact
               </h4>
 
-              <div className="flex flex-col gap-1 text-sm text-slate-600">
+              <div className="flex flex-col gap-1.5 text-sm text-slate-600">
 
                 <span className="transition-all hover:text-sky-600 hover:tracking-wide">
                   📞 +91 76691 56969
@@ -118,13 +125,11 @@ const Footer = () => {
                   ✉️ sales@xceledsolutions.com
                 </span>
 
-                {/* Address — enhanced */}
                 <span
                   className="
                     leading-relaxed
                     transition-all duration-300
                     group-hover:text-slate-700
-                    group-hover:tracking-[0.015em]
                   "
                 >
                   A-20, Gurunanak Pura, Laxmi Nagar, New Delhi – 110092
@@ -133,13 +138,15 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* CTA */}
+            {/* ================= CTA ================= */}
             <div className="flex md:justify-end">
               <Link
                 to="/contact"
                 className="
                   inline-flex items-center gap-3
-                  px-8 py-3 rounded-full
+                  px-7 sm:px-8
+                  py-3
+                  rounded-full
                   text-sky-600 font-medium text-sm
                   bg-white/80 backdrop-blur
                   border border-sky-400/60
@@ -158,11 +165,13 @@ const Footer = () => {
 
           </div>
 
-          {/* bottom */}
-          <div className="mt-10 pt-5 border-t border-sky-100 text-center">
+          {/* ================= BOTTOM ================= */}
+          <div className="mt-8 sm:mt-10 pt-4 border-t border-sky-100 text-center">
             <p
               className="
-                text-[11px] text-slate-500 tracking-wide
+                text-[11px]
+                text-slate-500
+                tracking-wide
                 transition-colors duration-300
                 group-hover:text-slate-600
               "

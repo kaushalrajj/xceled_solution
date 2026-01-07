@@ -33,19 +33,20 @@ const ServicesSection = () => {
   return (
     <section
       className="
-        w-full py-24 md:py-28
+        w-full
+        py-20 sm:py-24 md:py-28
         bg-gradient-to-b from-sky-50 via-white to-sky-50
       "
       style={{ fontFamily: "Inter, sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
 
         {/* ================= HEADING ================= */}
-        <div className="max-w-2xl mb-18 md:mb-20 space-y-5">
+        <div className="max-w-2xl mb-14 sm:mb-16 md:mb-20 space-y-5">
 
           <div className="flex items-center gap-4">
             <span className="block w-9 h-[2.5px] bg-sky-500 rounded-full" />
-            <p className="uppercase tracking-[0.34em] text-[0.7rem] font-semibold text-sky-600">
+            <p className="uppercase tracking-[0.36em] text-[0.65rem] sm:text-[0.7rem] font-semibold text-sky-600">
               What We Enable
             </p>
           </div>
@@ -54,8 +55,8 @@ const ServicesSection = () => {
             className="
               font-semibold tracking-tight
               text-slate-900
-              text-[clamp(1.9rem,3.4vw,2.6rem)]
-              leading-[1.15]
+              text-[clamp(1.85rem,4vw,2.6rem)]
+              leading-[1.2]
             "
           >
             Focus Areas Designed for Measurable Outcomes
@@ -64,7 +65,7 @@ const ServicesSection = () => {
           <p
             className="
               text-slate-600
-              leading-[1.7]
+              leading-[1.75]
               text-[0.95rem]
             "
           >
@@ -75,7 +76,7 @@ const ServicesSection = () => {
         </div>
 
         {/* ================= SERVICES GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-14">
 
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -85,7 +86,7 @@ const ServicesSection = () => {
                 key={index}
                 className="
                   group relative
-                  transition-all duration-400 ease-[cubic-bezier(.16,1,.3,1)]
+                  transition-transform duration-300 ease-out
                   hover:-translate-y-1
                 "
               >
@@ -107,7 +108,7 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-slate-600 text-[0.88rem] leading-[1.65]">
+                <p className="text-slate-600 text-[0.9rem] leading-[1.7]">
                   {service.desc}
                 </p>
               </div>
@@ -116,12 +117,12 @@ const ServicesSection = () => {
         </div>
 
         {/* ================= CTA ================= */}
-        <div className="mt-18 md:mt-20 text-center">
+        <div className="mt-14 sm:mt-16 md:mt-20 text-center">
           <Link
             to="/services"
             className="
               inline-flex items-center gap-2.5
-              px-8 py-3
+              px-8 py-3.5
               rounded-full
               border border-sky-400/60
               text-sky-700 font-medium text-sm

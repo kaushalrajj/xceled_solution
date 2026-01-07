@@ -75,7 +75,7 @@ const Hero = () => {
         style={{ fontFamily: "Inter, sans-serif" }}
         className="
           relative w-screen
-          min-h-[62svh] sm:min-h-[72svh] lg:min-h-[84svh]
+          min-h-[64svh] sm:min-h-[72svh] lg:min-h-[84svh]
           overflow-hidden
         "
       >
@@ -93,25 +93,26 @@ const Hero = () => {
           />
         </div>
 
-        {/* OVERLAY (lighter, cleaner) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/60 to-sky-900/10" />
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/65 to-sky-900/10" />
 
         {/* CONTENT */}
         <div
           className="
             relative z-10
-            min-h-[62svh] sm:min-h-[72svh] lg:min-h-[84svh]
+            min-h-[64svh] sm:min-h-[72svh] lg:min-h-[84svh]
             flex items-center
           "
         >
           <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
-            <div className="max-w-[40rem] space-y-5">
+            <div className="max-w-[40rem] space-y-6 sm:space-y-5">
 
               {/* Eyebrow */}
               <p
                 className={`
-                  uppercase tracking-[0.34em]
-                  text-sky-200/70 text-[0.65rem]
+                  uppercase tracking-[0.36em]
+                  text-sky-200/75
+                  text-[0.65rem]
                   font-medium
                   transition-all duration-600
                   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
@@ -120,13 +121,13 @@ const Hero = () => {
                 XCELED SOLUTIONS
               </p>
 
-              {/* Heading (slimmer) */}
+              {/* Heading */}
               <h1
                 className={`
                   font-bold tracking-tight
-                  leading-[1.1]
+                  leading-[1.15]
                   text-white
-                  text-[clamp(1.75rem,4.6vw,3.1rem)]
+                  text-[clamp(1.85rem,5vw,3.1rem)]
                   transition-all duration-800 delay-75
                   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
                 `}
@@ -138,8 +139,8 @@ const Hero = () => {
               <p
                 className={`
                   text-sky-50/90
-                  leading-[1.65]
-                  text-[0.94rem]
+                  leading-[1.7]
+                  text-[0.95rem]
                   max-w-[34rem]
                   transition-all duration-800 delay-150
                   ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-3"}
@@ -151,9 +152,9 @@ const Hero = () => {
               {/* Sub Text */}
               <p
                 className={`
-                  text-sky-200/80
-                  leading-[1.6]
-                  text-[0.86rem]
+                  text-sky-200/85
+                  leading-[1.65]
+                  text-[0.88rem]
                   max-w-[32rem]
                   transition-all duration-800 delay-250
                   ${visible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-3"}
@@ -162,10 +163,10 @@ const Hero = () => {
                 {slides[current].subtext}
               </p>
 
-              {/* CTA (slimmer, executive style) */}
+              {/* CTA */}
               <div
                 className={`
-                  flex flex-wrap gap-3 pt-6
+                  flex flex-wrap gap-4 pt-7
                   transition-all duration-800 delay-350
                   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
                 `}
@@ -173,7 +174,8 @@ const Hero = () => {
                 <Link to="/services">
                   <button
                     className="
-                      px-7 py-3 rounded-full
+                      px-7 py-3.5
+                      rounded-full
                       bg-white/10 backdrop-blur
                       border border-white/25
                       text-white text-sm font-medium
@@ -188,7 +190,8 @@ const Hero = () => {
                 <Link to="/contact">
                   <button
                     className="
-                      px-7 py-3 rounded-full
+                      px-7 py-3.5
+                      rounded-full
                       bg-white
                       text-sky-900 text-sm font-semibold
                       hover:bg-sky-100

@@ -5,25 +5,26 @@ const AboutSection = () => {
   return (
     <section
       className="
-        w-full mt-15 md:mt-36
-        pb-24 md:pb-32
+        w-full
+        mt-20 sm:mt-28 md:mt-36
+        pb-20 sm:pb-24 md:pb-32
         relative z-10
       "
       style={{ fontFamily: "Inter, sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* ================= TEXT ================= */}
-          <div className="space-y-6 flex flex-col justify-center relative z-20 max-w-xl">
+          <div className="space-y-7 flex flex-col justify-center relative z-20 max-w-xl">
 
             {/* SECTION MARKER */}
             <div className="flex items-center gap-4">
               <span className="block w-9 h-[2.5px] bg-sky-500 rounded-full" />
               <p
                 className="
-                  uppercase tracking-[0.34em]
-                  text-[0.7rem] sm:text-xs
+                  uppercase tracking-[0.36em]
+                  text-[0.65rem] sm:text-[0.7rem]
                   font-semibold text-sky-600
                 "
               >
@@ -36,8 +37,8 @@ const AboutSection = () => {
               className="
                 font-semibold tracking-tight
                 text-slate-800
-                leading-[1.15]
-                text-[clamp(1.85rem,3.4vw,2.6rem)]
+                leading-[1.2]
+                text-[clamp(1.9rem,4vw,2.6rem)]
               "
             >
               Building Skills That Translate Into Real Opportunity
@@ -47,8 +48,8 @@ const AboutSection = () => {
             <p
               className="
                 text-slate-600
-                text-[0.95rem] sm:text-[1rem]
-                leading-[1.7]
+                text-[0.95rem]
+                leading-[1.75]
               "
             >
               Xceled Solutions is a PMEGP-supported, women-led initiative dedicated
@@ -61,7 +62,7 @@ const AboutSection = () => {
             <p
               className="
                 text-slate-600
-                text-[0.9rem] sm:text-[0.95rem]
+                text-[0.92rem]
                 leading-[1.7]
               "
             >
@@ -75,8 +76,8 @@ const AboutSection = () => {
             <div
               className="
                 text-slate-700
-                text-[0.82rem]
-                flex flex-wrap gap-x-6 gap-y-2 pt-1
+                text-[0.83rem]
+                flex flex-wrap gap-x-6 gap-y-2 pt-2
               "
             >
               <span>• PMEGP Supported Initiative</span>
@@ -89,8 +90,8 @@ const AboutSection = () => {
               to="/about"
               className="
                 inline-flex items-center justify-center gap-2.5
-                mt-6 w-full sm:w-fit
-                px-7 py-3
+                mt-7 w-full sm:w-fit
+                px-7 py-3.5
                 rounded-full
                 border border-sky-400/50
                 text-sky-700 font-medium text-sm
@@ -111,7 +112,7 @@ const AboutSection = () => {
           <div className="relative z-0">
             <div
               className="
-                relative max-h-[24rem]
+                relative max-h-[22rem] sm:max-h-[24rem]
                 overflow-hidden rounded-3xl
                 shadow-md
               "
@@ -130,8 +131,8 @@ const AboutSection = () => {
             {/* SUBTLE ACCENT */}
             <div
               className="
-                absolute -bottom-8 -left-8
-                w-32 h-32
+                absolute -bottom-6 -left-6
+                w-28 h-28 sm:w-32 sm:h-32
                 bg-sky-200/30
                 rounded-full blur-3xl
                 -z-10
