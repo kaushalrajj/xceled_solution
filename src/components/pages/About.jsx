@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   Target,
@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
+/* ================= ASSETS ================= */
 import aboutImg from "../../assets/images/hero/edit2.webp";
 import directorImg from "../../assets/images/hero/director.webp";
 
@@ -29,16 +30,21 @@ import team13 from "../../assets/images/gallery/team13.jpg";
 import team14 from "../../assets/images/gallery/team14.jpg";
 import team15 from "../../assets/images/gallery/team15.jpg";
 
+/* ================= COMPONENT ================= */
 const About = () => {
   const shouldReduceMotion = useReducedMotion();
+  const cardRef = useRef(null);
 
-  /* ------------------ Animations ------------------ */
+  /* ================= ANIMATIONS ================= */
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 18 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: shouldReduceMotion ? 0 : 0.6, ease: "easeOut" },
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.6,
+        ease: "easeOut",
+      },
     },
   };
 
@@ -52,12 +58,12 @@ const About = () => {
         },
       };
 
-  /* ------------------ Language States ------------------ */
+  /* ================= LANGUAGE STATES ================= */
   const [missionLang, setMissionLang] = useState("en");
   const [visionLang, setVisionLang] = useState("en");
   const [founderLang, setFounderLang] = useState("en");
 
-  /* ------------------ CONTENT ------------------ */
+  /* ================= CONTENT ================= */
   const mission = {
     en: `Our mission is to empower the youth of India through quality education,
 skill-based training, and meaningful career guidance. We believe education
@@ -120,7 +126,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
 दीर्घकालिक राष्ट्रीय प्रभाव के प्रति हमारी प्रतिबद्धता को दर्शाता है।`,
   };
 
-  /* ------------------ TEAM DATA ------------------ */
+  /* ================= TEAM DATA ================= */
   const teamMembers = [
     { name: "Team Member 1", role: "Training Lead", image: team1 },
     { name: "Team Member 2", role: "Academic Advisor", image: team2 },
@@ -139,22 +145,29 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
     { name: "Team Member 15", role: "Support Staff", image: team15 },
   ];
 
-  /* ------------------ TEAM SLIDER ------------------ */
+  /* ================= TEAM SLIDER ================= */
   const [index, setIndex] = useState(0);
-  const cardRef = useRef(null);
 
-  const next = () => setIndex((p) => (p + 1) % teamMembers.length);
-  const prev = () =>
-    setIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1));
+  const next = useCallback(
+    () => setIndex((p) => (p + 1) % teamMembers.length),
+    [teamMembers.length]
+  );
+
+  const prev = useCallback(
+    () =>
+      setIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1)),
+    [teamMembers.length]
+  );
 
   const getTranslateX = () => {
     if (!cardRef.current) return 0;
     return index * (cardRef.current.offsetWidth + 40);
   };
 
+  /* ================= RENDER ================= */
   return (
     <section className="relative w-full pt-24 pb-24 bg-slate-50 text-slate-800">
-      {/* INTRO */}
+      {/* ================= INTRO ================= */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -176,7 +189,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </motion.div>
 
-      {/* WHO WE ARE */}
+      {/* ================= WHO WE ARE ================= */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -185,21 +198,18 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mb-24"
       >
         <div>
-          <p className="uppercase tracking-widest text-s font-semibold font-bold text-sky-600 mb-3">
+          <p className="uppercase tracking-widest text-sm font-bold text-sky-600 mb-3">
             Who We Are
           </p>
-
           <h2 className="text-2xl md:text-3xl font-bold mb-5 leading-snug">
             Bridging education with
             <span className="text-sky-600"> real-world employability</span>
           </h2>
-
           <p className="text-slate-600 leading-[1.75] mb-4">
             XCELED Solutions works at the intersection of education, skill
             development, and employability, collaborating with institutions and
             learners to convert academic learning into practical capability.
           </p>
-
           <p className="text-slate-600 leading-[1.75]">
             Our programs emphasize structured training, outcome-oriented
             learning, and long-term capability building aligned with
@@ -216,7 +226,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </motion.div>
       </motion.div>
 
-      {/* MISSION & VISION */}
+      {/* ================= MISSION & VISION ================= */}
       <div className="bg-sky-50/60 py-24 mb-24">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
           {[
@@ -253,9 +263,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                   onClick={() =>
                     item.setLang((p) => (p === "en" ? "hi" : "en"))
                   }
-                  className="flex items-center gap-2 text-sm px-4 py-1.5
-                             rounded-full border border-slate-300 text-slate-600
-                             hover:bg-slate-50 transition"
+                  className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition"
                 >
                   <Languages className="w-4 h-4" />
                   {item.lang === "en" ? "हिंदी" : "EN"}
@@ -269,7 +277,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </div>
 
-      {/* FOUNDER MESSAGE */}
+      {/* ================= FOUNDER MESSAGE ================= */}
       <motion.section
         variants={fadeUp}
         initial="hidden"
@@ -277,10 +285,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         viewport={{ once: true }}
         className="py-24 mb-24"
       >
-        <div
-          className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center
-                        bg-white rounded-3xl p-14 shadow-sm border border-slate-200"
-        >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center bg-white rounded-3xl p-14 shadow-sm border border-slate-200">
           <motion.div {...softHover} className="flex justify-center">
             <img
               src={directorImg}
@@ -295,9 +300,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 onClick={() =>
                   setFounderLang((p) => (p === "en" ? "hi" : "en"))
                 }
-                className="flex items-center gap-2 text-sm px-4 py-1.5
-                           rounded-full border border-slate-300 text-slate-600
-                           hover:bg-slate-50 transition"
+                className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition"
               >
                 <Languages className="w-4 h-4" />
                 {founderLang === "en" ? "हिंदी" : "EN"}
@@ -316,7 +319,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </motion.section>
 
-      {/* TEAM */}
+      {/* ================= TEAM ================= */}
       <motion.section
         variants={fadeUp}
         initial="hidden"
@@ -337,9 +340,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 ref={i === 0 ? cardRef : null}
                 key={i}
                 {...softHover}
-                className="min-w-[85vw] sm:min-w-[360px]
-                           bg-white rounded-3xl p-8 text-center
-                           shadow-sm border border-slate-200"
+                className="min-w-[85vw] sm:min-w-[360px] bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-200"
               >
                 <div className="w-44 h-44 mx-auto mb-6 rounded-2xl overflow-hidden">
                   <img
@@ -371,7 +372,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         </div>
       </motion.section>
 
-      {/* FINAL CTA */}
+      {/* ================= FINAL CTA ================= */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
