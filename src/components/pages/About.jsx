@@ -41,10 +41,7 @@ const About = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: shouldReduceMotion ? 0 : 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: shouldReduceMotion ? 0 : 0.6, ease: "easeOut" },
     },
   };
 
@@ -154,8 +151,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
   );
 
   const prev = useCallback(
-    () =>
-      setIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1)),
+    () => setIndex((p) => (p === 0 ? teamMembers.length - 1 : p - 1)),
     [teamMembers.length]
   );
 
@@ -164,24 +160,23 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
     return index * (cardRef.current.offsetWidth + 40);
   };
 
-  /* ================= RENDER ================= */
   return (
-    <section className="relative w-full pt-24 pb-24 bg-slate-50 text-slate-800">
+    <section className="relative w-full pt-20 sm:pt-24 pb-20 sm:pb-24 bg-slate-50 text-slate-800">
       {/* ================= INTRO ================= */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        className="max-w-5xl mx-auto px-6 mb-24"
+        className="max-w-5xl mx-auto px-6 mb-16 sm:mb-24"
       >
-        <div className="bg-white rounded-3xl px-12 py-14 text-center shadow-sm border border-slate-200">
-          <p className="uppercase tracking-[0.35em] text-sm font-bold text-sky-600 mb-6">
+        <div className="bg-white rounded-3xl px-8 sm:px-12 py-10 sm:py-14 text-center shadow-sm border border-slate-200">
+          <p className="uppercase tracking-[0.3em] text-sm font-bold text-sky-600 mb-4 sm:mb-6">
             About Us
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             About <span className="text-sky-600">XCELED Solutions</span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.7]">
+          <p className="text-sm sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.7]">
             A PMEGP-supported, MSME-registered, women-led initiative dedicated
             to skill development, entrepreneurship, and employment-oriented
             education across India.
@@ -195,22 +190,22 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center mb-24"
+        className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8 sm:gap-16 items-center mb-12 sm:mb-24"
       >
         <div>
           <p className="uppercase tracking-widest text-sm font-bold text-sky-600 mb-3">
             Who We Are
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-5 leading-snug">
+          <h2 className="text-xl sm:text-3xl font-bold mb-4 leading-snug">
             Bridging education with
             <span className="text-sky-600"> real-world employability</span>
           </h2>
-          <p className="text-slate-600 leading-[1.75] mb-4">
+          <p className="text-slate-600 leading-[1.65] mb-3">
             XCELED Solutions works at the intersection of education, skill
             development, and employability, collaborating with institutions and
             learners to convert academic learning into practical capability.
           </p>
-          <p className="text-slate-600 leading-[1.75]">
+          <p className="text-slate-600 leading-[1.65]">
             Our programs emphasize structured training, outcome-oriented
             learning, and long-term capability building aligned with
             institutional and national development frameworks.
@@ -227,8 +222,9 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       </motion.div>
 
       {/* ================= MISSION & VISION ================= */}
-      <div className="bg-sky-50/60 py-24 mb-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+      {/* ONLY THIS SECTION SPACING IS FIXED FOR MOBILE */}
+      <div className="bg-sky-50/60 py-12 sm:py-24 mb-12 sm:mb-24">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 sm:gap-16">
           {[
             {
               title: "Our Mission",
@@ -252,7 +248,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
               whileInView="visible"
               viewport={{ once: true }}
               {...softHover}
-              className="bg-white rounded-3xl p-10 shadow-sm border border-slate-200"
+              className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-200"
             >
               <div className="flex justify-between items-center mb-6">
                 <div className="flex items-center gap-3">
@@ -269,7 +265,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                   {item.lang === "en" ? "हिंदी" : "EN"}
                 </button>
               </div>
-              <p className="text-slate-600 leading-[1.8] whitespace-pre-line">
+              <p className="text-slate-600 leading-[1.75] whitespace-pre-line">
                 {item.text[item.lang]}
               </p>
             </motion.div>
@@ -283,19 +279,21 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="py-24 mb-24"
+        className="py-12 sm:py-24 mb-12 sm:mb-24"
       >
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center bg-white rounded-3xl p-14 shadow-sm border border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 sm:gap-16 items-center bg-white rounded-3xl p-10 sm:p-14 shadow-sm border border-slate-200">
           <motion.div {...softHover} className="flex justify-center">
             <img
               src={directorImg}
               alt="Founder"
-              className="w-[300px] h-[400px] object-cover rounded-[2.5rem] shadow-lg"
+              className="w-[280px] sm:w-[300px] h-[360px] sm:h-[400px] object-cover rounded-[2.5rem] shadow-lg"
             />
           </motion.div>
           <div>
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-3xl font-bold">Founder’s Message</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold">
+                Founder’s Message
+              </h3>
               <button
                 onClick={() =>
                   setFounderLang((p) => (p === "en" ? "hi" : "en"))
@@ -306,10 +304,10 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 {founderLang === "en" ? "हिंदी" : "EN"}
               </button>
             </div>
-            <p className="text-slate-600 leading-[1.85] whitespace-pre-line mb-8">
+            <p className="text-slate-600 leading-[1.8] whitespace-pre-line mb-6">
               {founder[founderLang]}
             </p>
-            <div className="border-t pt-5">
+            <div className="border-t pt-4">
               <p className="font-medium">Moni Kumari</p>
               <p className="text-sm text-slate-500">
                 Founder & Director, XCELED Solutions
@@ -325,15 +323,17 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto px-6 mb-24"
+        className="max-w-7xl mx-auto px-6 mb-12 sm:mb-24"
       >
-        <h2 className="text-3xl font-bold text-center mb-14">Our Team</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-14">
+          Our Team
+        </h2>
 
         <div className="overflow-hidden">
           <motion.div
             animate={{ x: `-${getTranslateX()}px` }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="flex gap-10"
+            className="flex gap-6 sm:gap-10"
           >
             {teamMembers.map((m, i) => (
               <motion.div
@@ -342,7 +342,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 {...softHover}
                 className="min-w-[85vw] sm:min-w-[360px] bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-200"
               >
-                <div className="w-44 h-44 mx-auto mb-6 rounded-2xl overflow-hidden">
+                <div className="w-40 h-40 sm:w-44 sm:h-44 mx-auto mb-5 rounded-2xl overflow-hidden">
                   <img
                     src={m.image}
                     alt={m.name}
@@ -356,7 +356,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
           </motion.div>
         </div>
 
-        <div className="flex justify-center gap-6 mt-14">
+        <div className="flex justify-center gap-6 mt-10 sm:mt-14">
           <button
             onClick={prev}
             className="p-3 rounded-full border border-slate-300 hover:bg-slate-100 transition"
@@ -378,27 +378,27 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="max-w-5xl mx-auto px-6 text-center py-16 bg-slate-100 rounded-3xl"
+        className="max-w-5xl mx-auto px-6 text-center py-12 sm:py-16 bg-slate-100 rounded-3xl"
       >
-        <h3 className="text-3xl md:text-4xl font-bold mb-6">
+        <h3 className="text-2xl sm:text-4xl font-bold mb-5">
           Empowering learners today,
           <br className="hidden md:block" />
           shaping responsible nation builders for tomorrow
         </h3>
-        <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mb-10">
+        <p className="text-sm sm:text-lg text-slate-600 max-w-3xl mx-auto mb-8">
           Partner with us in creating meaningful, institution-aligned
           educational impact across India.
         </p>
-        <div className="flex justify-center gap-5">
+        <div className="flex justify-center gap-4 sm:gap-5">
           <Link
             to="/services"
-            className="px-9 py-3.5 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition"
+            className="px-8 py-3 rounded-full bg-sky-600 text-white hover:bg-sky-700 transition"
           >
             Explore Our Programs
           </Link>
           <Link
             to="/contact"
-            className="px-9 py-3.5 rounded-full border border-sky-600 text-sky-600 hover:bg-sky-50 transition"
+            className="px-8 py-3 rounded-full border border-sky-600 text-sky-600 hover:bg-sky-50 transition"
           >
             Partner With Us
           </Link>

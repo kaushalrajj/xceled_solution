@@ -1,3 +1,4 @@
+import { memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   Laptop,
@@ -10,7 +11,6 @@ import {
 } from "lucide-react";
 
 /* ================= IMAGE IMPORTS ================= */
-
 import online from "../../assets/images/services/online skill image.webp";
 import campus from "../../assets/images/services/on campus training.webp";
 import training from "../../assets/images/services/Career-Mentoring-Career-Counseling-Blog-Post.webp";
@@ -19,9 +19,8 @@ import stationery from "../../assets/images/services/certificate.webp";
 import kits from "../../assets/images/services/aptitude.webp";
 import labkits from "../../assets/images/services/insti.webp";
 
-/* ================= SERVICES DATA ================= */
-
-const services = [
+/* ================= DATA ================= */
+const SERVICES_DATA = [
   {
     title: "Online Exams",
     description:
@@ -80,16 +79,75 @@ const services = [
   },
 ];
 
-/* ================= COMPONENT ================= */
+/* ================= CARD ================= */
+const ServiceCard = memo(({ service, isLast }) => {
+  const Icon = service.icon;
 
+  return (
+    <Link
+      to={service.path}
+      aria-label={service.title}
+      className={`group bg-white rounded-3xl overflow-hidden
+        border border-slate-100
+        shadow-[0_6px_24px_rgba(0,0,0,0.04)]
+        transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]
+        hover:-translate-y-2 hover:shadow-[0_18px_48px_rgba(0,0,0,0.12)]
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500
+        h-full
+        ${isLast ? "lg:col-start-3 lg:row-start-1" : ""}`}
+    >
+      <div className="flex flex-col h-full">
+        {/* IMAGE */}
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={service.image}
+            alt={service.title}
+            loading="lazy"
+            decoding="async"
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 50vw,
+                   33vw"
+            className="w-full h-full object-cover
+                       transition-transform duration-700 ease-out
+                       group-hover:scale-110"
+          />
+          <div
+            className="absolute inset-0 bg-black/10 opacity-0
+                       group-hover:opacity-100 transition-opacity duration-500"
+          />
+        </div>
+
+        {/* CONTENT */}
+        <div className="p-6 sm:p-8 flex flex-col flex-grow">
+          <div className="mb-5">
+            <span className="inline-flex p-3 rounded-xl bg-sky-100">
+              <Icon className="w-6 h-6 text-sky-600" aria-hidden />
+            </span>
+          </div>
+
+          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">
+            {service.title}
+          </h3>
+
+          <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+            {service.description}
+          </p>
+        </div>
+      </div>
+    </Link>
+  );
+});
+
+/* ================= PAGE ================= */
 const Services = () => {
+  const services = useMemo(() => SERVICES_DATA, []);
+
   return (
     <section className="w-full bg-sky-50 py-24 sm:py-28 md:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
-
         {/* HEADER */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <p className="uppercase tracking-[0.35em] font-bold text-sky-600 text-s font-semibold mb-4">
+          <p className="uppercase tracking-[0.35em] text-sm font-bold text-sky-600 mb-4">
             Services
           </p>
 
@@ -106,60 +164,14 @@ const Services = () => {
 
         {/* GRID */}
         <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const isLast = index === services.length - 1;
-
-            return (
-              <Link
-                key={service.path}
-                to={service.path}
-                className={`
-                  group bg-white rounded-3xl overflow-hidden
-                  border border-slate-100
-                  shadow-[0_6px_24px_rgba(0,0,0,0.04)]
-                  transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]
-                  hover:-translate-y-2 hover:shadow-[0_18px_48px_rgba(0,0,0,0.12)]
-                  h-full
-                  ${isLast ? "lg:col-start-3 lg:row-start-1" : ""}
-                `}
-              >
-                <div className="flex flex-col h-full">
-
-                  {/* IMAGE */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
-
-                  {/* CONTENT */}
-                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                    <div className="mb-5">
-                      <div className="inline-flex p-3 rounded-xl bg-sky-100">
-                        <Icon className="w-6 h-6 text-sky-600" />
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                      {service.description}
-                    </p>
-                  </div>
-
-                </div>
-              </Link>
-            );
-          })}
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.path}
+              service={service}
+              isLast={index === services.length - 1}
+            />
+          ))}
         </div>
-
       </div>
     </section>
   );
