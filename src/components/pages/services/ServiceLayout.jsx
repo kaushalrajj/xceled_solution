@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 const ServiceLayout = ({ title, subtitle, children }) => {
   return (
     <section className="w-full bg-white">
+
       {/* ================= PAGE HEADER ================= */}
-      <header className="w-full pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-10">
+      <header className="w-full pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-14 lg:pb-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="max-w-4xl">
             <p
               className="
                 uppercase
-                tracking-[0.4em]
+                tracking-[0.35em]
                 text-xs
                 font-semibold
                 text-sky-600
-                mb-6
+                mb-4 sm:mb-6
               "
             >
               Our Services
@@ -22,13 +23,14 @@ const ServiceLayout = ({ title, subtitle, children }) => {
 
             <h1
               className="
-                text-3xl
-                sm:text-4xl
-                md:text-[2.75rem]
+                text-2xl
+                sm:text-3xl
+                md:text-[2.5rem]
+                lg:text-[2.75rem]
                 font-semibold
                 text-slate-900
                 leading-[1.15]
-                mb-8
+                mb-5 sm:mb-7 lg:mb-8
               "
             >
               {title}
@@ -37,8 +39,9 @@ const ServiceLayout = ({ title, subtitle, children }) => {
             <p
               className="
                 text-slate-600
-                text-base
-                sm:text-lg
+                text-sm
+                sm:text-base
+                md:text-lg
                 leading-relaxed
                 max-w-[46rem]
               "
@@ -50,13 +53,13 @@ const ServiceLayout = ({ title, subtitle, children }) => {
       </header>
 
       {/* ================= PAGE CONTENT ================= */}
-      <main className="max-w-7xl mx-auto px-10">
+      <main className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         {children}
       </main>
 
       {/* ================= CTA FOOTER ================= */}
-      <footer className="max-w-7xl mx-auto px-10 py-24">
-        <div className="flex flex-col sm:flex-row gap-5">
+      <footer className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-16 sm:py-20 lg:py-24">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
           <Link
             to="/contact"
             className="
@@ -85,6 +88,7 @@ const ServiceLayout = ({ title, subtitle, children }) => {
           </Link>
         </div>
       </footer>
+
     </section>
   );
 };

@@ -1,5 +1,3 @@
-import { useEffect, useRef } from "react";
-
 /* ================= IMAGES ================= */
 import heroImg from "../../../assets/images/services/k2.webp";
 import whyImg from "../../../assets/images/services/k3.webp";
@@ -20,30 +18,11 @@ import {
 } from "lucide-react";
 
 const EducationalKits = () => {
-  const sectionRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-y-0");
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-
-    sectionRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className="w-full bg-gradient-to-b from-sky-50 via-white to-white">
-
       {/* ================= HERO ================= */}
       <section
-        className="relative pt-32 pb-28"
+        className="relative pt-20 sm:pt-24 lg:pt-28 pb-10 sm:pb-16 lg:pb-24"
         style={{
           backgroundImage: `linear-gradient(rgba(15,23,42,0.65), rgba(15,23,42,0.65)), url(${heroImg})`,
           backgroundSize: "cover",
@@ -51,10 +30,10 @@ const EducationalKits = () => {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Educational Kits
           </h1>
-          <p className="max-w-3xl mx-auto text-lg text-slate-200">
+          <p className="max-w-3xl mx-auto text-sm sm:text-lg text-slate-200 leading-relaxed">
             Empowering learning through hands-on, experiential educational kits
             designed to spark curiosity, creativity, and conceptual clarity.
           </p>
@@ -62,15 +41,12 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= INTRO ================= */}
-      <section
-        ref={(el) => (sectionRefs.current[0] = el)}
-        className="max-w-7xl mx-auto px-6 py-24 opacity-0 translate-y-10 transition-all duration-1000"
-      >
-        <div className="bg-sky-50 rounded-3xl px-10 py-16 text-center">
-          <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+      <section className="max-w-7xl mx-auto px-6 py-10 sm:py-16 lg:py-20">
+        <div className="bg-sky-50 rounded-3xl px-7 sm:px-10 py-10 sm:py-14 text-center">
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4 sm:mb-6">
             Empowering Learning Through Hands-On Experience
           </h2>
-          <p className="max-w-4xl mx-auto text-slate-600 leading-relaxed">
+          <p className="max-w-4xl mx-auto text-slate-600 leading-relaxed text-sm sm:text-base">
             At Xcelled Solutions, we believe that experiential learning is the
             key to fostering curiosity and innovation among students. Our
             meticulously designed Educational Kits provide practical tools that
@@ -81,15 +57,12 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= OUR EDUCATIONAL KITS ================= */}
-      <section
-        ref={(el) => (sectionRefs.current[1] = el)}
-        className="max-w-7xl mx-auto px-6 pb-28 opacity-0 translate-y-10 transition-all duration-1000"
-      >
-        <h2 className="text-2xl font-semibold text-center mb-14">
+      <section className="max-w-7xl mx-auto px-6 pb-10 sm:pb-16 lg:pb-20">
+        <h2 className="text-xl sm:text-2xl font-semibold text-center mb-8 sm:mb-12">
           Our Educational Kits
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7 lg:gap-8">
           {[
             {
               icon: FlaskConical,
@@ -130,10 +103,14 @@ const EducationalKits = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="bg-white rounded-2xl p-6 sm:p-7 shadow-md
+                         hover:shadow-xl hover:-translate-y-1
+                         transition-all duration-300"
             >
-              <item.icon className="w-10 h-10 text-sky-600 mb-5" />
-              <h3 className="font-semibold text-lg mb-4">{item.title}</h3>
+              <item.icon className="w-9 h-9 text-sky-600 mb-4" />
+              <h3 className="font-semibold text-base sm:text-lg mb-3">
+                {item.title}
+              </h3>
               <ul className="space-y-2 text-sm text-slate-600">
                 {item.points.map((p, idx) => (
                   <li key={idx} className="flex gap-2">
@@ -148,16 +125,13 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= KEY FEATURES ================= */}
-      <section
-        ref={(el) => (sectionRefs.current[2] = el)}
-        className="bg-slate-50 py-24 opacity-0 translate-y-10 transition-all duration-1000"
-      >
+      <section className="bg-slate-50 py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold text-center mb-14">
+          <h2 className="text-xl sm:text-2xl font-semibold text-center mb-8 sm:mb-12">
             Key Features
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-10 text-center">
+          <div className="grid md:grid-cols-4 gap-6 sm:gap-8 text-center">
             {[
               { icon: BookOpen, title: "Curriculum-Aligned" },
               { icon: GraduationCap, title: "Age-Appropriate Design" },
@@ -165,8 +139,10 @@ const EducationalKits = () => {
               { icon: ShieldCheck, title: "Quality Assurance" },
             ].map((f, i) => (
               <div key={i}>
-                <f.icon className="w-10 h-10 text-sky-600 mx-auto mb-4" />
-                <h4 className="font-medium text-slate-800">{f.title}</h4>
+                <f.icon className="w-8 h-8 sm:w-9 sm:h-9 text-sky-600 mx-auto mb-3" />
+                <h4 className="font-medium text-slate-800 text-sm sm:text-base">
+                  {f.title}
+                </h4>
               </div>
             ))}
           </div>
@@ -174,17 +150,14 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section
-        ref={(el) => (sectionRefs.current[3] = el)}
-        className="max-w-7xl mx-auto px-6 py-28 opacity-0 translate-y-10 transition-all duration-1000"
-      >
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="max-w-7xl mx-auto px-6 py-10 sm:py-16 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-14 items-center">
           <div>
-            <h2 className="text-2xl font-semibold mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-5 sm:mb-7">
               Why Choose Xcelled Solutions?
             </h2>
 
-            <div className="space-y-6 text-slate-600">
+            <div className="space-y-3 sm:space-y-5 text-slate-600 text-sm sm:text-base">
               <p className="flex gap-3">
                 <Award className="text-sky-600" /> Expertly crafted by educators
                 and industry professionals
@@ -204,11 +177,12 @@ const EducationalKits = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-6 lg:mt-0">
             <img
               src={whyImg}
               alt="Educational kits in use"
-              className="rounded-2xl shadow-xl hover:scale-[1.02] transition-transform duration-300"
+              className="rounded-2xl shadow-xl hover:scale-[1.02]
+                         transition-transform duration-300"
             />
           </div>
         </div>
@@ -218,5 +192,3 @@ const EducationalKits = () => {
 };
 
 export default EducationalKits;
-
-

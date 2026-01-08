@@ -32,12 +32,11 @@ const ManpowerServices = () => {
       subtitle="Connecting talent with opportunity through reliable, compliant, and industry-focused manpower solutions."
     >
       {/* ================= HERO / INTRO ================= */}
-      <section className="mb-36">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* TEXT */}
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
               Connecting Talent with Opportunity
             </h2>
 
@@ -56,29 +55,29 @@ const ManpowerServices = () => {
 
           {/* IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-sky-50 p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
+            <div className="bg-sky-50 p-3 sm:p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
               <img
                 src={k1}
                 alt="Manpower Services"
                 className="
-                  w-full max-w-[460px] rounded-2xl object-cover
+                  w-full max-w-[420px] sm:max-w-[460px]
+                  rounded-2xl object-cover
                   transition-transform duration-700 ease-out
                   hover:scale-110
                 "
               />
             </div>
           </div>
-
         </div>
       </section>
 
       {/* ================= OUR SERVICES ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Our Comprehensive Services
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {[
             {
               icon: Users,
@@ -125,7 +124,7 @@ const ManpowerServices = () => {
               key={i}
               className="
                 bg-sky-50 border border-sky-100
-                rounded-3xl p-8
+                rounded-3xl p-7 sm:p-8
                 transition-all duration-300
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
               "
@@ -153,12 +152,12 @@ const ManpowerServices = () => {
       </section>
 
       {/* ================= INDUSTRIES ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Industries We Serve
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {[
             { icon: Monitor, title: "IT" },
             { icon: Factory, title: "Manufacturing" },
@@ -173,7 +172,7 @@ const ManpowerServices = () => {
               key={i}
               className="
                 bg-white border border-slate-200
-                rounded-3xl p-8 text-center
+                rounded-3xl p-7 sm:p-8 text-center
                 transition-all duration-300
                 hover:-translate-y-2 hover:shadow-2xl
               "
@@ -188,12 +187,11 @@ const ManpowerServices = () => {
       </section>
 
       {/* ================= WHY CHOOSE ================= */}
-      <section className="mb-28">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+      <section className="mb-12 sm:mb-20 lg:mb-24">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
           {/* TEXT */}
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-6 sm:mb-8">
               Why Choose Ekwik Solution?
             </h2>
 
@@ -219,19 +217,19 @@ const ManpowerServices = () => {
 
           {/* IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-sky-50 p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
+            <div className="bg-sky-50 p-3 sm:p-4 rounded-3xl shadow-xl overflow-hidden transition hover:shadow-2xl">
               <img
                 src={k2}
                 alt="Manpower Workforce"
                 className="
-                  w-full max-w-[460px] rounded-2xl object-cover
+                  w-full max-w-[420px] sm:max-w-[460px]
+                  rounded-2xl object-cover
                   transition-transform duration-700 ease-out
                   hover:scale-110
                 "
               />
             </div>
           </div>
-
         </div>
       </section>
     </ServiceLayout>

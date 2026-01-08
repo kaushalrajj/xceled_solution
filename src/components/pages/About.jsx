@@ -30,7 +30,6 @@ import team13 from "../../assets/images/gallery/team13.jpg";
 import team14 from "../../assets/images/gallery/team14.jpg";
 import team15 from "../../assets/images/gallery/team15.jpg";
 
-/* ================= COMPONENT ================= */
 const About = () => {
   const shouldReduceMotion = useReducedMotion();
   const cardRef = useRef(null);
@@ -142,7 +141,6 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
     { name: "Team Member 15", role: "Support Staff", image: team15 },
   ];
 
-  /* ================= TEAM SLIDER ================= */
   const [index, setIndex] = useState(0);
 
   const next = useCallback(
@@ -162,6 +160,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
 
   return (
     <section className="relative w-full pt-20 sm:pt-24 pb-20 sm:pb-24 bg-slate-50 text-slate-800">
+
       {/* ================= INTRO ================= */}
       <motion.div
         variants={fadeUp}
@@ -176,11 +175,6 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             About <span className="text-sky-600">XCELED Solutions</span>
           </h1>
-          <p className="text-sm sm:text-lg text-slate-600 max-w-3xl mx-auto leading-[1.7]">
-            A PMEGP-supported, MSME-registered, women-led initiative dedicated
-            to skill development, entrepreneurship, and employment-oriented
-            education across India.
-          </p>
         </div>
       </motion.div>
 
@@ -202,13 +196,11 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
           </h2>
           <p className="text-slate-600 leading-[1.65] mb-3">
             XCELED Solutions works at the intersection of education, skill
-            development, and employability, collaborating with institutions and
-            learners to convert academic learning into practical capability.
+            development, and employability.
           </p>
           <p className="text-slate-600 leading-[1.65]">
-            Our programs emphasize structured training, outcome-oriented
-            learning, and long-term capability building aligned with
-            institutional and national development frameworks.
+            Our programs emphasize structured training and long-term capability
+            building.
           </p>
         </div>
 
@@ -222,8 +214,7 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
       </motion.div>
 
       {/* ================= MISSION & VISION ================= */}
-      {/* ONLY THIS SECTION SPACING IS FIXED FOR MOBILE */}
-      <div className="bg-sky-50/60 py-12 sm:py-24 mb-12 sm:mb-24">
+      <div className="bg-sky-50/60 py-10 sm:py-16 mb-6 sm:mb-12">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 sm:gap-16">
           {[
             {
@@ -259,7 +250,9 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                   onClick={() =>
                     item.setLang((p) => (p === "en" ? "hi" : "en"))
                   }
-                  className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition"
+                  className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full
+                             border border-slate-300 text-slate-600
+                             hover:bg-slate-50 transition"
                 >
                   <Languages className="w-4 h-4" />
                   {item.lang === "en" ? "हिंदी" : "EN"}
@@ -279,14 +272,15 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="py-12 sm:py-24 mb-12 sm:mb-24"
+        className="pt-6 sm:pt-10 pb-12 sm:pb-20 mb-12 sm:mb-24"
       >
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 sm:gap-16 items-center bg-white rounded-3xl p-10 sm:p-14 shadow-sm border border-slate-200">
           <motion.div {...softHover} className="flex justify-center">
             <img
               src={directorImg}
               alt="Founder"
-              className="w-[280px] sm:w-[300px] h-[360px] sm:h-[400px] object-cover rounded-[2.5rem] shadow-lg"
+              className="w-[280px] sm:w-[300px] h-[360px] sm:h-[400px]
+                         object-cover rounded-[2.5rem] shadow-lg"
             />
           </motion.div>
           <div>
@@ -298,7 +292,9 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 onClick={() =>
                   setFounderLang((p) => (p === "en" ? "hi" : "en"))
                 }
-                className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition"
+                className="flex items-center gap-2 text-sm px-4 py-1.5 rounded-full
+                           border border-slate-300 text-slate-600
+                           hover:bg-slate-50 transition"
               >
                 <Languages className="w-4 h-4" />
                 {founderLang === "en" ? "हिंदी" : "EN"}
@@ -340,7 +336,9 @@ PM SHRI विद्यालयों और जवाहर नवोदय �
                 ref={i === 0 ? cardRef : null}
                 key={i}
                 {...softHover}
-                className="min-w-[85vw] sm:min-w-[360px] bg-white rounded-3xl p-8 text-center shadow-sm border border-slate-200"
+                className="min-w-[85vw] sm:min-w-[360px]
+                           bg-white rounded-3xl p-8 text-center
+                           shadow-sm border border-slate-200"
               >
                 <div className="w-40 h-40 sm:w-44 sm:h-44 mx-auto mb-5 rounded-2xl overflow-hidden">
                   <img

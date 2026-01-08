@@ -60,18 +60,21 @@ const OnlineExams = () => {
       title="Online Examination Services"
       subtitle="Secure, scalable, and institution-ready online examination solutions delivered with operational excellence across India."
     >
-      {/* ================= INTRO (WITH LIGHT BACKGROUND) ================= */}
-      <section className="mb-36">
+      {/* ================= INTRO ================= */}
+      <section className="mb-16 sm:mb-24 lg:mb-28">
         <div
           className="
-            grid lg:grid-cols-2 gap-16 items-center
+            grid lg:grid-cols-2
+            gap-10 sm:gap-12 lg:gap-16
+            items-center
             bg-sky-50/60
             rounded-3xl
-            px-6 sm:px-10 py-12 sm:py-16
+            px-6 sm:px-10
+            py-10 sm:py-14 lg:py-16
           "
         >
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
               Trusted Online Examination Platform
             </h2>
 
@@ -81,7 +84,7 @@ const OnlineExams = () => {
               transparency, and scalability.
             </p>
 
-            <p className="text-slate-700 leading-relaxed mb-8">
+            <p className="text-slate-700 leading-relaxed mb-6 sm:mb-8">
               With proven experience in managing large-scale assessments, our
               solutions ensure seamless execution from candidate onboarding to
               post-exam reporting — backed by strict compliance and operational
@@ -106,25 +109,26 @@ const OnlineExams = () => {
             <img
               src={mainImage}
               alt="Online Examination Setup"
-              className="w-full max-w-[420px] rounded-3xl shadow-2xl"
+              className="w-full max-w-[380px] sm:max-w-[420px] rounded-3xl shadow-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* ================= WHAT WE OFFER ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           What We Offer
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {offerings.map((item, i) => (
             <div
               key={i}
               className="
                 bg-sky-50/60
-                p-8 rounded-3xl
+                p-7 sm:p-8
+                rounded-3xl
                 border border-slate-200
                 transition-all duration-300
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
@@ -143,18 +147,21 @@ const OnlineExams = () => {
       </section>
 
       {/* ================= TRUSTED BY ================= */}
-      <section className="mb-28">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-12">
+      <section className="mb-12 sm:mb-20 lg:mb-24">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-12">
           Trusted by Institutions
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10">
           {clients.map((logo, i) => (
             <div
               key={i}
               className="
                 flex justify-center items-center
-                p-6 bg-slate-50 rounded-2xl border
+                p-5 sm:p-6
+                bg-slate-50
+                rounded-2xl
+                border
                 transition-all duration-300
                 hover:bg-white hover:-translate-y-1 hover:shadow-xl
               "
@@ -163,7 +170,8 @@ const OnlineExams = () => {
                 src={logo}
                 alt="Client Logo"
                 className="
-                  max-h-14 object-contain
+                  max-h-12 sm:max-h-14
+                  object-contain
                   grayscale transition-all duration-300
                   hover:grayscale-0
                 "

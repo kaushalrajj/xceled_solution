@@ -26,10 +26,10 @@ const EducationalTraining = () => {
       subtitle="Skill-based, outcome-driven educational training programs designed to enhance learning, innovation, and employability across institutions and industries."
     >
       {/* ================= INTRO ================= */}
-      <section className="mb-36">
-        <div className="grid lg:grid-cols-2 gap-16 items-center bg-sky-50 rounded-3xl px-10 py-16">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center bg-sky-50 rounded-3xl px-6 sm:px-10 py-10 sm:py-16">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
               Empowering Future Innovators Through Skill-Based Learning
             </h2>
 
@@ -46,14 +46,15 @@ const EducationalTraining = () => {
             </p>
           </div>
 
-          {/* IMAGE WITH ZOOM */}
+          {/* IMAGE */}
           <div className="flex justify-center">
-            <div className=" p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <div className="p-3 sm:p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
               <img
                 src={e1}
                 alt="Educational Training Environment"
                 className="
-                  w-full max-w-[460px] rounded-2xl object-cover
+                  w-full max-w-[420px] sm:max-w-[460px]
+                  rounded-2xl object-cover
                   transition-transform duration-700 ease-out
                   hover:scale-110
                 "
@@ -64,12 +65,12 @@ const EducationalTraining = () => {
       </section>
 
       {/* ================= TRAINING PROGRAMS ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Our Comprehensive Training Programs
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {[
             {
               icon: GraduationCap,
@@ -136,7 +137,7 @@ const EducationalTraining = () => {
               key={i}
               className="
                 bg-sky-50 border border-sky-100
-                rounded-3xl p-8
+                rounded-3xl p-7 sm:p-8
                 transition-all duration-300
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
               "
@@ -164,14 +165,14 @@ const EducationalTraining = () => {
       </section>
 
       {/* ================= WHO CAN BENEFIT ================= */}
-      <section className="mb-36">
-        <div className="grid lg:grid-cols-2 gap-16 items-center bg-slate-50 rounded-3xl px-10 py-16">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center bg-slate-50 rounded-3xl px-6 sm:px-10 py-10 sm:py-16">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-6 sm:mb-8">
               Who Can Benefit?
             </h2>
 
-            <div className="space-y-5 text-slate-700">
+            <div className="space-y-4 sm:space-y-5 text-slate-700">
               <p><strong>Schools & Colleges:</strong> Academic enrichment and skill development.</p>
               <p><strong>Government Exam Institutes:</strong> National and state exam training.</p>
               <p><strong>Vocational Training Centers:</strong> Skill certification programs.</p>
@@ -180,14 +181,15 @@ const EducationalTraining = () => {
             </div>
           </div>
 
-          {/* IMAGE WITH ZOOM */}
+          {/* IMAGE */}
           <div className="flex justify-center">
-            <div className=" p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <div className="p-3 sm:p-4 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl">
               <img
                 src={e2}
                 alt="Training Session"
                 className="
-                  w-full max-w-[460px] rounded-2xl object-cover
+                  w-full max-w-[420px] sm:max-w-[460px]
+                  rounded-2xl object-cover
                   transition-transform duration-700 ease-out
                   hover:scale-110
                 "
@@ -198,12 +200,12 @@ const EducationalTraining = () => {
       </section>
 
       {/* ================= WHY CHOOSE ================= */}
-      <section className="mb-28">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-12 sm:mb-20 lg:mb-24">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Why Choose Xceled Solutions?
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {[
             { icon: ShieldCheck, title: "Government-Recognized", text: "Aligned with national frameworks." },
             { icon: Award, title: "Experienced Faculty", text: "Industry & academic experts." },
@@ -214,7 +216,7 @@ const EducationalTraining = () => {
               key={i}
               className="
                 bg-white border border-slate-200
-                rounded-3xl p-8 text-center
+                rounded-3xl p-7 sm:p-8 text-center
                 transition-all duration-300
                 hover:-translate-y-2 hover:shadow-2xl
               "

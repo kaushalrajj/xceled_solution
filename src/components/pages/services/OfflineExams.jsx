@@ -49,19 +49,22 @@ const OfflineExams = () => {
       title="Offline Proctor-Based Examination Services"
       subtitle="Professionally managed offline invigilation services ensuring secure, standardized, and scalable examination execution across India."
     >
-
-      {/* ================= INTRO (BACKGROUND ADDED) ================= */}
-      <section className="mb-36">
+      {/* ================= INTRO ================= */}
+      <section className="mb-16 sm:mb-24 lg:mb-28">
         <div
           className="
-            grid lg:grid-cols-2 gap-16 items-center
-            bg-sky-50/60 rounded-3xl
-            px-10 py-12
+            grid lg:grid-cols-2
+            gap-10 sm:gap-12 lg:gap-16
+            items-center
+            bg-sky-50/60
+            rounded-3xl
+            px-6 sm:px-10
+            py-10 sm:py-14 lg:py-16
           "
         >
           {/* TEXT */}
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
               Reliable Exam Invigilation Services Across India
             </h2>
 
@@ -71,7 +74,7 @@ const OfflineExams = () => {
               institutions, and private organizations.
             </p>
 
-            <p className="text-slate-700 leading-relaxed mb-8">
+            <p className="text-slate-700 leading-relaxed mb-6 sm:mb-8">
               Our structured processes, trained manpower, and centralized
               coordination ensure secure, compliant, and standardized
               execution of offline examinations across diverse geographies.
@@ -96,7 +99,8 @@ const OfflineExams = () => {
             <div
               className="
                 bg-white/80 backdrop-blur
-                p-4 rounded-3xl shadow-xl
+                p-3 sm:p-4
+                rounded-3xl shadow-xl
                 transition-all duration-300
                 hover:shadow-2xl
               "
@@ -105,7 +109,7 @@ const OfflineExams = () => {
                 src={off1}
                 alt="Offline Exam Invigilation"
                 className="
-                  w-full max-w-[460px]
+                  w-full max-w-[420px] sm:max-w-[460px]
                   rounded-2xl object-cover
                   transition-transform duration-500
                   hover:scale-[1.03]
@@ -116,13 +120,13 @@ const OfflineExams = () => {
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE US (SOFT BACKGROUND) ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      {/* ================= WHY CHOOSE US ================= */}
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Why Choose Our Proctoring Team
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {strengths.map((item, i) => (
             <div
               key={i}
@@ -139,14 +143,14 @@ const OfflineExams = () => {
                   src={item.image}
                   alt={item.title}
                   className="
-                    h-44 w-full object-cover
+                    h-40 sm:h-44 w-full object-cover
                     transition-transform duration-500
                     hover:scale-[1.05]
                   "
                 />
               </div>
 
-              <div className="p-7">
+              <div className="p-6 sm:p-7">
                 <h3 className="text-lg font-semibold text-slate-900 mb-3">
                   {item.title}
                 </h3>
@@ -159,20 +163,20 @@ const OfflineExams = () => {
         </div>
       </section>
 
-      {/* ================= EXAM FORMATS (LIGHT TINT) ================= */}
-      <section className="mb-28">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-12">
+      {/* ================= EXAM FORMATS ================= */}
+      <section className="mb-12 sm:mb-20 lg:mb-24">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-12">
           We Support Multiple Exam Formats
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {formats.map((format, i) => (
             <div
               key={i}
               className="
                 bg-sky-50/70
                 border border-slate-200
-                rounded-2xl px-8 py-6
+                rounded-2xl px-7 py-5 sm:px-8 sm:py-6
                 text-center font-semibold text-slate-800
                 transition-all duration-300
                 hover:-translate-y-1 hover:shadow-lg
@@ -183,7 +187,6 @@ const OfflineExams = () => {
           ))}
         </div>
       </section>
-
     </ServiceLayout>
   );
 };

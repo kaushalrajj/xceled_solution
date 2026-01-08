@@ -47,32 +47,24 @@ const Products = () => {
   }, []);
 
   return (
-    <section
-      className="
-        relative w-full overflow-hidden
-        bg-gradient-to-b
-        from-sky-50/60
-        via-white
-        to-white
-      "
-    >
-      {/* Soft ambient background accent */}
-      <div className="absolute top-1/4 -left-40 w-[420px] h-[420px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-sky-50/60 via-white to-white">
+      {/* Ambient background accent */}
+      <div className="absolute top-1/4 -left-40 w-[420px] h-[420px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
 
       {/* ================= HERO ================= */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-24 transition-all duration-700">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+      <div className="relative max-w-7xl mx-auto px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-5 sm:mb-6">
           Educational Lab Kits
         </h1>
 
-        <p className="text-lg text-slate-600 max-w-4xl leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 max-w-4xl leading-relaxed">
           Our Educational Lab Kits are thoughtfully designed STEM learning
           solutions that promote structured experimentation, conceptual clarity,
           and practical understanding across Robotics, Physics, Chemistry, and
           Biology disciplines.
         </p>
 
-        <div className="mt-8 rounded-xl px-6 py-4 text-center bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+        <div className="mt-6 rounded-xl px-6 py-4 text-center bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
           <p className="text-sm font-semibold text-slate-800 mb-1">
             Bulk Orders • Customization • Installation Support
           </p>
@@ -83,8 +75,8 @@ const Products = () => {
       </div>
 
       {/* ================= LAB KIT CARDS ================= */}
-      <section className="mb-36">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
           {[
             {
               img: t0,
@@ -134,29 +126,22 @@ const Products = () => {
           ].map((card, i) => (
             <div
               key={i}
-              className="
-                bg-white rounded-3xl shadow-md
-                transition-all duration-500 ease-out
-                hover:shadow-2xl hover:-translate-y-2
-              "
+              className="bg-white rounded-3xl shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
             >
               <div className="overflow-hidden rounded-t-3xl">
                 <img
                   src={card.img}
-                  className="
-                    w-full h-60 object-cover
-                    transition-transform duration-700
-                    hover:scale-[1.05]
-                  "
+                  alt={card.title}
+                  className="w-full h-56 sm:h-60 object-cover transition-transform duration-700 hover:scale-[1.05]"
                 />
               </div>
 
-              <div className="p-8">
-                <h3 className="text-xl font-semibold mb-4">
+              <div className="p-6 sm:p-8">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4">
                   {card.title}
                 </h3>
 
-                <ul className="list-disc pl-5 text-slate-600 space-y-1 mb-4">
+                <ul className="list-disc pl-5 text-slate-600 space-y-1 mb-4 text-sm">
                   {card.points.map((p, j) => (
                     <li key={j}>{p}</li>
                   ))}
@@ -172,9 +157,9 @@ const Products = () => {
       </section>
 
       {/* ================= COMPONENTS SLIDER ================= */}
-      <section className="bg-sky-50/60 py-24 mb-24">
+      <section className="bg-sky-50/60 py-14 sm:py-20 lg:py-24 mb-16 sm:mb-24">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold text-slate-900 mb-12">
+          <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-8 sm:mb-12">
             Components & Accessories
           </h2>
 
@@ -184,23 +169,16 @@ const Products = () => {
               style={{ transform: `translateX(-${index * 320}px)` }}
             >
               {[...products, ...products].map((item, i) => (
-                <div key={i} className="min-w-[300px] mr-6">
-                  <div
-                    className="
-                      bg-white rounded-2xl p-4 shadow-md
-                      transition-all duration-300
-                      hover:shadow-xl hover:-translate-y-2
-                    "
-                  >
+                <div key={i} className="min-w-[280px] sm:min-w-[300px] mr-5 sm:mr-6">
+                  <div className="bg-white rounded-2xl p-4 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
                     <img
                       src={item.img}
-                      className="
-                        w-full h-40 object-cover rounded-lg mb-4
-                        transition-transform duration-500
-                        hover:scale-[1.05]
-                      "
+                      alt={item.title}
+                      className="w-full h-36 sm:h-40 object-cover rounded-lg mb-4 transition-transform duration-500 hover:scale-[1.05]"
                     />
-                    <h3 className="font-semibold">{item.title}</h3>
+                    <h3 className="font-semibold text-sm sm:text-base">
+                      {item.title}
+                    </h3>
                     <p className="text-sm text-slate-600">
                       {item.desc}
                     </p>

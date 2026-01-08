@@ -23,11 +23,12 @@ const StationeryUniforms = () => {
       subtitle="Your trusted partner for educational essentials, delivering quality, consistency, and reliability at scale."
     >
       {/* ================= HERO ================= */}
-      <section className="mb-36">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+
           {/* TEXT */}
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
               Your Trusted Partner for Educational Essentials
             </h2>
 
@@ -59,11 +60,11 @@ const StationeryUniforms = () => {
 
           {/* IMAGE */}
           <div className="flex justify-center">
-            <div className="bg-sky-50 p-5 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <div className="bg-sky-50 p-4 sm:p-5 rounded-3xl shadow-xl transition-all duration-300 hover:shadow-2xl">
               <img
                 src={u2}
                 alt="School Uniforms"
-                className="w-full max-w-[460px] rounded-2xl object-cover"
+                className="w-full max-w-[420px] sm:max-w-[460px] rounded-2xl object-cover"
               />
             </div>
           </div>
@@ -71,14 +72,14 @@ const StationeryUniforms = () => {
       </section>
 
       {/* ================= OUR OFFERINGS ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-16 sm:mb-24 lg:mb-28">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Our Offerings
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {/* Card 1 */}
-          <div className="group bg-sky-50 border border-slate-200 rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
+          <div className="group bg-sky-50 border border-slate-200 rounded-3xl p-7 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
             <PenTool className="h-8 w-8 text-sky-600 mb-4 group-hover:scale-110 transition" />
             <h3 className="text-lg font-semibold text-slate-900 mb-3">
               School Stationery Supplies
@@ -91,7 +92,7 @@ const StationeryUniforms = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="group bg-sky-50 border border-slate-200 rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
+          <div className="group bg-sky-50 border border-slate-200 rounded-3xl p-7 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
             <Shirt className="h-8 w-8 text-sky-600 mb-4 group-hover:scale-110 transition" />
             <h3 className="text-lg font-semibold text-slate-900 mb-3">
               School Uniforms
@@ -103,7 +104,7 @@ const StationeryUniforms = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="group bg-sky-50 border border-slate-200 rounded-3xl p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
+          <div className="group bg-sky-50 border border-slate-200 rounded-3xl p-7 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
             <Backpack className="h-8 w-8 text-sky-600 mb-4 group-hover:scale-110 transition" />
             <h3 className="text-lg font-semibold text-slate-900 mb-3">
               Accessories & Additional Items
@@ -117,62 +118,50 @@ const StationeryUniforms = () => {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="mb-36">
-        <h2 className="text-2xl font-semibold text-slate-900 mb-14">
+      <section className="mb-12 sm:mb-20 lg:mb-24">
+        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
           Why Choose Xceled Solutions
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="bg-white border border-slate-200 rounded-3xl p-7 transition hover:-translate-y-1 hover:shadow-xl">
-            <CheckCircle className="h-7 w-7 text-sky-600 mb-3" />
-            <h4 className="font-semibold text-slate-900 mb-2">
-              Quality Assurance
-            </h4>
-            <p className="text-sm text-slate-700">
-              Strict quality checks to ensure products meet institutional
-              standards.
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-3xl p-7 transition hover:-translate-y-1 hover:shadow-xl">
-            <Settings className="h-7 w-7 text-sky-600 mb-3" />
-            <h4 className="font-semibold text-slate-900 mb-2">
-              Customization
-            </h4>
-            <p className="text-sm text-slate-700">
-              Tailored solutions aligned with institutional requirements.
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-3xl p-7 transition hover:-translate-y-1 hover:shadow-xl">
-            <BadgeCheck className="h-7 w-7 text-sky-600 mb-3" />
-            <h4 className="font-semibold text-slate-900 mb-2">
-              Competitive Pricing
-            </h4>
-            <p className="text-sm text-slate-700">
-              Cost-effective pricing without compromising quality.
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-3xl p-7 transition hover:-translate-y-1 hover:shadow-xl">
-            <Truck className="h-7 w-7 text-sky-600 mb-3" />
-            <h4 className="font-semibold text-slate-900 mb-2">
-              Timely Delivery
-            </h4>
-            <p className="text-sm text-slate-700">
-              Reliable logistics ensuring on-time supply across locations.
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-3xl p-7 transition hover:-translate-y-1 hover:shadow-xl">
-            <Headphones className="h-7 w-7 text-sky-600 mb-3" />
-            <h4 className="font-semibold text-slate-900 mb-2">
-              Customer Support
-            </h4>
-            <p className="text-sm text-slate-700">
-              Dedicated support team for order management and assistance.
-            </p>
-          </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          {[
+            {
+              icon: CheckCircle,
+              title: "Quality Assurance",
+              text: "Strict quality checks to ensure products meet institutional standards.",
+            },
+            {
+              icon: Settings,
+              title: "Customization",
+              text: "Tailored solutions aligned with institutional requirements.",
+            },
+            {
+              icon: BadgeCheck,
+              title: "Competitive Pricing",
+              text: "Cost-effective pricing without compromising quality.",
+            },
+            {
+              icon: Truck,
+              title: "Timely Delivery",
+              text: "Reliable logistics ensuring on-time supply across locations.",
+            },
+            {
+              icon: Headphones,
+              title: "Customer Support",
+              text: "Dedicated support team for order management and assistance.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white border border-slate-200 rounded-3xl p-7 transition hover:-translate-y-1 hover:shadow-xl"
+            >
+              <item.icon className="h-7 w-7 text-sky-600 mb-3" />
+              <h4 className="font-semibold text-slate-900 mb-2">
+                {item.title}
+              </h4>
+              <p className="text-sm text-slate-700">{item.text}</p>
+            </div>
+          ))}
         </div>
       </section>
     </ServiceLayout>
