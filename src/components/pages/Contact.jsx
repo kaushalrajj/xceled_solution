@@ -64,7 +64,6 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Let form submit normally, show toast visually
     setTimeout(() => {
       setShowToast(true);
       setIsSubmitting(false);
@@ -78,10 +77,10 @@ const Contact = () => {
         <div className="fixed top-6 right-6 z-50 animate-slide-in">
           <div className="flex items-start gap-4 bg-white border border-green-200 shadow-xl rounded-2xl px-6 py-4">
             <div>
-              <p className="text-green-600 font-medium">
+              <p className="text-green-600 font-medium text-base">
                 Message sent successfully!
               </p>
-              <p className="text-sm text-slate-500">
+              <p className="text-base text-slate-500">
                 Our team will contact you shortly.
               </p>
             </div>
@@ -97,10 +96,10 @@ const Contact = () => {
 
       {/* ================= HERO ================= */}
       <div className="max-w-7xl mx-auto px-6 text-center mb-20">
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+        <h1 className="text-5xl md:text-6xl font-semibold tracking-tight">
           Contact Us
         </h1>
-        <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
+        <p className="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">
           Have a question or business inquiry?
           <br className="hidden sm:block" />
           Our team is always happy to connect.
@@ -112,11 +111,11 @@ const Contact = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href={`tel:${PHONE_NUMBER.replace(/\s+/g, "")}`}
-            className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full
-                       bg-sky-600 text-white font-medium
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full
+                       bg-sky-600 text-white font-medium text-lg
                        hover:bg-sky-700 transition"
           >
-            <Phone size={18} />
+            <Phone size={20} />
             Call Now
           </a>
 
@@ -124,11 +123,11 @@ const Contact = () => {
             href={GMAIL_COMPOSE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-full
-                       border border-sky-600 text-sky-600 font-medium bg-white
+            className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full
+                       border border-sky-600 text-sky-600 font-medium text-lg bg-white
                        hover:bg-sky-50 transition"
           >
-            <Mail size={18} />
+            <Mail size={20} />
             Mail Us
           </a>
         </div>
@@ -138,11 +137,11 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-6 mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* ADDRESS CARD */}
-          <div className="bg-white rounded-3xl border border-slate-200 p-10 shadow-sm">
-            <MapPin className="text-sky-600 mb-4" />
-            <h3 className="font-semibold text-lg mb-4">Our Office</h3>
+          <div className="bg-white rounded-3xl border border-slate-200 p-12 shadow-sm">
+            <MapPin className="text-sky-600 mb-4" size={22} />
+            <h3 className="font-semibold text-xl mb-4">Our Office</h3>
 
-            <p className="text-sm text-slate-700 leading-relaxed">
+            <p className="text-base text-slate-700 leading-relaxed">
               A-20, Gurunanak Pura,
               <br />
               Laxmi Nagar, New Delhi – 110092
@@ -152,7 +151,7 @@ const Contact = () => {
               href="https://www.openstreetmap.org/?mlat=28.6369&mlon=77.2773#map=17/28.6369/77.2773"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-6 text-sm font-medium text-sky-600 hover:underline"
+              className="inline-block mt-6 text-base font-medium text-sky-600 hover:underline"
             >
               Open in Maps →
             </a>
@@ -176,7 +175,7 @@ const Contact = () => {
           action={`https://formsubmit.co/${EMAIL}`}
           method="POST"
           onSubmit={handleSubmit}
-          className={`space-y-7 bg-white rounded-[2.5rem] border border-slate-200 p-12 shadow-xl ${
+          className={`space-y-8 bg-white rounded-[2.5rem] border border-slate-200 p-14 shadow-xl ${
             shake ? "animate-shake" : ""
           }`}
         >
@@ -191,12 +190,12 @@ const Contact = () => {
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
-              className={`w-full rounded-2xl px-5 py-4 border ${
+              className={`w-full rounded-2xl px-6 py-5 text-lg border ${
                 errors.name ? "border-red-400" : "border-slate-300"
               } focus:ring-2 focus:ring-sky-500`}
             />
             {errors.name && (
-              <p className="text-sm text-red-500 mt-1">
+              <p className="text-base text-red-500 mt-1">
                 {errors.name}
               </p>
             )}
@@ -212,12 +211,12 @@ const Contact = () => {
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className={`w-full rounded-2xl px-5 py-4 border ${
+              className={`w-full rounded-2xl px-6 py-5 text-lg border ${
                 errors.email ? "border-red-400" : "border-slate-300"
               } focus:ring-2 focus:ring-sky-500`}
             />
             {errors.email && (
-              <p className="text-sm text-red-500 mt-1">
+              <p className="text-base text-red-500 mt-1">
                 {errors.email}
               </p>
             )}
@@ -236,12 +235,12 @@ const Contact = () => {
                   message: e.target.value,
                 })
               }
-              className={`w-full rounded-2xl px-5 py-4 border resize-none ${
+              className={`w-full rounded-2xl px-6 py-5 text-lg border resize-none ${
                 errors.message ? "border-red-400" : "border-slate-300"
               } focus:ring-2 focus:ring-sky-500`}
             />
             {errors.message && (
-              <p className="text-sm text-red-500 mt-1">
+              <p className="text-base text-red-500 mt-1">
                 {errors.message}
               </p>
             )}
@@ -251,24 +250,24 @@ const Contact = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex items-center justify-center gap-3 px-12 py-4 rounded-full
-                       bg-sky-600 text-white font-medium hover:bg-sky-700
+            className="inline-flex items-center justify-center gap-3 px-14 py-5 rounded-full
+                       bg-sky-600 text-white font-medium text-lg hover:bg-sky-700
                        transition disabled:opacity-70"
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="animate-spin" size={18} />
+                <Loader2 className="animate-spin" size={20} />
                 Sending
               </>
             ) : (
               <>
-                <Send size={18} />
+                <Send size={20} />
                 Send Message
               </>
             )}
           </button>
 
-          <p className="text-xs text-slate-500 text-center pt-2">
+          <p className="text-sm text-slate-500 text-center pt-2">
             We respect your privacy. Your data is never shared.
           </p>
         </form>

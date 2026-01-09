@@ -6,25 +6,25 @@ const AboutSection = () => {
     <section
       className="
         w-full
-        mt-20 sm:mt-28 md:mt-36
-        pb-20 sm:pb-24 md:pb-32
+        mt-24 sm:mt-32 md:mt-40
+        pb-24 sm:pb-28 md:pb-36
         relative z-10
       "
       style={{ fontFamily: "Inter, sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
           {/* ================= TEXT ================= */}
-          <div className="space-y-7 flex flex-col justify-center relative z-20 max-w-xl">
+          <div className="space-y-8 flex flex-col justify-center relative z-20 max-w-xl">
 
             {/* SECTION MARKER */}
             <div className="flex items-center gap-4">
-              <span className="block w-9 h-[2.5px] bg-sky-500 rounded-full" />
+              <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
               <p
                 className="
-                  uppercase tracking-[0.36em]
-                  text-[0.65rem] sm:text-[0.7rem]
+                  uppercase tracking-[0.38em]
+                  text-[0.7rem] sm:text-[0.75rem]
                   font-semibold text-sky-600
                 "
               >
@@ -37,8 +37,8 @@ const AboutSection = () => {
               className="
                 font-semibold tracking-tight
                 text-slate-800
-                leading-[1.2]
-                text-[clamp(1.9rem,4vw,2.6rem)]
+                leading-[1.18]
+                text-[clamp(2.1rem,4.2vw,2.9rem)]
               "
             >
               Building Skills That Translate Into Real Opportunity
@@ -48,8 +48,8 @@ const AboutSection = () => {
             <p
               className="
                 text-slate-600
-                text-[0.95rem]
-                leading-[1.75]
+                text-[1.02rem]
+                leading-[1.8]
               "
             >
               Xceled Solutions is a PMEGP-supported, women-led initiative dedicated
@@ -62,8 +62,8 @@ const AboutSection = () => {
             <p
               className="
                 text-slate-600
-                text-[0.92rem]
-                leading-[1.7]
+                text-[0.98rem]
+                leading-[1.75]
               "
             >
               Our focus remains clear — practical learning, measurable outcomes,
@@ -76,8 +76,8 @@ const AboutSection = () => {
             <div
               className="
                 text-slate-700
-                text-[0.83rem]
-                flex flex-wrap gap-x-6 gap-y-2 pt-2
+                text-[0.9rem]
+                flex flex-wrap gap-x-8 gap-y-2 pt-3
               "
             >
               <span>• PMEGP Supported Initiative</span>
@@ -89,12 +89,12 @@ const AboutSection = () => {
             <Link
               to="/about"
               className="
-                inline-flex items-center justify-center gap-2.5
-                mt-7 w-full sm:w-fit
-                px-7 py-3.5
+                inline-flex items-center justify-center gap-3
+                mt-8 w-full sm:w-fit
+                px-8 py-4
                 rounded-full
                 border border-sky-400/50
-                text-sky-700 font-medium text-sm
+                text-sky-700 font-medium text-[0.95rem]
                 bg-white
                 shadow-sm
                 hover:bg-sky-50 hover:border-sky-500
@@ -103,7 +103,7 @@ const AboutSection = () => {
               "
             >
               Learn More About Our Approach
-              <span className="text-base">→</span>
+              <span className="text-lg">→</span>
             </Link>
 
           </div>
@@ -112,7 +112,7 @@ const AboutSection = () => {
           <div className="relative z-0">
             <div
               className="
-                relative max-h-[22rem] sm:max-h-[24rem]
+                relative max-h-[24rem] sm:max-h-[26rem]
                 overflow-hidden rounded-3xl
                 shadow-md
               "
@@ -132,7 +132,7 @@ const AboutSection = () => {
             <div
               className="
                 absolute -bottom-6 -left-6
-                w-28 h-28 sm:w-32 sm:h-32
+                w-32 h-32 sm:w-36 sm:h-36
                 bg-sky-200/30
                 rounded-full blur-3xl
                 -z-10

@@ -33,8 +33,8 @@ const ImpactSection = () => {
     <section
       className="
         relative w-full
-        mt-20 sm:mt-24 md:mt-15
-        pb-24 sm:pb-32 md:pb-36
+        mt-24 sm:mt-28 md:mt-32
+        pb-28 sm:pb-36 md:pb-40
         overflow-hidden
       "
       style={{ fontFamily: "Inter, sans-serif" }}
@@ -42,10 +42,10 @@ const ImpactSection = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
 
         {/* ================= HEADER ================= */}
-        <header className="max-w-2xl mb-16 sm:mb-20 md:mb-24 space-y-5">
+        <header className="max-w-2xl mb-18 sm:mb-22 md:mb-26 space-y-6">
           <div className="flex items-center gap-4">
-            <span className="block w-9 h-[2.5px] bg-sky-500 rounded-full" />
-            <p className="uppercase tracking-[0.36em] text-[0.65rem] sm:text-[0.7rem] font-semibold text-sky-600">
+            <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+            <p className="uppercase tracking-[0.38em] text-[0.7rem] sm:text-[0.75rem] font-semibold text-sky-600">
               Our Impact
             </p>
           </div>
@@ -54,8 +54,8 @@ const ImpactSection = () => {
             className="
               font-semibold tracking-tight
               text-slate-800
-              text-[clamp(1.9rem,4vw,2.5rem)]
-              leading-[1.2]
+              text-[clamp(2.1rem,4.3vw,2.85rem)]
+              leading-[1.18]
             "
           >
             Measurable Learning. Meaningful Outcomes.
@@ -64,8 +64,8 @@ const ImpactSection = () => {
           <p
             className="
               text-slate-600
-              leading-[1.75]
-              text-[0.95rem]
+              leading-[1.8]
+              text-[1.02rem]
             "
           >
             Our initiatives focus on delivering tangible educational outcomes
@@ -76,7 +76,7 @@ const ImpactSection = () => {
         </header>
 
         {/* ================= GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 sm:gap-x-12 gap-y-14 sm:gap-y-18">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 sm:gap-x-14 gap-y-16 sm:gap-y-20">
 
           {impacts.map((item, index) => (
             <article
@@ -84,7 +84,7 @@ const ImpactSection = () => {
               className="
                 group relative
                 transition-transform duration-300 ease-out
-                hover:-translate-y-1
+                hover:-translate-y-1.5
                 will-change-transform
               "
             >
@@ -111,12 +111,12 @@ const ImpactSection = () => {
               </div>
 
               {/* CONTENT */}
-              <div className="pt-4">
-                <h3 className="text-[0.95rem] font-semibold text-slate-800 mb-1.5">
+              <div className="pt-5">
+                <h3 className="text-[1.05rem] font-semibold text-slate-800 mb-2">
                   {item.title}
                 </h3>
 
-                <p className="text-slate-600 text-[0.9rem] leading-[1.7]">
+                <p className="text-slate-600 text-[0.97rem] leading-[1.75]">
                   {item.desc}
                 </p>
               </div>
@@ -124,11 +124,11 @@ const ImpactSection = () => {
               {/* BRAND ACCENT */}
               <span
                 className="
-                  absolute -bottom-2.5 left-0
-                  h-[2.5px] w-0
+                  absolute -bottom-3 left-0
+                  h-[3px] w-0
                   bg-sky-500
                   transition-all duration-500
-                  group-hover:w-12
+                  group-hover:w-14
                 "
               />
             </article>
@@ -138,7 +138,7 @@ const ImpactSection = () => {
       </div>
 
       {/* ================= DECORATIVE BACKDROP ================= */}
-      <div className="absolute -top-24 -right-24 w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] bg-sky-200/35 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 -right-24 w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] bg-sky-200/35 rounded-full blur-3xl pointer-events-none" />
     </section>
   );
 };

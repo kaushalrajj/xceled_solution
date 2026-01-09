@@ -64,17 +64,17 @@ const OfflineExams = () => {
         >
           {/* TEXT */}
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-6">
               Reliable Exam Invigilation Services Across India
             </h2>
 
-            <p className="text-slate-700 leading-relaxed mb-4">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-5">
               Xceled Solutions delivers end-to-end offline proctor-based
               examination services for government bodies, educational
               institutions, and private organizations.
             </p>
 
-            <p className="text-slate-700 leading-relaxed mb-6 sm:mb-8">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-7 sm:mb-9">
               Our structured processes, trained manpower, and centralized
               coordination ensure secure, compliant, and standardized
               execution of offline examinations across diverse geographies.
@@ -122,7 +122,7 @@ const OfflineExams = () => {
 
       {/* ================= WHY CHOOSE US ================= */}
       <section className="mb-16 sm:mb-24 lg:mb-28">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           Why Choose Our Proctoring Team
         </h2>
 
@@ -151,10 +151,10 @@ const OfflineExams = () => {
               </div>
 
               <div className="p-6 sm:p-7">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">
+                <h3 className="text-xl font-semibold text-slate-900 mb-4">
                   {item.title}
                 </h3>
-                <p className="text-slate-700 text-sm leading-relaxed">
+                <p className="text-base text-slate-700 leading-relaxed">
                   {item.text}
                 </p>
               </div>
@@ -165,7 +165,7 @@ const OfflineExams = () => {
 
       {/* ================= EXAM FORMATS ================= */}
       <section className="mb-12 sm:mb-20 lg:mb-24">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-14">
           We Support Multiple Exam Formats
         </h2>
 
@@ -177,7 +177,7 @@ const OfflineExams = () => {
                 bg-sky-50/70
                 border border-slate-200
                 rounded-2xl px-7 py-5 sm:px-8 sm:py-6
-                text-center font-semibold text-slate-800
+                text-center font-semibold text-base sm:text-lg text-slate-800
                 transition-all duration-300
                 hover:-translate-y-1 hover:shadow-lg
               "

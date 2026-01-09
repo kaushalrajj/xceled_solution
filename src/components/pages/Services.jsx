@@ -118,18 +118,18 @@ const ServiceCard = memo(({ service, isLast }) => {
         </div>
 
         {/* CONTENT */}
-        <div className="p-6 sm:p-8 flex flex-col flex-grow">
-          <div className="mb-5">
-            <span className="inline-flex p-3 rounded-xl bg-sky-100">
-              <Icon className="w-6 h-6 text-sky-600" aria-hidden />
+        <div className="p-7 sm:p-9 flex flex-col flex-grow">
+          <div className="mb-6">
+            <span className="inline-flex p-3.5 rounded-xl bg-sky-100">
+              <Icon className="w-7 h-7 text-sky-600" aria-hidden />
             </span>
           </div>
 
-          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-3">
+          <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-3">
             {service.title}
           </h3>
 
-          <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+          <p className="text-slate-600 leading-relaxed text-base sm:text-lg">
             {service.description}
           </p>
         </div>
@@ -143,19 +143,19 @@ const Services = () => {
   const services = useMemo(() => SERVICES_DATA, []);
 
   return (
-    <section className="w-full bg-sky-50 py-24 sm:py-28 md:py-32">
+    <section className="w-full bg-sky-50 py-28 sm:py-32 md:py-36">
       <div className="max-w-7xl mx-auto px-5 sm:px-6">
         {/* HEADER */}
-        <div className="max-w-3xl mb-16 sm:mb-20">
-          <p className="uppercase tracking-[0.35em] text-sm font-bold text-sky-600 mb-4">
+        <div className="max-w-3xl mb-18 sm:mb-22">
+          <p className="uppercase tracking-[0.35em] text-base font-bold text-sky-600 mb-5">
             Services
           </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-900 mb-7">
             Solutions Delivered with Precision & Trust
           </h1>
 
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-600 text-lg sm:text-xl leading-relaxed">
             Our services are designed to support educational institutions,
             examinations, training, and operational requirements with reliability
             and professionalism.
@@ -163,7 +163,7 @@ const Services = () => {
         </div>
 
         {/* GRID */}
-        <div className="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+        <div className="grid gap-10 sm:gap-12 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
           {services.map((service, index) => (
             <ServiceCard
               key={service.path}

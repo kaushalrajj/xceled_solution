@@ -29,17 +29,17 @@ const EducationalTraining = () => {
       <section className="mb-16 sm:mb-24 lg:mb-28">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center bg-sky-50 rounded-3xl px-6 sm:px-10 py-10 sm:py-16">
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-6">
               Empowering Future Innovators Through Skill-Based Learning
             </h2>
 
-            <p className="text-slate-700 leading-relaxed mb-4">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-5">
               Xceled Solutions delivers structured, industry-aligned educational
               training programs designed to equip learners with practical skills
               and real-world readiness.
             </p>
 
-            <p className="text-slate-700 leading-relaxed">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
               Our approach bridges academic learning and professional
               application through experiential training, innovation-driven
               methodologies, and outcome-focused program design.
@@ -66,7 +66,7 @@ const EducationalTraining = () => {
 
       {/* ================= TRAINING PROGRAMS ================= */}
       <section className="mb-16 sm:mb-24 lg:mb-28">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           Our Comprehensive Training Programs
         </h2>
 
@@ -142,19 +142,19 @@ const EducationalTraining = () => {
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <item.icon className="h-8 w-8 text-sky-600 mb-5 transition-transform duration-300 hover:scale-110" />
+              <item.icon className="h-9 w-9 text-sky-600 mb-6 transition-transform duration-300 hover:scale-110" />
 
-              <h3 className="text-lg font-semibold text-slate-900 mb-4">
+              <h3 className="text-xl font-semibold text-slate-900 mb-5">
                 {item.title}
               </h3>
 
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {item.points.map((point, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2 text-sm text-slate-700"
+                    className="flex items-start gap-2 text-base text-slate-700"
                   >
-                    <CheckCircle className="h-4 w-4 text-sky-600 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-sky-600 mt-0.5" />
                     {point}
                   </li>
                 ))}
@@ -168,11 +168,11 @@ const EducationalTraining = () => {
       <section className="mb-16 sm:mb-24 lg:mb-28">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center bg-slate-50 rounded-3xl px-6 sm:px-10 py-10 sm:py-16">
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-7 sm:mb-9">
               Who Can Benefit?
             </h2>
 
-            <div className="space-y-4 sm:space-y-5 text-slate-700">
+            <div className="space-y-4 sm:space-y-6 text-slate-700 text-base sm:text-lg">
               <p><strong>Schools & Colleges:</strong> Academic enrichment and skill development.</p>
               <p><strong>Government Exam Institutes:</strong> National and state exam training.</p>
               <p><strong>Vocational Training Centers:</strong> Skill certification programs.</p>
@@ -201,7 +201,7 @@ const EducationalTraining = () => {
 
       {/* ================= WHY CHOOSE ================= */}
       <section className="mb-12 sm:mb-20 lg:mb-24">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           Why Choose Xceled Solutions?
         </h2>
 
@@ -221,11 +221,11 @@ const EducationalTraining = () => {
                 hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5 transition-transform duration-300 hover:scale-110" />
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+              <item.icon className="h-9 w-9 text-sky-600 mx-auto mb-6 transition-transform duration-300 hover:scale-110" />
+              <h3 className="text-xl font-semibold text-slate-900 mb-4">
                 {item.title}
               </h3>
-              <p className="text-sm text-slate-700 leading-relaxed">
+              <p className="text-base text-slate-700 leading-relaxed">
                 {item.text}
               </p>
             </div>

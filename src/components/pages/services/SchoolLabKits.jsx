@@ -31,17 +31,17 @@ const SchoolLabKits = () => {
 
           {/* TEXT */}
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-6">
               Equipping Young Minds for Scientific Exploration
             </h2>
 
-            <p className="text-slate-700 leading-relaxed mb-4">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-5">
               Xceled Solutions is committed to enriching school education by
               providing well-structured laboratory kits that enable students to
               learn science through real experimentation and observation.
             </p>
 
-            <p className="text-slate-700 leading-relaxed">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed">
               Our School Lab Kits are meticulously designed to align with
               curriculum standards while ensuring safety, clarity, and
               effective concept building across core science disciplines.
@@ -69,7 +69,7 @@ const SchoolLabKits = () => {
 
       {/* ================= OUR OFFERINGS ================= */}
       <section className="mb-16 sm:mb-24 lg:mb-28">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           Our Offerings
         </h2>
 
@@ -77,11 +77,11 @@ const SchoolLabKits = () => {
           
           {/* Physics */}
           <div className="bg-sky-50 border border-sky-100 rounded-3xl p-7 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
-            <FlaskConical className="h-8 w-8 text-sky-600 mb-5" />
-            <h3 className="text-lg font-semibold text-slate-900 mb-3">
+            <FlaskConical className="h-9 w-9 text-sky-600 mb-6" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">
               Physics Lab Kits
             </h3>
-            <ul className="space-y-2 text-sm text-slate-700">
+            <ul className="space-y-3 text-base text-slate-700">
               {[
                 "Mechanics experiments",
                 "Optics and light studies",
@@ -89,7 +89,7 @@ const SchoolLabKits = () => {
                 "Thermodynamics basics",
               ].map((item, i) => (
                 <li key={i} className="flex gap-2">
-                  <CheckCircle className="h-4 w-4 text-sky-600 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-sky-600 mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -98,11 +98,11 @@ const SchoolLabKits = () => {
 
           {/* Chemistry */}
           <div className="bg-sky-50 border border-sky-100 rounded-3xl p-7 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
-            <TestTube className="h-8 w-8 text-sky-600 mb-5" />
-            <h3 className="text-lg font-semibold text-slate-900 mb-3">
+            <TestTube className="h-9 w-9 text-sky-600 mb-6" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">
               Chemistry Lab Kits
             </h3>
-            <ul className="space-y-2 text-sm text-slate-700">
+            <ul className="space-y-3 text-base text-slate-700">
               {[
                 "Acid-base reactions",
                 "Chemical handling practices",
@@ -110,7 +110,7 @@ const SchoolLabKits = () => {
                 "Organic chemistry basics",
               ].map((item, i) => (
                 <li key={i} className="flex gap-2">
-                  <CheckCircle className="h-4 w-4 text-sky-600 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-sky-600 mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -119,11 +119,11 @@ const SchoolLabKits = () => {
 
           {/* Biology */}
           <div className="bg-sky-50 border border-sky-100 rounded-3xl p-7 sm:p-8 transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl">
-            <Dna className="h-8 w-8 text-sky-600 mb-5" />
-            <h3 className="text-lg font-semibold text-slate-900 mb-3">
+            <Dna className="h-9 w-9 text-sky-600 mb-6" />
+            <h3 className="text-xl font-semibold text-slate-900 mb-4">
               Biology Lab Kits
             </h3>
-            <ul className="space-y-2 text-sm text-slate-700">
+            <ul className="space-y-3 text-base text-slate-700">
               {[
                 "Microscopy observations",
                 "Dissection models",
@@ -131,7 +131,7 @@ const SchoolLabKits = () => {
                 "Ecology and environment studies",
               ].map((item, i) => (
                 <li key={i} className="flex gap-2">
-                  <CheckCircle className="h-4 w-4 text-sky-600 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-sky-600 mt-0.5" />
                   {item}
                 </li>
               ))}
@@ -143,7 +143,7 @@ const SchoolLabKits = () => {
 
       {/* ================= KEY FEATURES ================= */}
       <section className="mb-16 sm:mb-24 lg:mb-28">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           Key Features
         </h2>
 
@@ -174,11 +174,13 @@ const SchoolLabKits = () => {
               key={i}
               className="bg-white border border-slate-200 rounded-3xl p-7 sm:p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-5" />
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+              <item.icon className="h-9 w-9 text-sky-600 mx-auto mb-6" />
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
                 {item.title}
               </h3>
-              <p className="text-sm text-slate-700">{item.text}</p>
+              <p className="text-base text-slate-700">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
@@ -186,7 +188,7 @@ const SchoolLabKits = () => {
 
       {/* ================= WHY CHOOSE XCELED ================= */}
       <section className="mb-12 sm:mb-20 lg:mb-24">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           Why Choose Xceled Solutions?
         </h2>
 
@@ -201,8 +203,8 @@ const SchoolLabKits = () => {
               key={i}
               className="bg-sky-50 border border-sky-100 rounded-3xl p-7 sm:p-8 text-center transition-all duration-300 hover:bg-white hover:-translate-y-2 hover:shadow-2xl"
             >
-              <item.icon className="h-8 w-8 text-sky-600 mx-auto mb-4" />
-              <p className="text-sm font-medium text-slate-800">
+              <item.icon className="h-9 w-9 text-sky-600 mx-auto mb-5" />
+              <p className="text-base font-medium text-slate-800">
                 {item.text}
               </p>
             </div>

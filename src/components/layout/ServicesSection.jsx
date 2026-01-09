@@ -34,7 +34,7 @@ const ServicesSection = () => {
     <section
       className="
         w-full
-        py-20 sm:py-24 md:py-28
+        py-24 sm:py-28 md:py-32
         bg-gradient-to-b from-sky-50 via-white to-sky-50
       "
       style={{ fontFamily: "Inter, sans-serif" }}
@@ -42,11 +42,11 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
 
         {/* ================= HEADING ================= */}
-        <div className="max-w-2xl mb-14 sm:mb-16 md:mb-20 space-y-5">
+        <div className="max-w-2xl mb-16 sm:mb-18 md:mb-22 space-y-6">
 
           <div className="flex items-center gap-4">
-            <span className="block w-9 h-[2.5px] bg-sky-500 rounded-full" />
-            <p className="uppercase tracking-[0.36em] text-[0.65rem] sm:text-[0.7rem] font-semibold text-sky-600">
+            <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+            <p className="uppercase tracking-[0.38em] text-[0.7rem] sm:text-[0.75rem] font-semibold text-sky-600">
               What We Enable
             </p>
           </div>
@@ -55,8 +55,8 @@ const ServicesSection = () => {
             className="
               font-semibold tracking-tight
               text-slate-900
-              text-[clamp(1.85rem,4vw,2.6rem)]
-              leading-[1.2]
+              text-[clamp(2.05rem,4.2vw,2.85rem)]
+              leading-[1.18]
             "
           >
             Focus Areas Designed for Measurable Outcomes
@@ -65,8 +65,8 @@ const ServicesSection = () => {
           <p
             className="
               text-slate-600
-              leading-[1.75]
-              text-[0.95rem]
+              leading-[1.8]
+              text-[1.02rem]
             "
           >
             Our services focus on clearly defined capability areas where
@@ -76,7 +76,7 @@ const ServicesSection = () => {
         </div>
 
         {/* ================= SERVICES GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-14 lg:gap-16">
 
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -87,14 +87,14 @@ const ServicesSection = () => {
                 className="
                   group relative
                   transition-transform duration-300 ease-out
-                  hover:-translate-y-1
+                  hover:-translate-y-1.5
                 "
               >
                 {/* underline accent */}
                 <div
                   className="
                     absolute inset-x-0 -bottom-3
-                    h-[2px]
+                    h-[2.5px]
                     bg-gradient-to-r from-sky-400 to-sky-500
                     scale-x-0 origin-left
                     transition-transform duration-500
@@ -102,13 +102,13 @@ const ServicesSection = () => {
                   "
                 />
 
-                <Icon className="h-9 w-9 text-sky-500 mb-4" />
+                <Icon className="h-10 w-10 text-sky-500 mb-5" />
 
-                <h3 className="text-[0.95rem] font-semibold text-slate-800 mb-2">
+                <h3 className="text-[1.05rem] font-semibold text-slate-800 mb-3">
                   {service.title}
                 </h3>
 
-                <p className="text-slate-600 text-[0.9rem] leading-[1.7]">
+                <p className="text-slate-600 text-[0.97rem] leading-[1.75]">
                   {service.desc}
                 </p>
               </div>
@@ -117,15 +117,15 @@ const ServicesSection = () => {
         </div>
 
         {/* ================= CTA ================= */}
-        <div className="mt-14 sm:mt-16 md:mt-20 text-center">
+        <div className="mt-16 sm:mt-18 md:mt-22 text-center">
           <Link
             to="/services"
             className="
-              inline-flex items-center gap-2.5
-              px-8 py-3.5
+              inline-flex items-center gap-3
+              px-9 py-4
               rounded-full
               border border-sky-400/60
-              text-sky-700 font-medium text-sm
+              text-sky-700 font-medium text-[0.95rem]
               bg-white
               shadow-sm
               hover:bg-sky-50 hover:border-sky-500
@@ -134,7 +134,7 @@ const ServicesSection = () => {
             "
           >
             Explore Our Programs
-            <span className="text-base">→</span>
+            <span className="text-lg">→</span>
           </Link>
         </div>
 

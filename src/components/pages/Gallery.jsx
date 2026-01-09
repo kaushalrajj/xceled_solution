@@ -54,11 +54,11 @@ const Gallery = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mb-24 max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-semibold text-sky-800 mb-6">
+            <h1 className="text-5xl md:text-6xl font-semibold text-sky-800 mb-7">
               Gallery
             </h1>
-            <div className="w-20 h-[2px] bg-sky-500 mb-6 rounded-full" />
-            <p className="text-slate-600 text-lg leading-relaxed">
+            <div className="w-20 h-[2px] bg-sky-500 mb-7 rounded-full" />
+            <p className="text-slate-600 text-xl leading-relaxed">
               A professional visual showcase highlighting our institutional
               programs, student engagement activities, and on-ground training
               initiatives across multiple regions.
@@ -66,7 +66,7 @@ const Gallery = () => {
           </motion.div>
 
           {/* GRID */}
-          <h2 className="text-2xl font-semibold text-slate-800 mb-12">
+          <h2 className="text-3xl font-semibold text-slate-800 mb-14">
             Program Highlights
           </h2>
 
@@ -96,8 +96,8 @@ const Gallery = () => {
                 </div>
 
                 {/* TITLE */}
-                <div className="px-5 py-4 border-t border-slate-100">
-                  <h3 className="font-medium text-slate-800 tracking-wide">
+                <div className="px-6 py-5 border-t border-slate-100">
+                  <h3 className="font-medium text-lg text-slate-800 tracking-wide">
                     {item.title}
                   </h3>
                 </div>
@@ -124,10 +124,10 @@ const Gallery = () => {
               onClick={() => setActiveImage(null)}
               className="absolute top-6 right-6 z-50
                          bg-black/60 hover:bg-black/80
-                         text-white p-2 rounded-full transition"
+                         text-white p-3 rounded-full transition"
               aria-label="Close image"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
 
             {/* FULL IMAGE */}

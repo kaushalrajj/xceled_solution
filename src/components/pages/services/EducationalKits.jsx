@@ -30,10 +30,10 @@ const EducationalKits = () => {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center text-white">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 sm:mb-7">
             Educational Kits
           </h1>
-          <p className="max-w-3xl mx-auto text-sm sm:text-lg text-slate-200 leading-relaxed">
+          <p className="max-w-3xl mx-auto text-base sm:text-xl text-slate-200 leading-relaxed">
             Empowering learning through hands-on, experiential educational kits
             designed to spark curiosity, creativity, and conceptual clarity.
           </p>
@@ -41,12 +41,12 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= INTRO ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-10 sm:py-16 lg:py-20">
-        <div className="bg-sky-50 rounded-3xl px-7 sm:px-10 py-10 sm:py-14 text-center">
-          <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-4 sm:mb-6">
+      <section className="max-w-7xl mx-auto px-6 py-12 sm:py-18 lg:py-22">
+        <div className="bg-sky-50 rounded-3xl px-8 sm:px-12 py-12 sm:py-16 text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-5 sm:mb-7">
             Empowering Learning Through Hands-On Experience
           </h2>
-          <p className="max-w-4xl mx-auto text-slate-600 leading-relaxed text-sm sm:text-base">
+          <p className="max-w-4xl mx-auto text-slate-600 leading-relaxed text-base sm:text-lg">
             At Xcelled Solutions, we believe that experiential learning is the
             key to fostering curiosity and innovation among students. Our
             meticulously designed Educational Kits provide practical tools that
@@ -57,12 +57,12 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= OUR EDUCATIONAL KITS ================= */}
-      <section className="max-w-7xl mx-auto px-6 pb-10 sm:pb-16 lg:pb-20">
-        <h2 className="text-xl sm:text-2xl font-semibold text-center mb-8 sm:mb-12">
+      <section className="max-w-7xl mx-auto px-6 pb-12 sm:pb-18 lg:pb-22">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10 sm:mb-14">
           Our Educational Kits
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-9">
           {[
             {
               icon: FlaskConical,
@@ -103,18 +103,18 @@ const EducationalKits = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-6 sm:p-7 shadow-md
+              className="bg-white rounded-2xl p-7 sm:p-8 shadow-md
                          hover:shadow-xl hover:-translate-y-1
                          transition-all duration-300"
             >
-              <item.icon className="w-9 h-9 text-sky-600 mb-4" />
-              <h3 className="font-semibold text-base sm:text-lg mb-3">
+              <item.icon className="w-10 h-10 text-sky-600 mb-5" />
+              <h3 className="font-semibold text-lg sm:text-xl mb-4">
                 {item.title}
               </h3>
-              <ul className="space-y-2 text-sm text-slate-600">
+              <ul className="space-y-3 text-base text-slate-600">
                 {item.points.map((p, idx) => (
                   <li key={idx} className="flex gap-2">
-                    <CheckCircle className="w-4 h-4 text-sky-500 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-sky-500 mt-0.5" />
                     {p}
                   </li>
                 ))}
@@ -125,13 +125,13 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= KEY FEATURES ================= */}
-      <section className="bg-slate-50 py-10 sm:py-16 lg:py-20">
+      <section className="bg-slate-50 py-12 sm:py-18 lg:py-22">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-xl sm:text-2xl font-semibold text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-10 sm:mb-14">
             Key Features
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-6 sm:gap-8 text-center">
+          <div className="grid md:grid-cols-4 gap-7 sm:gap-9 text-center">
             {[
               { icon: BookOpen, title: "Curriculum-Aligned" },
               { icon: GraduationCap, title: "Age-Appropriate Design" },
@@ -139,8 +139,8 @@ const EducationalKits = () => {
               { icon: ShieldCheck, title: "Quality Assurance" },
             ].map((f, i) => (
               <div key={i}>
-                <f.icon className="w-8 h-8 sm:w-9 sm:h-9 text-sky-600 mx-auto mb-3" />
-                <h4 className="font-medium text-slate-800 text-sm sm:text-base">
+                <f.icon className="w-9 h-9 sm:w-10 sm:h-10 text-sky-600 mx-auto mb-4" />
+                <h4 className="font-medium text-slate-800 text-base sm:text-lg">
                   {f.title}
                 </h4>
               </div>
@@ -150,14 +150,14 @@ const EducationalKits = () => {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-10 sm:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-14 items-center">
+      <section className="max-w-7xl mx-auto px-6 py-12 sm:py-18 lg:py-22">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold mb-5 sm:mb-7">
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8">
               Why Choose Xcelled Solutions?
             </h2>
 
-            <div className="space-y-3 sm:space-y-5 text-slate-600 text-sm sm:text-base">
+            <div className="space-y-4 sm:space-y-6 text-slate-600 text-base sm:text-lg">
               <p className="flex gap-3">
                 <Award className="text-sky-600" /> Expertly crafted by educators
                 and industry professionals

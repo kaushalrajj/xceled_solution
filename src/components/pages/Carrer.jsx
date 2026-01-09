@@ -37,11 +37,11 @@ const Carrer = () => {
       {/* Success Message */}
       {showSuccess && (
         <div className="fixed top-24 right-6 z-50">
-          <div className="bg-white border border-green-200 shadow-lg rounded-xl px-6 py-4">
-            <p className="text-green-700 font-semibold">
+          <div className="bg-white border border-green-200 shadow-lg rounded-xl px-7 py-5">
+            <p className="text-green-700 font-semibold text-lg">
               Application submitted successfully
             </p>
-            <p className="text-sm text-slate-600">
+            <p className="text-base text-slate-600">
               Our team will contact you if shortlisted.
             </p>
           </div>
@@ -49,11 +49,11 @@ const Carrer = () => {
       )}
 
       {/* Page Heading */}
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        <h1 className="text-4xl font-semibold text-sky-700 mb-3">
+      <div className="max-w-7xl mx-auto px-6 mb-18">
+        <h1 className="text-5xl font-semibold text-sky-700 mb-4">
           Careers at Xcelled
         </h1>
-        <p className="text-slate-600 max-w-3xl">
+        <p className="text-slate-600 text-lg max-w-3xl">
           Join a team that builds practical, scalable solutions for education
           and institutions. We value ownership, clarity, and real-world impact.
         </p>
@@ -62,12 +62,12 @@ const Carrer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
         {/* WHY WORK WITH XCELLED (6 CARDS) */}
-        <div className="bg-white rounded-2xl p-10 border border-sky-100 shadow-sm">
-          <h2 className="text-2xl font-semibold text-sky-700 mb-8">
+        <div className="bg-white rounded-2xl p-12 border border-sky-100 shadow-sm">
+          <h2 className="text-3xl font-semibold text-sky-700 mb-10">
             Why Work With Xcelled?
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
             {[
               "Collaborative and growth-focused work environment",
               "Exposure to real institutional and educational projects",
@@ -79,15 +79,15 @@ const Carrer = () => {
               <div
                 key={index}
                 className="
-                  flex gap-4 p-5 rounded-xl
+                  flex gap-4 p-6 rounded-xl
                   bg-sky-50/70
                   border border-sky-100
                   hover:shadow-md
                   transition-shadow
                 "
               >
-                <span className="text-sky-600 font-semibold">✔</span>
-                <p className="text-slate-700 text-sm leading-relaxed">
+                <span className="text-sky-600 font-semibold text-lg">✔</span>
+                <p className="text-slate-700 text-base leading-relaxed">
                   {item}
                 </p>
               </div>
@@ -101,7 +101,7 @@ const Carrer = () => {
           method="POST"
           encType="multipart/form-data"
           onSubmit={() => setIsSubmitting(true)}
-          className="bg-white rounded-2xl p-10 shadow-xl border border-slate-100"
+          className="bg-white rounded-2xl p-12 shadow-xl border border-slate-100"
         >
           <input type="hidden" name="_captcha" value="false" />
           <input
@@ -120,34 +120,34 @@ const Carrer = () => {
             value={`${window.location.pathname}?success=true`}
           />
 
-          <label className="label">Full Name *</label>
+          <label className="label text-base">Full Name *</label>
           <input
             name="name"
             required
             placeholder="Enter your full name"
-            className="input"
+            className="input text-lg"
             value={formData.name}
             onChange={(e) =>
               setFormData({ ...formData, name: e.target.value })
             }
           />
 
-          <label className="label">Email Address *</label>
+          <label className="label text-base">Email Address *</label>
           <input
             type="email"
             name="email"
             required
             placeholder="Enter your email address"
-            className="input"
+            className="input text-lg"
             value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
           />
 
-          <label className="label">Phone Number *</label>
-          <div className="flex gap-2 mb-4">
-            <span className="px-4 py-3 border rounded-lg bg-slate-50 text-slate-700 text-sm">
+          <label className="label text-base">Phone Number *</label>
+          <div className="flex gap-3 mb-5">
+            <span className="px-4 py-3 border rounded-lg bg-slate-50 text-slate-700 text-base">
               +91
             </span>
             <input
@@ -155,7 +155,7 @@ const Carrer = () => {
               required
               pattern="[0-9]{10}"
               placeholder="10-digit mobile number"
-              className="input flex-1 mb-0"
+              className="input flex-1 mb-0 text-lg"
               value={formData.phone}
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
@@ -163,27 +163,27 @@ const Carrer = () => {
             />
           </div>
 
-          <label className="label">Position Applied For *</label>
+          <label className="label text-base">Position Applied For *</label>
           <input
             name="role"
             required
             placeholder="e.g. Frontend Developer, Lab Technician"
-            className="input"
+            className="input text-lg"
             value={formData.role}
             onChange={(e) =>
               setFormData({ ...formData, role: e.target.value })
             }
           />
 
-          <label className="label">Resume *</label>
-          <div className="flex items-center gap-4 mb-6">
+          <label className="label text-base">Resume *</label>
+          <div className="flex items-center gap-4 mb-7">
             <label
               htmlFor="resume"
-              className="px-5 py-2.5 rounded-lg bg-sky-600 text-white text-sm font-medium cursor-pointer hover:bg-sky-700 transition-colors"
+              className="px-6 py-3 rounded-lg bg-sky-600 text-white text-base font-medium cursor-pointer hover:bg-sky-700 transition-colors"
             >
               Browse Documents
             </label>
-            <span className="text-sm text-slate-600 truncate max-w-[260px]">
+            <span className="text-base text-slate-600 truncate max-w-[260px]">
               {fileName}
             </span>
           </div>
@@ -206,7 +206,7 @@ const Carrer = () => {
             type="submit"
             disabled={isSubmitting}
             className={`
-              w-full mt-4 py-3 rounded-xl font-semibold tracking-wide
+              w-full mt-5 py-4 rounded-xl font-semibold tracking-wide text-lg
               transition-all duration-150
               ${
                 isSubmitting
@@ -229,8 +229,8 @@ const Carrer = () => {
         }
         .input {
           width: 100%;
-          padding: 12px 14px;
-          margin-bottom: 16px;
+          padding: 14px 16px;
+          margin-bottom: 18px;
           border: 1px solid #d1d5db;
           border-radius: 10px;
           background-color: #f9fafb;

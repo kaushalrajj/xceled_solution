@@ -19,8 +19,8 @@ const TrustSection = () => {
     <section
       className="
         w-full
-        mt-20 sm:mt-24 md:mt-15
-        pb-24 sm:pb-28
+        mt-24 sm:mt-28 md:mt-32
+        pb-28 sm:pb-32
       "
       style={{ fontFamily: "Inter, sans-serif" }}
     >
@@ -31,20 +31,20 @@ const TrustSection = () => {
             bg-sky-50
             border border-sky-200
             rounded-3xl
-            px-6 sm:px-10 md:px-16
-            py-12 sm:py-14 md:py-16
+            px-7 sm:px-12 md:px-20
+            py-14 sm:py-16 md:py-18
             shadow-sm
           "
         >
           {/* ================= HEADING ================= */}
-          <div className="text-center mb-10 sm:mb-12 md:mb-14 space-y-5">
+          <div className="text-center mb-12 sm:mb-14 md:mb-16 space-y-6">
 
             <div className="flex items-center justify-center gap-4">
-              <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+              <span className="block w-11 h-[3px] bg-sky-500 rounded-full" />
               <p
                 className="
-                  uppercase tracking-[0.36em]
-                  text-[0.7rem] sm:text-[0.75rem]
+                  uppercase tracking-[0.38em]
+                  text-[0.75rem] sm:text-[0.8rem]
                   text-sky-700 font-semibold
                 "
               >
@@ -56,7 +56,7 @@ const TrustSection = () => {
               className="
                 font-bold tracking-tight
                 text-slate-900
-                text-[clamp(1.6rem,3.5vw,2.3rem)]
+                text-[clamp(1.85rem,3.8vw,2.6rem)]
               "
             >
               Government & Industry Affiliations
@@ -64,10 +64,10 @@ const TrustSection = () => {
 
             <p
               className="
-                text-[0.9rem] sm:text-[0.95rem]
+                text-[1rem] sm:text-[1.05rem]
                 text-slate-700
                 max-w-xl mx-auto
-                leading-[1.75]
+                leading-[1.8]
               "
             >
               Officially registered, certified, and recognized under
@@ -80,7 +80,7 @@ const TrustSection = () => {
           <div className="relative overflow-hidden">
             <div
               className="
-                flex items-center gap-12 sm:gap-16 md:gap-20
+                flex items-center gap-14 sm:gap-18 md:gap-22
                 animate-logoScroll
                 hover:[animation-play-state:paused]
                 w-max
@@ -91,16 +91,16 @@ const TrustSection = () => {
                   key={index}
                   className="
                     flex items-center justify-center
-                    min-w-[120px] sm:min-w-[150px] md:min-w-[180px]
+                    min-w-[130px] sm:min-w-[160px] md:min-w-[190px]
                     transition-transform duration-300 ease-out
-                    hover:scale-[1.04]
+                    hover:scale-[1.05]
                   "
                 >
                   <img
                     src={logo}
                     alt="Affiliation Logo"
                     className="
-                      h-14 sm:h-16 md:h-18 lg:h-20
+                      h-16 sm:h-18 md:h-20 lg:h-22
                       w-auto object-contain
                       opacity-85
                       grayscale

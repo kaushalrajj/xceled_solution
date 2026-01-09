@@ -5,8 +5,8 @@ const CTASection = () => {
     <section
       className="
         relative w-full
-        mt-20 sm:mt-24 md:mt-15
-        pb-28 sm:pb-32 md:pb-40
+        mt-24 sm:mt-28 md:mt-32
+        pb-32 sm:pb-36 md:pb-44
       "
       style={{ fontFamily: "Inter, sans-serif" }}
     >
@@ -18,25 +18,25 @@ const CTASection = () => {
             bg-gradient-to-br from-sky-50 via-white to-sky-100/60
             border border-sky-200
             rounded-3xl
-            px-6 sm:px-10 md:px-20
-            py-16 sm:py-20 md:py-24
+            px-7 sm:px-12 md:px-24
+            py-18 sm:py-22 md:py-26
             shadow-md
           "
         >
           {/* ================= DECORATIVE BACKDROPS ================= */}
-          <div className="absolute -top-20 -right-20 w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-sky-300/40 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-sky-200/50 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-sky-300/40 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-28 -left-28 w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] bg-sky-200/50 rounded-full blur-3xl pointer-events-none" />
 
           {/* ================= CONTENT ================= */}
           <div className="relative z-10 max-w-3xl">
 
             {/* MARKER */}
-            <div className="flex items-center gap-4 mb-5">
-              <span className="block w-10 h-[3px] bg-sky-500 rounded-full" />
+            <div className="flex items-center gap-4 mb-6">
+              <span className="block w-11 h-[3px] bg-sky-500 rounded-full" />
               <p
                 className="
-                  uppercase tracking-[0.36em]
-                  text-[0.7rem]
+                  uppercase tracking-[0.38em]
+                  text-[0.75rem]
                   font-semibold
                   text-sky-700
                 "
@@ -50,8 +50,8 @@ const CTASection = () => {
               className="
                 font-bold tracking-tight
                 text-slate-900
-                text-[clamp(1.85rem,4.5vw,2.85rem)]
-                leading-[1.2]
+                text-[clamp(2.15rem,4.8vw,3.05rem)]
+                leading-[1.18]
               "
             >
               Let’s Take the Next Step Together
@@ -61,9 +61,9 @@ const CTASection = () => {
             <p
               className="
                 text-slate-700
-                mt-5 sm:mt-6
-                text-[0.95rem] sm:text-[1rem]
-                leading-[1.75]
+                mt-6 sm:mt-7
+                text-[1.05rem] sm:text-[1.1rem]
+                leading-[1.8]
                 max-w-2xl
               "
             >
@@ -73,18 +73,18 @@ const CTASection = () => {
             </p>
 
             {/* ================= CTAs ================= */}
-            <div className="mt-10 sm:mt-12 md:mt-14 flex flex-wrap gap-4 sm:gap-6">
+            <div className="mt-12 sm:mt-14 md:mt-16 flex flex-wrap gap-5 sm:gap-7">
 
               {/* PRIMARY CTA */}
               <Link
                 to="/services"
                 className="
                   group inline-flex items-center gap-3
-                  px-8 sm:px-10
-                  py-3.5 sm:py-4
+                  px-9 sm:px-11
+                  py-4 sm:py-4.5
                   rounded-full
                   bg-sky-700 text-white
-                  font-semibold
+                  font-semibold text-[1rem]
                   shadow-lg sm:shadow-xl
                   transition-all duration-300 ease-out
                   hover:bg-sky-800
@@ -103,12 +103,12 @@ const CTASection = () => {
                 to="/contact"
                 className="
                   group inline-flex items-center gap-3
-                  px-8 sm:px-10
-                  py-3.5 sm:py-4
+                  px-9 sm:px-11
+                  py-4 sm:py-4.5
                   rounded-full
                   border border-sky-400
                   text-sky-700
-                  font-semibold
+                  font-semibold text-[1rem]
                   bg-white
                   shadow-sm sm:shadow-md
                   transition-all duration-300 ease-out

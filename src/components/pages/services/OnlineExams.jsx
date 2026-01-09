@@ -74,17 +74,17 @@ const OnlineExams = () => {
           "
         >
           <div>
-            <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-5">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-6">
               Trusted Online Examination Platform
             </h2>
 
-            <p className="text-slate-700 leading-relaxed mb-4">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-5">
               Xceled Solutions delivers reliable and secure online examination
               services designed for institutions that demand precision,
               transparency, and scalability.
             </p>
 
-            <p className="text-slate-700 leading-relaxed mb-6 sm:mb-8">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed mb-7 sm:mb-9">
               With proven experience in managing large-scale assessments, our
               solutions ensure seamless execution from candidate onboarding to
               post-exam reporting — backed by strict compliance and operational
@@ -117,7 +117,7 @@ const OnlineExams = () => {
 
       {/* ================= WHAT WE OFFER ================= */}
       <section className="mb-16 sm:mb-24 lg:mb-28">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-14">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-16">
           What We Offer
         </h2>
 
@@ -134,11 +134,11 @@ const OnlineExams = () => {
                 hover:bg-white hover:-translate-y-2 hover:shadow-2xl
               "
             >
-              <h3 className="text-lg font-semibold text-slate-900 mb-4">
+              <h3 className="text-xl font-semibold text-slate-900 mb-5">
                 {item.title}
               </h3>
 
-              <p className="text-slate-700 text-sm leading-relaxed">
+              <p className="text-base text-slate-700 leading-relaxed">
                 {item.text}
               </p>
             </div>
@@ -148,7 +148,7 @@ const OnlineExams = () => {
 
       {/* ================= TRUSTED BY ================= */}
       <section className="mb-12 sm:mb-20 lg:mb-24">
-        <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-10 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 mb-12 sm:mb-14">
           Trusted by Institutions
         </h2>
 

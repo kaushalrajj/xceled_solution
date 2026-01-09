@@ -57,7 +57,6 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(false);
-
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
         setVisible(true);
@@ -74,8 +73,8 @@ const Hero = () => {
       <section
         style={{ fontFamily: "Inter, sans-serif" }}
         className="
-          relative w-screen
-          min-h-[64svh] sm:min-h-[72svh] lg:min-h-[84svh]
+          relative w-full
+          min-h-[65svh] sm:min-h-[72svh] lg:min-h-[84svh]
           overflow-hidden
         "
       >
@@ -85,7 +84,7 @@ const Hero = () => {
             src={slides[current].image}
             alt=""
             className={`
-              w-full h-full object-cover object-center
+              w-full h-full object-cover
               transition-all duration-[3000ms]
               ease-[cubic-bezier(.16,1,.3,1)]
               ${visible ? "opacity-100 scale-100" : "opacity-0 scale-[1.05]"}
@@ -94,27 +93,37 @@ const Hero = () => {
         </div>
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/65 to-sky-900/10" />
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-r
+            from-sky-950/95
+            via-sky-900/70
+            to-sky-900/20
+            sm:from-sky-950/90
+            sm:via-sky-900/60
+          "
+        />
 
         {/* CONTENT */}
         <div
           className="
             relative z-10
-            min-h-[64svh] sm:min-h-[72svh] lg:min-h-[84svh]
+            min-h-[65svh] sm:min-h-[72svh] lg:min-h-[84svh]
             flex items-center
           "
         >
-          <div className="w-full max-w-7xl mx-auto px-6 sm:px-8">
-            <div className="max-w-[40rem] space-y-6 sm:space-y-5">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-8">
+            <div className="max-w-[40rem] space-y-5 sm:space-y-6">
 
               {/* Eyebrow */}
               <p
                 className={`
-                  uppercase tracking-[0.36em]
+                  uppercase tracking-[0.32em]
                   text-sky-200/75
-                  text-[0.65rem]
+                  text-[0.72rem] sm:text-[0.77rem]
                   font-medium
-                  transition-all duration-600
+                  transition-all duration-500
                   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
                 `}
               >
@@ -125,10 +134,10 @@ const Hero = () => {
               <h1
                 className={`
                   font-bold tracking-tight
-                  leading-[1.15]
+                  leading-[1.18]
                   text-white
-                  text-[clamp(1.85rem,5vw,3.1rem)]
-                  transition-all duration-800 delay-75
+                  text-[clamp(1.9rem,6.8vw,3.6rem)]
+                  transition-all duration-700 delay-75
                   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
                 `}
               >
@@ -140,9 +149,9 @@ const Hero = () => {
                 className={`
                   text-sky-50/90
                   leading-[1.7]
-                  text-[0.95rem]
+                  text-[1.05rem] sm:text-[1.1rem]
                   max-w-[34rem]
-                  transition-all duration-800 delay-150
+                  transition-all duration-700 delay-150
                   ${visible ? "opacity-90 translate-y-0" : "opacity-0 translate-y-3"}
                 `}
               >
@@ -154,9 +163,9 @@ const Hero = () => {
                 className={`
                   text-sky-200/85
                   leading-[1.65]
-                  text-[0.88rem]
+                  text-[0.96rem] sm:text-[1rem]
                   max-w-[32rem]
-                  transition-all duration-800 delay-250
+                  transition-all duration-700 delay-250
                   ${visible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-3"}
                 `}
               >
@@ -166,14 +175,17 @@ const Hero = () => {
               {/* CTA */}
               <div
                 className={`
-                  flex flex-wrap gap-4 pt-7
-                  transition-all duration-800 delay-350
+                  flex flex-col sm:flex-row
+                  gap-3 sm:gap-4
+                  pt-6 sm:pt-7
+                  transition-all duration-700 delay-350
                   ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
                 `}
               >
                 <Link to="/services">
                   <button
                     className="
+                      w-full sm:w-auto
                       px-7 py-3.5
                       rounded-full
                       bg-white/10 backdrop-blur
@@ -190,6 +202,7 @@ const Hero = () => {
                 <Link to="/contact">
                   <button
                     className="
+                      w-full sm:w-auto
                       px-7 py-3.5
                       rounded-full
                       bg-white
